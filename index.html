@@ -2,24 +2,45 @@
 <html class="bg_white">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maria Arkadieff, artist</title>
     <link rel="stylesheet" href="index.css"></link>
+    <!-- <script>
+      document.addEventListener("scroll", function() {
+        var windowHeight = window.innerHeight;
+        var splashSection = document.getElementById("splash");
+        var sloganSection = document.getElementById("slogan");
+        var videoSection = document.getElementById("backgroundVideo");
+        var splashPosition = splashSection.getBoundingClientRect();
+        var sloganPosition = sloganSection.getBoundingClientRect();
+        var videoPosition = videoSection.getBoundingClientRect();
+
+        console.log("splashBottom: ", splashPosition.bottom);
+        console.log("slogan: ", sloganPosition);
+        console.log("videoTop: ", videoPosition.top);
+      });
+
+    </script> -->
   </head>
   <body>
-    <section id="splash" class="bg_white">
-        <h1>Maria Arkadieff</h1>
-        <img src="Illustrations/portrait_arkadieff.png" alt="Portrait, eine junge Frau mit sehr kurzen Haaren steht an einer Mauer">
-    </section>
-    <section id="slogan" class="bg_transparent">
-      <div id="sloganwrapper">
-        <p class="slogan red">GIVE</p>
-        <p class="slogan">EVERY</p>
-        <p class="slogan">THING</p>
-        <p class="slogan">FOREVER</p>
-      </div>
-    </section>
-    <section id="links.contact" class="bg_white">
+    <div id="splashwrapper">
+      <section id="splash" class="bg_white">
+          <!-- <h1>Maria Arkadieff</h1> -->
+          <div id="portrait-wrapper"><img src="Illustrations/portrait_arkadieff.png" alt="Portrait, eine junge Frau mit sehr kurzen Haaren steht an einer Mauer"></div>
+      </section>
+      <section id="slogan" class="bg_transparent">
+        <div id="sloganwrapper">
+          <p class="slogan red">GIVE</p>
+          <p class="slogan">EVERY</p>
+          <p class="slogan">THING</p>
+          <p class="slogan">FOREVER</p>
+        </div>
+      </section>
+    </div>
+
+    <section id="links-contact" class="bg_white">
       <div id="links">
+        <a href="www.google.com">Testadresse</a>
         <p>Musik</p>
         <p>Klassische Komposition</p>
         <p>Lyrik</p>
@@ -37,7 +58,6 @@
         Your browser does not support the video tag.
       </video>
     </div>
-
 
   </body>
 </html>
