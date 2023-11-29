@@ -109,6 +109,7 @@ h1 {
 /*SECOND SECTION*/
 #slogan {
   position: sticky;
+  opacity: 1;
   z-index: 2;
   bottom: 0;
   background-color: #3a363600;
@@ -117,12 +118,7 @@ h1 {
 }
 
 #sloganwrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding-left: 0.5rem;
-  width: 100vw; /* Use width instead of max-width */
+  display: block;
 }
 
 .slogan {
