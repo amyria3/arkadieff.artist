@@ -1,6 +1,6 @@
 /*DESIGN WORKS with window width min 1300*/
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
 .white {
   color: #f5f2f2;
 }
@@ -157,13 +157,17 @@ h1 {
   justify-content: space-between;
   align-items: flex-end;
   padding: 2.5rem;
-  padding-bottom: 7.5rem;
   z-index: 2;
 }
 
 #links {
   display: block;
   z-index: 2;
+  min-height: fit-content;
+}
+#links > * {
+  margin: 0;
+  font-weight: 400;
 }
 
 /*CURSOR*/
