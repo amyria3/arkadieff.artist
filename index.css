@@ -1,7 +1,7 @@
 /*DESIGN WORKS with window width min 1300*/
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;400;500;600;700&display=swap");
 
 /*COLORS*/
 .white {
@@ -72,7 +72,7 @@ section {
 }
 
 /*FIRST PART*/
-#splashwrapper {
+#splash-wrapper {
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -158,8 +158,8 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 2rem;
-  padding-top: 4rem;
+  padding: 4rem;
+  padding-top: 16rem;
   z-index: 2;
 }
 
@@ -171,11 +171,11 @@ h1 {
 
 .desciplines-list-item {
   color: #3a3636;
-  font-family: Inter, sans-serif;
+  font-family: Blinker, sans-serif;
   padding-top: 0.4rem;
   padding-bottom: 0.1rem;
-  font-size: 2.5rem;
-  line-height: 2.7rem;
+  font-size: 2rem;
+  line-height: 2.2rem;
   font-style: normal;
   font-weight: 100;
   text-transform: uppercase;
@@ -187,16 +187,18 @@ a {
   font-family: Inter, sans-serif;
   padding-top: 0.2rem;
   padding-bottom: 0.1rem;
-  font-size: 2.5rem;
-  line-height: 2.7rem;
+  font-size: 2rem;
+  line-height: 2.2rem;
   font-style: normal;
   font-weight: 100;
   text-transform: uppercase;
   margin: 0;
+  text-decoration: none;
 }
 
 a:hover {
   color: #ff0002;
+  text-decoration: underline;
 }
 
 /*CURSOR*/
