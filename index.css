@@ -1,26 +1,26 @@
 /*DESIGN WORKS with window width min 1300*/
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+
+/*COLORS*/
 .white {
   color: #f5f2f2;
 }
-.bg_white {
+.bg-white {
   background-color: #f5f2f2;
 }
-
-.bg_transparent {
+.bg-transparent {
   background-color: #3a363600;
 }
-
 .black {
   color: #3A3636;
 }
-
-
 .red {
   color: #ff0002;
 }
 
+/*LAYORS*/
 * {
   font-family: "Lato", sans-serif;
   font-weight: 300;
@@ -76,11 +76,9 @@ section {
   bottom: 0;
 }
 
-
 /*SPLASH*/
 #splash {
   display: flex;
-  padding-bottom: 12vw;
   justify-content: end;
   align-items: flex-end;
 } /*will only take the space needed*/
@@ -93,6 +91,7 @@ section {
 #portrait-wrapper {
   max-width: 100vw;
   padding: 4vw;
+  margin-top: 4vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,16 +107,12 @@ h1 {
 
 /*SECOND SECTION*/
 #slogan {
-  position: sticky;
-  opacity: 1;
+  position: absolute;
+  top: 0;
+  /* opacity: 1; */
   z-index: 2;
-  bottom: 0;
-  background-color: #3a363600;
   margin-bottom: 100vh;
   overflow: hidden; /* Add this line to hide the overflow content */
-}
-
-#sloganwrapper {
   display: block;
 }
 
