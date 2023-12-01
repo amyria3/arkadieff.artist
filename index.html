@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maria Arkadieff, artist</title>
     <link rel="stylesheet" href="index.css"></link>
+    <script>
+      window.addEventListener('scroll', function() {
+        // Calculate scroll progress
+        const scrollProgress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+
+        // Get the #slogan element
+        const sloganElement = document.getElementById('slogan');
+
+        // Move #slogan to the bottom based on scroll progress
+        sloganElement.style.transform = `translateY(${scrollProgress * 100}%)`;
+      });
+    </script>
   </head>
   <body>
     <div id="splashwrapper">
