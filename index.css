@@ -2,18 +2,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;400;500;600;700&display=swap");
-@font-face {
-  font-family: 'SF Compact';
-  src: url('https://example.com/path/to/SFCompact-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
 
 @font-face {
-  font-family: 'SF Compact';
-  src: url('https://example.com/path/to/SFCompact-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
+  font-family: "Biotif";
+  src: url("Illustrations/biotif-1/Biotif-Light.ttf") format("truetype"); /* Replace 'path/to/biotif.woff' with the actual path to your .woff font file */
 }
 /* Add additional font weights/styles if needed */
 
@@ -69,12 +61,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-size: 1vw;
-}
-
 html,
 body {
   min-width: 100%;
@@ -84,6 +70,17 @@ body {
 section {
   width: 100vw;
   margin: 0;
+}
+
+body {
+  font-family: "Biotif", sans-serif;
+  font-weight: light;
+  font-size: 1vw;
+}
+
+a:hover {
+  color: #ff0002;
+  text-decoration: none;
 }
 
 /*FIRST PART*/
@@ -169,49 +166,46 @@ h1 {
 }
 
 /*LINKS SECTION*/
-#links-contact {
-  width: 100vw;
-  height: 100vh;
-  max-height: 100vw;
 
-  background-color: #191919ae;
+#disciplines {
+  font-size: 1.6rem;
+  line-height: 1.6rem;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 4rem;
-  padding-top: 16rem;
-  z-index: 2;
-
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-#links {
-  display: flex;
-  flex-direction: column;
-  gap: 0rem;
+#disciplines section {
+  width: auto;
+  transition: flex-grow 0.5s;
+  /* Align h2 to the top of each section */
+  align-items: flex-start;
+}
+#disciplines section:not(:last-child) {
+  border-right: 1px solid #191919;
 }
 
-.desciplines-list-item {
-  color: #f5f2f2;
+#disciplines section:hover {
+  flex-grow: 1;
+}
 
-  padding-top: 0.2rem;
-  padding-bottom: 0.1rem;
-
-  font-family: 'SF Compact', sans-serif;
-  font-size: 2.5rem;
-  font-style: normal;
-  font-weight: 59;
+#disciplines section h2 {
+  padding-top: 1.6rem;
+  display: inline-block;
+  writing-mode: vertical-rl;
+  color: #191919;
   text-transform: uppercase;
-  margin: 0;
   text-decoration: none;
+  white-space: nowrap;
 }
 
-a:hover {
+#disciplines section:hover h2 {
   color: #ff0002;
-  text-decoration: none;
 }
 
-/*POETRY*/
-#poetry {
+/*
+#lyrik {
   width: 100vw;
   padding: 20rem;
   font-family: Blinker;
@@ -221,13 +215,13 @@ a:hover {
   line-height: normal;
   text-transform: uppercase;
 }
-#poetry h2{
+#lyrik h2 {
   width: 100vw;
   padding: 20rem;
   font-family: Blinker;
   font-size: 3.5rem;
   font-weight: 400;
-}
+}*/
 
 /*CURSOR*/
 body {
