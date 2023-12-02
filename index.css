@@ -154,7 +154,6 @@ h1 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  min-height: 50vw;
   max-height: 100vw;
 }
 
@@ -162,7 +161,8 @@ h1 {
   position: fixed;
   top: auto;
   bottom: 0;
-  min-width: 100vw;
+  width: 100vw;
+  height: 100vh;
   max-height: 100vw;
   object-fit: cover;
   z-index: -2;
