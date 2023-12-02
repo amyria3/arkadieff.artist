@@ -170,13 +170,18 @@ h1 {
 
 /*LINKS SECTION*/
 #links-contact {
-  background-color: #19191976;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vw;
+
+  background-color: #191919ae;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   padding: 4rem;
   padding-top: 16rem;
   z-index: 2;
+
 }
 
 #links {
