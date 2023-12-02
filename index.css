@@ -168,12 +168,14 @@ h1 {
 /*LINKS SECTION*/
 
 #disciplines {
+  position: relative;
   font-size: 1.6rem;
   line-height: 1.6rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+  height: 90vh;
 }
 
 #disciplines section {
@@ -192,6 +194,7 @@ h1 {
 
 #disciplines section h2 {
   padding-top: 1.6rem;
+  padding-bottom: 2.2rem;
   display: inline-block;
   writing-mode: vertical-rl;
   color: #191919;
