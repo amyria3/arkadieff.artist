@@ -2,19 +2,36 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;400;500;600;700&display=swap");
+@font-face {
+  font-family: 'SF Compact';
+  src: url('https://example.com/path/to/SFCompact-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Compact';
+  src: url('https://example.com/path/to/SFCompact-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+/* Add additional font weights/styles if needed */
 
 /*COLORS*/
-.white {
-  color: #f5f2f2;
-}
 .bg-white {
   background-color: #f5f2f2;
 }
 .bg-transparent {
-  background-color: #3a363600;
+  background-color: #3f3d3d00;
+}
+.bg-black {
+  color: #191919;
+}
+.white {
+  color: #f5f2f2;
 }
 .black {
-  color: #3a3636;
+  color: #191919;
 }
 .red {
   color: #ff0002;
@@ -55,8 +72,6 @@ body {
 body {
   font-family: "Lato", sans-serif;
   font-weight: 300;
-  color: #3a3636;
-  background-color: #3a363600;
   font-size: 1vw;
 }
 
@@ -126,8 +141,8 @@ h1 {
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 9rem;
-  line-height: 9rem; /* 96.429% */
+  font-size: 12rem;
+  line-height: 12rem; /* 96.429% */
   text-transform: uppercase;
   margin: 0;
 }
@@ -155,6 +170,7 @@ h1 {
 
 /*LINKS SECTION*/
 #links-contact {
+  background-color: #19191976;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -170,27 +186,15 @@ h1 {
 }
 
 .desciplines-list-item {
-  color: #3a3636;
-  font-family: Blinker, sans-serif;
-  padding-top: 0.4rem;
-  padding-bottom: 0.1rem;
-  font-size: 2rem;
-  line-height: 2.2rem;
-  font-style: normal;
-  font-weight: 100;
-  text-transform: uppercase;
-  margin: 0;
-}
+  color: #f5f2f2;
 
-a {
-  color: #3a3636;
-  font-family: Inter, sans-serif;
   padding-top: 0.2rem;
   padding-bottom: 0.1rem;
-  font-size: 2rem;
-  line-height: 2.2rem;
+
+  font-family: 'SF Compact', sans-serif;
+  font-size: 2.5rem;
   font-style: normal;
-  font-weight: 100;
+  font-weight: 59;
   text-transform: uppercase;
   margin: 0;
   text-decoration: none;
@@ -198,7 +202,26 @@ a {
 
 a:hover {
   color: #ff0002;
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+/*POETRY*/
+#poetry {
+  width: 100vw;
+  padding: 20rem;
+  font-family: Blinker;
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  text-transform: uppercase;
+}
+#poetry h2{
+  width: 100vw;
+  padding: 20rem;
+  font-family: Blinker;
+  font-size: 3.5rem;
+  font-weight: 400;
 }
 
 /*CURSOR*/

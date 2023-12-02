@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maria Arkadieff, artist</title>
     <link rel="stylesheet" href="index.css"></link>
-    <script>
+    <!-- <script>
       window.addEventListener('scroll', function() {
         // Calculate scroll progress
         const scrollProgress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
@@ -14,11 +14,21 @@
         const sloganElement = document.getElementById('slogan');
 
         // Move #slogan to the bottom based on scroll progress
-        sloganElement.style.transform = `translateY(${scrollProgress * 100}%)`;
+        sloganElement.style.transform = `translateY(${scrollProgress * 200}%)`;
+      });
+    </script> -->
+    <script>
+      window.addEventListener('scroll', function() {
+        // Get the #slogan element
+        const sloganElement = document.getElementById('slogan');
+
+        // Use the number of pixels scrolled for translateY
+        sloganElement.style.transform = `translateY(${window.scrollY}px)`;
       });
     </script>
+
   </head>
-  <body>
+  <body class="bg-transparent black">
     <div id="splash-wrapper">
       <section id="splash" class="bg-white">
           <!-- <h1>Maria Arkadieff</h1> -->
@@ -41,7 +51,7 @@
       </video>
     </section>
 
-    <section id="links-contact" class="bg-white">
+    <section id="links-contact" class="bg-black white">
       <div id="links">
         <a href="https://www.saatchiart.com/arkadieff" class="desciplines-list-item">Aquarelle</a>
         <p class="desciplines-list-item">Musik</p>
@@ -51,7 +61,28 @@
         <a href="https://www.youtube.com/@mariaarkadieff7342" class="desciplines-list-item">Video art</a>
         <p class="desciplines-list-item">UX/UI & Webdesign</p>
       </div>
-      <a href="mailto:m.arkadieff.open@email.com"> ->->-> email</a>
+      <!-- <a href="mailto:m.arkadieff.open@email.com"> ->->-> email</a> -->
+    </section>
+
+    <section id="poetry" class="bg-white">
+     <h2> Die Sprache ist die Heimat der Fehler</h2>
+      Die Sprache ist die Heimat der Fehler.<br>
+      Wir sprechen Bedeutung aus und das ist, als streckten wir eben rasch eine Kerze an und sprachen: <br>
+      Dies ist Dein Platz in der Zeit und zwischen den Menschen.<br>
+      <br>
+      Die Zeit aber ist wie ein Wolkenhimmel zwischen zwei Gewittern, wie ein Strom betrachtet aus der Höhe der Vogelscharen - jetzt so und dann so, und fließt und den Ort, an dem ich sprach - ich bin’s! - treibts weg unter<br>
+      mir und unter uns.<br>
+      <br>
+      Manch ein Wort ist nur eine Meinung, eine nachgesprochene Geste und <br>
+      Bedeutsame Worte scheinen wie schweres Gestein, das die Rundung des Wassers umschwebt. <br>
+      Manch ein Stein schlägt, und dem anderen baut man fliegende Städte, die scheinen zu bestehen und doch zerschellen sie gegen das Firmament.<br>
+      <br>
+      Es gesellt sich Haus zum Haus, Versprechen und Vertrauen nehmen hier ihren Ursprung, taumeln sich wie Trauben auf einem Zweig.<br>
+      <br>
+      Im Schutze der Mauer<br>
+      die spielenden Kinder -<br>
+      zu ihnen, nur zu ihnen<br>
+      ein sanftes Gebet<br>
     </section>
   </body>
 </html>
