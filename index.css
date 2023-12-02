@@ -152,6 +152,11 @@ h1 {
   width: 100vw;
   height: 100vh;
   max-height: 100vw;
+  transition: height 1.2s ease-out;
+}
+#video-background-wrapper:hover {
+  height: 100vh; /* Adjust the height to the desired value when hovered over */
+  max-height: 100vw;
 }
 
 #video-background-wrapper video {
@@ -166,7 +171,6 @@ h1 {
 }
 
 /*LINKS SECTION*/
-
 #disciplines {
   position: relative;
   font-size: 1.6rem;

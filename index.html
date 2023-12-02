@@ -7,12 +7,40 @@
     <link rel="stylesheet" href="index.css"></link>
     <script>
       window.addEventListener('scroll', function() {
-        // Get the #slogan element
         const sloganElement = document.getElementById('slogan');
-        // Use the number of pixels scrolled for translateY
         sloganElement.style.transform = `translateY(${window.scrollY}px)`;
-      });
+
+        ////THIS IS OK FOR NOW, IT RESIZES THE SEA DEPENDING ON SCROLL PROGRESS
+        // Get the #video-background-wrapper element
+        const videoWrapper = document.getElementById('video-background-wrapper');
+
+        // Get the #disciplines section
+        const disciplinesSection = document.getElementById('disciplines');
+        const disciplinesPosition = disciplinesSection.getBoundingClientRect();
+
+        // Calculate the scroll progress based on screen height
+        const screenHeight = window.innerHeight;
+        const scrollProgress = (window.scrollY - disciplinesPosition.top) / (screenHeight / 5);
+        var videoWrapperIsSmall = false;
+        // Shrink the video background when the scroll progress is reached
+        if (scrollProgress >= 1) {
+          const newHeight = 20; // 10vw in height
+          videoWrapper.style.height = `${newHeight}vw`;
+          var videoWrapperIsSmall = true;
+        }
+
+        videoWrapper.addEventListener('click', function(){
+          if(videoWrapperIsSmall){
+            videoWrapper.style.height = '100vh';
+            videoWrapper.style.maxHeight = '100vw';
+          }
+
+        })
+
+      })
+
     </script>
+
 
   </head>
   <body class="bg-transparent black">
