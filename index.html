@@ -20,11 +20,11 @@
 
         // Calculate the scroll progress based on screen height
         const screenHeight = window.innerHeight;
-        const scrollProgress = (window.scrollY - disciplinesPosition.top) / (screenHeight / 5);
+        const scrollProgress = (window.scrollY - disciplinesPosition.top) / (screenHeight / 6);
         var videoWrapperIsSmall = false;
         // Shrink the video background when the scroll progress is reached
         if (scrollProgress >= 1) {
-          const newHeight = 20; // 10vw in height
+          const newHeight = 40; // 10vw in height
           videoWrapper.style.height = `${newHeight}vw`;
           var videoWrapperIsSmall = true;
         }
