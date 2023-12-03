@@ -207,14 +207,6 @@ h1 {
   white-space: nowrap;
 }
 
-#disciplines section:hover h2 {
-  color: #ff0002;
-}
-
-#disciplines section:focus h2 {
-  color: #ff0002;
-}
-
 .discipline-content {
   padding: 1.6rem;
 }
@@ -233,21 +225,23 @@ h1 {
 }
 
 /*INTERACTIVE*/
-#disciplines section:hover {
-  flex-grow: 1;
+.discipline-section:not(.opened) h2:hover {
+  cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
+  color: #ff0002;
 }
 
+/* .discipline-section:hover {
+  flex-grow: 1;
+} */
+
 .discipline-content {
-  transition: width  0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
 }
 
 .opened .discipline-content {
   display: flex;
   width: auto;
 }
-
-
-
 
 
 /*
