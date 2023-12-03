@@ -182,30 +182,19 @@ h1 {
   height: 90vh;
 }
 
-#disciplines section {
-  width: auto;
-  transition: flex-grow 0.5s;
-  /* Align h2 to the top of each section */
-  display: flex;
-  align-items: flex-start;
-}
-
-#disciplines section .discipline-content{
-  display: none;
-}
-
-#disciplines section:not(:last-child) {
+.discipline-section:not(:last-child) {
   border-right: 1px solid #191919;
 }
 
-#disciplines section:hover {
-  flex-grow: 1;
-}
-#disciplines section:hover .discipline-content {
+.discipline-section {
+  width: auto;
+  /* Align h2 to the top of each section */
   display: flex;
+  align-items: flex-start;
+  transition: flex-grow 0.5s ease-in-out; /*in case there is growth it will be smooth*/
 }
 
-#disciplines section h2 {
+.discipline-section h2 {
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
   margin-left: 1.6rem;
@@ -235,6 +224,34 @@ h1 {
   margin: 0;
   font-size: large;
 }
+
+.discipline-content{
+  width: 0;
+  overflow: hidden;
+  display: none;
+  /*ANIMATE TO DISPLAYY FLEX OR WHATEVER*/
+}
+
+/*INTERACTIVE*/
+#disciplines section:hover {
+  flex-grow: 1;
+}
+
+.discipline-content {
+  transition: width  0.5s ease-in-out;
+}
+.disciplne-section:hover .discipline-content {
+  display: flex;
+}
+
+.opened .discipline-content {
+  display: flex;
+  width: auto;
+}
+
+
+
+
 
 /*
 #lyrik {
