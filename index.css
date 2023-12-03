@@ -63,13 +63,16 @@ body {
 
 html,
 body {
-  min-width: 100%;
+  width: 100%;
   min-height: 100%;
 }
 
 section {
-  width: 100vw;
   margin: 0;
+}
+
+.full-width {
+  width: 100vw;
 }
 
 body {
@@ -176,22 +179,10 @@ h1 {
   font-size: 1.6rem;
   line-height: 1.6rem;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   height: 90vh;
-}
-
-.discipline-section:not(:last-child) {
-  border-right: 1px solid #191919;
-}
-
-.discipline-section {
-  width: auto;
-  /* Align h2 to the top of each section */
-  display: flex;
-  align-items: flex-start;
-  transition: flex-grow 0.5s ease-in-out; /*in case there is growth it will be smooth*/
 }
 
 .discipline-section h2 {
@@ -207,63 +198,42 @@ h1 {
   white-space: nowrap;
 }
 
+/*DISCIPLINE_SECTIONS*/
+.discipline-section:not(:last-child) {
+  border-right: 1px solid #191919;
+}
+
+.discipline-section {
+  width: auto;
+  display: flex;
+  align-items: flex-start;
+  transition: width 0.5s ease-in-out; /*in case there is growth it will be smooth*/
+}
+
 .discipline-content {
   padding: 1.6rem;
+  width: 0;
+  display: none;
+  overflow: hidden;
+  transition: width 1s ease-in-out;
+}
+
+.visible {
+  width: auto !important;
+  display: flex !important;
 }
 
 .discipline-content p {
   padding: 0;
   margin: 0;
-  font-size: large;
 }
 
-.discipline-content{
-  width: 0;
-  overflow: hidden;
-  display: none;
-  /*ANIMATE TO DISPLAYY FLEX OR WHATEVER*/
-}
-
-/*INTERACTIVE*/
+/*INTERACTIVE CURSOR*/
 .discipline-section:not(.opened) h2:hover {
   cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
   color: #ff0002;
 }
 
-/* .discipline-section:hover {
-  flex-grow: 1;
-} */
-
-.discipline-content {
-  transition: width 0.5s ease-in-out;
-}
-
-.opened .discipline-content {
-  display: flex;
-  width: auto;
-}
-
-
-/*
-#lyrik {
-  width: 100vw;
-  padding: 20rem;
-  font-family: Blinker;
-  font-size: 3.5rem;
-  font-style: normal;
-  font-weight: 200;
-  line-height: normal;
-  text-transform: uppercase;
-}
-#lyrik h2 {
-  width: 100vw;
-  padding: 20rem;
-  font-family: Blinker;
-  font-size: 3.5rem;
-  font-weight: 400;
-}*/
-
-/*CURSOR*/
 body {
   cursor: url("Illustrations/cursor.svg"), auto; /* Replace with the correct path to your cursor.svg file */
 }
