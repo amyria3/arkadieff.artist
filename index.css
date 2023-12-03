@@ -207,15 +207,14 @@ h1 {
   width: auto;
   display: flex;
   align-items: flex-start;
-  transition: width 0.5s ease-in-out; /*in case there is growth it will be smooth*/
+  transition: width 5s ease-in-out; /*in case there is growth it will be smooth*/
 }
 
 .discipline-content {
   padding: 1.6rem;
-  width: 0;
   display: none;
   overflow: hidden;
-  transition: width 1s ease-in-out;
+  transition: width 5s ease-in-out;
 }
 
 .visible {

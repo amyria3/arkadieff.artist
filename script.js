@@ -4,7 +4,6 @@
 // 2. RESIZE VISIBLE VIDEO CONTENT DEPENDING ON CLICK OR SCROLL
 
 window.addEventListener("scroll", function () {
-
   const sloganElement = document.getElementById("slogan");
   sloganElement.style.transform = `translateY(${window.scrollY}px)`;
 
@@ -36,9 +35,26 @@ window.addEventListener("scroll", function () {
       videoWrapperIsSmall = false; // Update the state
     }
   });
+});
 
+document.addEventListener('DOMContentLoaded', function () {
+  const disciplineSections = document.querySelectorAll('.discipline-section');
 
+  disciplineSections.forEach((section) => {
+    section.addEventListener('mouseenter', function () {
+      // Remove .opened class from all discipline sections
+      disciplineSections.forEach((s) => s.classList.remove('opened'));
 
-  //// INTERACTIVE SECTIONS!
+      // Remove .visible class from all discipline content sections
+      const contentSections = document.querySelectorAll('.discipline-content');
+      contentSections.forEach((content) => content.classList.remove('visible'));
 
+      // Add .opened class to the current discipline section
+      section.classList.add('opened');
+
+      // Add .visible class to the corresponding discipline content
+      const correspondingContent = section.querySelector('.discipline-content');
+      correspondingContent.classList.add('visible');
+    });
+  });
 });
