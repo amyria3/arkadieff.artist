@@ -155,6 +155,10 @@ h1 {
   transition: height 0.8s ease-out;
 }
 
+#video-background-wrapper:hover {
+  cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
+}
+
 #video-background-wrapper video {
   position: fixed;
   top: auto;
@@ -172,7 +176,7 @@ h1 {
   font-size: 1.6rem;
   line-height: 1.6rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: flex-start;
   align-items: flex-start;
   height: 90vh;
@@ -182,8 +186,14 @@ h1 {
   width: auto;
   transition: flex-grow 0.5s;
   /* Align h2 to the top of each section */
+  display: flex;
   align-items: flex-start;
 }
+
+#disciplines section .discipline-content{
+  display: none;
+}
+
 #disciplines section:not(:last-child) {
   border-right: 1px solid #191919;
 }
@@ -191,10 +201,15 @@ h1 {
 #disciplines section:hover {
   flex-grow: 1;
 }
+#disciplines section:hover .discipline-content {
+  display: flex;
+}
 
 #disciplines section h2 {
   padding-top: 1.6rem;
-  padding-bottom: 2.2rem;
+  padding-bottom: 1.6rem;
+  margin-left: 1.6rem;
+  margin-right: 1.6rem;
   display: inline-block;
   writing-mode: vertical-rl;
   color: #191919;
@@ -205,6 +220,20 @@ h1 {
 
 #disciplines section:hover h2 {
   color: #ff0002;
+}
+
+#disciplines section:focus h2 {
+  color: #ff0002;
+}
+
+.discipline-content {
+  padding: 1.6rem;
+}
+
+.discipline-content p {
+  padding: 0;
+  margin: 0;
+  font-size: large;
 }
 
 /*
