@@ -204,70 +204,25 @@ h1 {
   width: auto;
   display: flex;
   align-items: flex-start;
-  transition: width 1s ease-in-out, flex-grow 1s ease-in-out;
+  transition: flex-grow 1s ease-in-out,  width 1s ease-in-out;
 }
 
 .section-content {
   min-width: 0;
   overflow: hidden;
   padding: 1.6rem;
-  transition: width 0.5s ease-in-out, display 0.5s ease-in-out;}
+  transition: width 1s ease-in-out, display 1s ease-in-out;}
 
-.discipline-section.closed .section-content {
+/* .discipline-section.closed .section-content {
   width: 0%;
   display: none;
-}
-
-.discipline-section.opened .section-content {
-  width: 100% !important;
-  display: flex !important;
-}
+} */
 
 .section-content p {
+  width: 100%;
   padding: 0;
   margin: 0;
 }
-
-/*will be changed dynamically*/
-/* #klassische-komposition {
-  flex-grow: 0;
-  width: min-content;
-}
-
-#klassische-komposition .section-content {
-  display: none;
-  width: 0;
-}
-
-#aquarelle {
-  flex-grow: 0;
-  width: min-content;
-}
-
-#aquarelle .section-content {
-  display: none;
-  width: 0;
-}
-
-#lyrik {
-  flex-grow: 0;
-  width: min-content;
-}
-
-#lyrik .section-content {
-  display: none;
-  width: 0;
-}
-
-#politik {
-  flex-grow: 0;
-  width: min-content;
-}
-
-#politik .section-content {
-  display: none;
-  width: 0;
-} */
 
 /*INTERACTIVE CURSOR*/
 .discipline-section:not(.opened) h2:hover {
