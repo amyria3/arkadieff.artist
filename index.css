@@ -198,7 +198,8 @@ h1 {
   white-space: nowrap;
 }
 
-/* DISCIPLINE_SECTION */
+/*INTERACTIVE RESIZING*/
+/* DISCIPLINE_SECTION + SECTION CONTENT */
 .discipline-section {
   width: auto;
   display: flex;
@@ -206,43 +207,67 @@ h1 {
   transition: width 1s ease-in-out, flex-grow 1s ease-in-out;
 }
 
-.discipline-section.closed {
-  flex-grow: 0;
-}
-
-.discipline-section.opened {
-  flex-grow: 1;
-  width: 100%;
-}
-
-/* SECTION CONTENT */
 .section-content {
   min-width: 0;
   overflow: hidden;
   padding: 1.6rem;
-  transition: width 1s ease-in-out;
-}
+  transition: width 0.5s ease-in-out, display 0.5s ease-in-out;}
 
-.section-content.zero-width {
-  width: 0;
-}
-
-.section-content.auto-width {
-  width: 100%;
-}
-
-.section-content.invisible {
+.discipline-section.closed .section-content {
+  width: 0%;
   display: none;
 }
 
-.section-content.visible {
-  display: flex;
+.discipline-section.opened .section-content {
+  width: 100% !important;
+  display: flex !important;
 }
 
 .section-content p {
   padding: 0;
   margin: 0;
 }
+
+/*will be changed dynamically*/
+/* #klassische-komposition {
+  flex-grow: 0;
+  width: min-content;
+}
+
+#klassische-komposition .section-content {
+  display: none;
+  width: 0;
+}
+
+#aquarelle {
+  flex-grow: 0;
+  width: min-content;
+}
+
+#aquarelle .section-content {
+  display: none;
+  width: 0;
+}
+
+#lyrik {
+  flex-grow: 0;
+  width: min-content;
+}
+
+#lyrik .section-content {
+  display: none;
+  width: 0;
+}
+
+#politik {
+  flex-grow: 0;
+  width: min-content;
+}
+
+#politik .section-content {
+  display: none;
+  width: 0;
+} */
 
 /*INTERACTIVE CURSOR*/
 .discipline-section:not(.opened) h2:hover {

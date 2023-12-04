@@ -138,66 +138,32 @@ document.addEventListener("DOMContentLoaded", function () {
     // Get the previously opened section
     const previouslyOpenedSection = document.querySelector(
       ".discipline-section.opened"
-    );
+    )
 
-    // Step 3: Close previously opened section if it's not identical with the hovered one
-    if (
-      previouslyOpenedSection &&
-      previouslyOpenedSection !== section &&
-      previouslyOpenedSection.classList.contains("opened")
-    ) {
-      closeSection(previouslyOpenedSection);
-    }
-
-    // Step 4: Open the current section
-    openSection(section);
+    //apply clothing to the preciously opened section
+    closeSection(previouslyOpenedSection)
+    openSection(section)
   }
 
-  // Function to replace classes
-  function replaceClasses(element, oldClass, newClass) {
-    console.log(
-      `Before class replacement (${oldClass} to ${newClass}):`,
-      element.classList
-    );
-    element.classList.remove(oldClass);
-    element.classList.add(newClass);
-    console.log(
-      `After class replacement (${oldClass} to ${newClass}):`,
-      element.classList
-    );
-  }
+  function closeSection(sectionToBeClosed) {
+    const sectionContent = sectionToBeClosed.querySelector(".section-content");
+    sectionToBeClosed.style.flexGrow = 0;
+    sectionContent.style.width = "0";
+    setTimeout(() => {
+      sectionContent.style.display = "none";
+    }, 1000);
+    sectionToBeClosed.classList.add("closed");
+    sectionToBeClosed.classList.remove("opened");
 
-  //Function to replace classes in the current section
+  }
 
   function openSection(sectionToBeOpened) {
-    replaceClasses(sectionToBeOpened, "closed", "opened");
-    replaceClasses(
-      sectionToBeOpened.querySelector(".section-content"),
-      "invisible",
-      "visible"
-    );
-    replaceClasses(
-      sectionToBeOpened.querySelector(".section-content"),
-      "zero-width",
-      "auto-width"
-    );
-  }
-
-  //Function to replace classes in the previous section
-  function closeSection(sectionToBeClosed) {
-    replaceClasses(
-      sectionToBeClosed.querySelector(".section-content"),
-      "auto-width",
-      "zero-width"
-    );
-    replaceClasses(sectionToBeClosed, "opened", "closed");
-    setTimeout(() => {
-      replaceClasses(
-        sectionToBeClosed.querySelector(".section-content"),
-        "visible",
-        "invisible"
-      );
-    }, 1000);
+    const sectionContent = sectionToBeOpened.querySelector(".section-content");
+    sectionToBeOpened.style.flexGrow = 1;
+    sectionContent.style.display = "flex";
+    sectionContent.style.width = "100%";
+    sectionToBeOpened.classList.add("opened");
+    sectionToBeOpened.classList.remove("closed");
   }
 
   // Set event listeners for mouse enter and mouse leave for every section
