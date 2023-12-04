@@ -207,24 +207,41 @@ h1 {
   width: auto;
   display: flex;
   align-items: flex-start;
-  transition: width 5s ease-in-out; /*in case there is growth it will be smooth*/
+  transition: width 1s ease-in-out, flex-grow 1s ease-in-out;
 }
 
-.discipline-content {
-  min-width: 0; /* Set min-width to 0 initially */
-  width: 0;
+.discipline-section.closed {
+  flex-grow: 0;
+}
+
+.discipline-section.opened {
+  flex-grow: 1;
+}
+
+.section-content {
+  min-width: 0;
   overflow: hidden;
-  transition: width 1.5s ease-in-out; /* Adjust the duration and easing as needed */
-}
-
-.visible {
-  width: 100%;
-  display: flex !important;
   padding: 1.6rem;
+  transition: width 1s ease-in-out;
 }
 
+.section-content.zero-width {
+  width: 0;
+}
 
-.discipline-content p {
+.section-content.auto-width {
+  width: 100%;
+}
+
+.section-content.invisible {
+  display: none;
+}
+
+.section-content.visible {
+  display: flex;
+}
+
+.section-content p {
   padding: 0;
   margin: 0;
 }
