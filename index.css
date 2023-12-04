@@ -173,7 +173,7 @@ h1 {
   z-index: -2;
 }
 
-/*LINKS SECTION*/
+/*MAIN CONTENT SECTION*/
 #disciplines {
   position: relative;
   font-size: 1.6rem;
@@ -198,11 +198,7 @@ h1 {
   white-space: nowrap;
 }
 
-/*DISCIPLINE_SECTIONS*/
-.discipline-section:not(:last-child) {
-  border-right: 1px solid #191919;
-}
-
+/* DISCIPLINE_SECTION */
 .discipline-section {
   width: auto;
   display: flex;
@@ -216,8 +212,10 @@ h1 {
 
 .discipline-section.opened {
   flex-grow: 1;
+  width: 100%;
 }
 
+/* SECTION CONTENT */
 .section-content {
   min-width: 0;
   overflow: hidden;
