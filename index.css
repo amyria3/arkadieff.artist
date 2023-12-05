@@ -208,20 +208,26 @@ h1 {
   flex-basis: 5.4rem;
   flex-grow: 0;
   align-items: flex-start;
-  transition: flex-grow 1s ease-in-out,  width 1s ease-in-out;
+  transition: flex-grow 1s ease-in; /* Remove the width transition */
 }
 
 .section-content {
   min-width: 0;
   overflow: hidden;
   padding: 1.6rem;
-  transition: width 1s ease-in-out, display 1s ease-in-out;
+  width: 100%; /* Set the width to 100% initially */
+  transition: width 1s ease-in, display 1s ease-in;
 }
 
 .section-content p {
-  width: 100%;
+  min-width: 15vw;
+  max-width: 80%;
+  flex-shrink: 0;
   padding: 0;
   margin: 0;
+  overflow: hidden; /* Hide any overflowing content */
+  text-overflow: ellipsis; /* Display an ellipsis (...) for text that overflows */
+  white-space: wrap;
 }
 
 /*INTERACTIVE CURSOR*/
