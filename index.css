@@ -218,11 +218,6 @@ h1 {
   transition: width 1s ease-in-out, display 1s ease-in-out;
 }
 
-/* .discipline-section.closed .section-content {
-  width: 0%;
-  display: none;
-} */
-
 .section-content p {
   width: 100%;
   padding: 0;
