@@ -225,7 +225,7 @@ h1 {
 }
 
 /*INTERACTIVE CURSOR*/
-.discipline-section:not(.opened) h2:hover {
+.discipline-section.closed h2:hover {
   cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
   color: #ff0002;
 }
