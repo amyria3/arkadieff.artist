@@ -71,9 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function openSection(sectionToBeOpened) {
     sectionToBeOpened.classList.remove("closed");
     const sectionContent = sectionToBeOpened.querySelector(".section-content");
-
-    sectionContent.style.width = "100%";
     sectionToBeOpened.style.flexGrow = 1;
+    sectionContent.style.width = "100%";
     sectionContent.style.display = "flex";
     sectionToBeOpened.classList.add("opened");
   }

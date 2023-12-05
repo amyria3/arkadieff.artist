@@ -182,10 +182,13 @@ h1 {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 90vh;
+  height: 95vh;
 }
 
 .discipline-section h2 {
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+  text-align: center;
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
   margin-left: 1.6rem;
@@ -201,8 +204,9 @@ h1 {
 /*INTERACTIVE RESIZING*/
 /* DISCIPLINE_SECTION + SECTION CONTENT */
 .discipline-section {
-  width: auto;
   display: flex;
+  flex-basis: 5.4rem;
+  flex-grow: 0;
   align-items: flex-start;
   transition: flex-grow 1s ease-in-out,  width 1s ease-in-out;
 }
@@ -211,7 +215,8 @@ h1 {
   min-width: 0;
   overflow: hidden;
   padding: 1.6rem;
-  transition: width 1s ease-in-out, display 1s ease-in-out;}
+  transition: width 1s ease-in-out, display 1s ease-in-out;
+}
 
 /* .discipline-section.closed .section-content {
   width: 0%;
