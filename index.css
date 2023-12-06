@@ -176,8 +176,8 @@ h1 {
 /*MAIN CONTENT SECTION*/
 #disciplines {
   position: relative;
-  font-size: 1.2rem;
-  line-height: 1.2rem;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -185,13 +185,17 @@ h1 {
 }
 
 .discipline-section h2 {
-  font-size: 1.8rem;
-  line-height: 1.8rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 300;
   text-align: center;
-  margin: 1.6rem;
+  margin-top: 1rem;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
   writing-mode: vertical-rl;
   color: #191919;
   text-transform: uppercase;
+  font-weight: 100;
   text-decoration: none;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -201,11 +205,11 @@ h1 {
 /* DISCIPLINE-SECTION + SECTION-CONTENT-description */
 .discipline-section {
   display: flex;
-  flex-basis: 4.6rem;
+  flex-basis: 2.4rem;
   flex-grow: 0;
   align-items: flex-start;
   transition: flex-grow 1s ease-in; /* Remove the width transition */
-  height: 45vw;
+  height: 18vw;
 }
 
 .discipline-section:not(.opened) {
@@ -217,15 +221,8 @@ h1 {
   color: #191919;
 }
 
-.discipline-section.opened h2 {
-  font-size: 2.2rem;
-}
-
 .discipline-section:not(.opened) h2 {
   color: #f5f2f2;
-  font-weight: 100;
-  margin-left: 1.3rem;
-  margin-right: 1.3rem;
 }
 
 .discipline-section:not(:last-child) {
@@ -259,7 +256,7 @@ h1 {
 /*DISCIPLINE-SECTIONS CONTENT-SECTIONS*/
 
 #vertical-discipline-content-sections-wrapper {
-  border-top: solid #ff0002 0.06rem;
+  /* border-top: solid #ff0002 0.06rem; */
   display: flex;
   gap: 0;
   flex-direction: row;
@@ -279,6 +276,14 @@ h1 {
   padding: 1.6rem;
   padding-top: 3.2rem;
 }
+
+/*appear on scroll*/
+.appear-on-scroll {
+  opacity: 0.2;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
 
 
 /*INTERACTIVE CURSOR*/

@@ -44,6 +44,18 @@ window.addEventListener("scroll", function () {
   });
 });
 
+  //APPEAR ON SCROLL-IN
+  const animatedElement = document.querySelector(".appear-on-scroll");
+
+  window.addEventListener("scroll", function () {
+    const scrollPosition = window.scrollY;
+    const elementPosition = animatedElement.offsetTop;
+
+    if (scrollPosition > elementPosition - window.innerHeight / 1.6) {
+      animatedElement.style.opacity = "1";
+      animatedElement.style.transform = "translateY(0)";
+    }
+  });
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get all elements with the class 'discipline-section'
