@@ -182,17 +182,15 @@ h1 {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 95vh;
+  min-height: 50vw;
+  max-height: 60vw;
 }
 
 .discipline-section h2 {
-  font-size: 2.2rem;
-  line-height: 2.2rem;
+  font-size: 2rem;
+  line-height: 2rem;
   text-align: center;
-  padding-top: 1.6rem;
-  padding-bottom: 1.6rem;
-  margin-left: 1.6rem;
-  margin-right: 1.6rem;
+  margin: 1.6rem;
   display: inline-block;
   writing-mode: vertical-rl;
   color: #191919;
@@ -205,14 +203,37 @@ h1 {
 /* DISCIPLINE_SECTION + SECTION CONTENT */
 .discipline-section {
   display: flex;
-  flex-basis: 5.4rem;
+  flex-basis: 4.6rem;
   flex-grow: 0;
   align-items: flex-start;
   transition: flex-grow 1s ease-in; /* Remove the width transition */
+  height: 50vw;
+}
+
+
+.discipline-section:not(.opened) {
+  background-color: #ff0002;
+  color: #f5f2f2;
+}
+
+.discipline-section:not(.opened):hover {
+  color: #191919;
+}
+
+.discipline-section.opened h2 {
+  font-size: 2.2rem;
+}
+
+
+.discipline-section:not(.opened) h2 {
+  color: #f5f2f2;
+  font-weight: 100;
+  margin-left: 1.3rem;
+  margin-right: 1.3rem;
 }
 
 .discipline-section:not(:last-child) {
-  border-right: solid .07rem #191919;
+  border-right: solid 0.06rem #f5f2f2;
 }
 
 .section-content {
@@ -238,7 +259,6 @@ h1 {
 /*INTERACTIVE CURSOR*/
 .discipline-section.closed h2:hover {
   cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
-  color: #ff0002;
 }
 
 body {
