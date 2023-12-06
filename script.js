@@ -29,6 +29,13 @@ window.addEventListener("scroll", function () {
 
   // Restore the original size on click if the videoWrapper is small
   videoWrapper.addEventListener("click", function () {
+
+      // Scroll the videoWrapper to the top edge of the viewport
+      videoWrapper.scrollIntoView({
+        behavior: 'smooth', // You can use 'auto' instead of 'smooth' for an instant scroll
+        block: 'start', // Align the top edge of the element with the top of the viewport
+      });
+
     if (videoWrapperIsSmall) {
       videoWrapper.style.height = "100vh";
       videoWrapper.style.maxHeight = "100vw";
@@ -87,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openSection(sectionToBeOpened) {
     sectionToBeOpened.classList.remove("closed");
-    const sectionContent = sectionToBeOpened.querySelector(".section-content");
+    const sectionContent = sectionToBeOpened.querySelector(".section-description");
     sectionToBeOpened.style.flexGrow = 1;
     sectionContent.style.width = "100%";
     sectionContent.style.display = "flex";
@@ -97,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function closeSection(sectionToBeClosed) {
     if (!sectionToBeClosed) return;
 
-    const sectionContent = sectionToBeClosed.querySelector(".section-content");
+    const sectionContent = sectionToBeClosed.querySelector(".section-description");
     sectionToBeClosed.style.flexGrow = 0;
     sectionContent.style.width = "0%";
     setTimeout(() => {

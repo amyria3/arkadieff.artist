@@ -44,6 +44,7 @@ html {
   padding: 0 0 0 0;
   max-width: 100%;
   z-index: -2;
+  font-size: 1.8vw;
 }
 
 body {
@@ -78,7 +79,6 @@ section {
 body {
   font-family: "Biotif", sans-serif;
   font-weight: light;
-  font-size: 1vw;
 }
 
 a:hover {
@@ -234,7 +234,7 @@ h1 {
   border-right: solid 0.06rem #f5f2f2;
 }
 
-.section-content {
+.section-description {
   min-width: 0;
   overflow: hidden;
   padding: 1.6rem;
@@ -242,7 +242,7 @@ h1 {
   transition: width 1s ease-in, display 1s ease-in;
 }
 
-.section-content p {
+.section-description p {
   min-width: 15vw;
   max-width: 80%;
   max-height: 40vw;
@@ -267,7 +267,13 @@ a:hover {
   cursor: url("Illustrations/cursor-when-hovering.svg"), pointer; /* Replace with the path to a red version of your cursor.svg */
 }
 
-
+/*FOR RESPONSIVE*/
+@media screen and (max-aspect-ratio: 1/1) {
+  #video-background-wrapper video {
+    position: absolute;
+    top: 100vw;
+  }
+}
 
 /*SCREENS*/
 /* Media query for screens smaller than 1200px */
