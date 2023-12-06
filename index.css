@@ -276,6 +276,8 @@ a:hover {
 }
 
 /*DON'T SHRINK VIDEO ON MOBILEs*/
+/*FIX MAX FONT-SIZE FOR VERY HUGE SCREENS (by fixing rootFontSize in HTML
+/*FIX MIN FONT-SIZE, too
 
 
 /* Media query for screens smaller than 1200px */
