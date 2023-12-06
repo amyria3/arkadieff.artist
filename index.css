@@ -176,8 +176,8 @@ h1 {
 /*MAIN CONTENT SECTION*/
 #disciplines {
   position: relative;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
+  font-size: 0.6rem;
+  line-height: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -185,13 +185,13 @@ h1 {
 }
 
 .discipline-section h2 {
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: 0.7rem;
+  line-height: 0.7rem;
   font-weight: 300;
   text-align: center;
-  margin-top: 1rem;
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
+  margin-top: 0.7rem;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
   writing-mode: vertical-rl;
   color: #191919;
   text-transform: uppercase;
@@ -205,28 +205,33 @@ h1 {
 /* DISCIPLINE-SECTION + SECTION-CONTENT-description */
 .discipline-section {
   display: flex;
-  flex-basis: 2.4rem;
+  flex-basis: 2.1rem;
   flex-grow: 0;
   align-items: flex-start;
   transition: flex-grow 1s ease-in; /* Remove the width transition */
   height: 18vw;
 }
 
-.discipline-section:not(.opened) {
-  background-color: #ff0002;
+/* .discipline-section.closed:hover {
   color: #f5f2f2;
+  background-color: #ff0002;
+} */
+
+.discipline-section.opened h2 {
+display: none;
 }
 
-.discipline-section:not(.opened):hover {
+
+/* .discipline-section:not(.opened):hover {
   color: #191919;
 }
 
 .discipline-section:not(.opened) h2 {
   color: #f5f2f2;
-}
+} */
 
 .discipline-section:not(:last-child) {
-  border-right: solid 0.06rem #f5f2f2;
+  border-right: solid 0.06rem #191919;
 }
 
 .section-description {
@@ -287,7 +292,7 @@ h1 {
 
 
 /*INTERACTIVE CURSOR*/
-.discipline-section.closed h2:hover {
+.discipline-section:not(.opened):hover {
   cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
 }
 
