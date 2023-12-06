@@ -210,7 +210,6 @@ h1 {
   height: 50vw;
 }
 
-
 .discipline-section:not(.opened) {
   background-color: #ff0002;
   color: #f5f2f2;
@@ -223,7 +222,6 @@ h1 {
 .discipline-section.opened h2 {
   font-size: 2.2rem;
 }
-
 
 .discipline-section:not(.opened) h2 {
   color: #f5f2f2;
