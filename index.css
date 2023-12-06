@@ -44,7 +44,7 @@ html {
   padding: 0 0 0 0;
   max-width: 100%;
   z-index: -2;
-  font-size: 1.8vw;
+  font-size: 1.7vw;
 }
 
 body {
@@ -176,19 +176,17 @@ h1 {
 /*MAIN CONTENT SECTION*/
 #disciplines {
   position: relative;
-  font-size: 1.6rem;
-  line-height: 1.6rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  min-height: 50vw;
-  max-height: 60vw;
 }
 
 .discipline-section h2 {
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
   text-align: center;
   margin: 1.6rem;
   display: inline-block;
@@ -197,17 +195,18 @@ h1 {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /*INTERACTIVE RESIZING*/
-/* DISCIPLINE_SECTION + SECTION CONTENT */
+/* DISCIPLINE-SECTION + SECTION-CONTENT-description */
 .discipline-section {
   display: flex;
   flex-basis: 4.6rem;
   flex-grow: 0;
   align-items: flex-start;
   transition: flex-grow 1s ease-in; /* Remove the width transition */
-  height: 50vw;
+  height: 45vw;
 }
 
 .discipline-section:not(.opened) {
@@ -254,6 +253,33 @@ h1 {
   white-space: wrap;
 }
 
+/*DISCIPLINE-SECTIONS CONTENT-SECTIONS*/
+
+#vertical-discipline-content-sections-wrapper {
+  display: flex;
+  gap: 0;
+  flex-direction: row;
+  overflow-x: auto;
+  white-space: nowrap; /* Prevents content from wrapping to the next line */
+  height: 100vh;
+  max-width: 100vw; /*mmmh*/
+}
+
+.content-section {
+  background-color: #f5f2f2;
+  font-size: 1.2rem;
+  display: flex;
+}
+
+#disciplines #politik.opened ~ #vertical-discipline-content-sections-wrapper #politik-content {
+  background-color: aquamarine;
+}
+
+:focus {
+  border: darkblue;
+  border-width: 0.08rem;
+}
+
 /*INTERACTIVE CURSOR*/
 .discipline-section.closed h2:hover {
   cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
@@ -278,7 +304,7 @@ a:hover {
 /*DON'T SHRINK VIDEO ON MOBILEs*/
 /*FIX MAX FONT-SIZE FOR VERY HUGE SCREENS (by fixing rootFontSize in HTML
 /*FIX MIN FONT-SIZE, too
-
+/*zum Video eine Aufnahme von Meehresgeräuschen hinzufügen, das optional abgespielt werden kann
 
 /* Media query for screens smaller than 1200px */
 /* @media screen and (max-width: 1200px) {
