@@ -61,11 +61,28 @@ document.addEventListener("DOMContentLoaded", function () {
     // Get the previously opened section
     const previouslyOpenedSection = document.querySelector(
       ".discipline-section.opened"
-    )
+    );
 
-    //apply clothing to the preciously opened section
-    closeSection(previouslyOpenedSection)
-    openSection(section)
+    // Apply clothing to the previously opened section
+    closeSection(previouslyOpenedSection);
+    openSection(section);
+  }
+
+  // Function to handle click event
+  function handleClick(section) {
+    // Exit the function if the section is already opened
+    if (section.classList.contains("opened")) {
+      return;
+    }
+
+    // Get the previously opened section
+    const previouslyOpenedSection = document.querySelector(
+      ".discipline-section.opened"
+    );
+
+    // Apply clothing to the previously opened section
+    closeSection(previouslyOpenedSection);
+    openSection(section);
   }
 
   function openSection(sectionToBeOpened) {
@@ -78,6 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function closeSection(sectionToBeClosed) {
+    if (!sectionToBeClosed) return;
+
     const sectionContent = sectionToBeClosed.querySelector(".section-content");
     sectionToBeClosed.style.flexGrow = 0;
     sectionContent.style.width = "0%";
@@ -88,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     sectionToBeClosed.classList.remove("opened");
   }
 
-  // Set event listeners for mouse enter and mouse leave for every section
+  // Set event listeners for mouse enter, mouse leave, and click for every section
   disciplineSections.forEach((section) => {
     section.addEventListener("mouseenter", function () {
       // Set the flag to true and initiate a timeout for handleMouseEnter after 800ms
@@ -100,6 +119,11 @@ document.addEventListener("DOMContentLoaded", function () {
       // Reset the flag to false and clear the timeout
       isMouseOver = false;
       clearTimeout(timeoutId);
+    });
+
+    section.addEventListener("click", function () {
+      // Handle click event
+      handleClick(section);
     });
   });
 });
