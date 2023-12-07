@@ -212,23 +212,9 @@ h1 {
   height: 18vw;
 }
 
-/* .discipline-section.closed:hover {
-  color: #f5f2f2;
-  background-color: #ff0002;
-} */
-
 .discipline-section.opened h2 {
-display: none;
+  display: none;
 }
-
-
-/* .discipline-section:not(.opened):hover {
-  color: #191919;
-}
-
-.discipline-section:not(.opened) h2 {
-  color: #f5f2f2;
-} */
 
 .discipline-section:not(:last-child) {
   border-right: solid 0.06rem #191919;
@@ -249,32 +235,32 @@ display: none;
 .section-description p {
   min-width: 30%;
   max-width: 70%;
-  max-height:70%;
+  max-height: 70%;
   flex-shrink: 0;
   padding: 0;
   margin: 0;
   overflow: hidden;
-  text-overflow: ellipsis; /* Display an ellipsis (...) for text that overflows */
+  text-overflow: ellipsis;
   white-space: wrap;
 }
 
 /*DISCIPLINE-SECTIONS CONTENT-SECTIONS*/
-
 #vertical-discipline-content-sections-wrapper {
-  /* border-top: solid #ff0002 0.06rem; */
   display: flex;
   gap: 0;
   flex-direction: row;
   overflow-x: auto;
   white-space: nowrap; /* Prevents content from wrapping to the next line */
-  height: 100vh;
+  min-height: 100vh;
   max-width: 100vw; /*mmmh*/
+  overflow-y: scroll;
 }
 
 .content-section {
   background-color: #f5f2f2;
   font-size: 1.4rem;
   display: flex;
+  flex-direction: column;
   width: 100vw;
   flex-shrink: 0;
   flex-basis: 100vw;
@@ -282,14 +268,27 @@ display: none;
   padding-top: 3.2rem;
 }
 
-/*appear on scroll*/
+/*display the right section*/
+#disciplines:has(#komposition.opened) ~ #vertical-discipline-content-sections-wrapper #komposition-content {
+  background-color: #ff0002;
+  display: flex;
+}
+
+
+#disciplines:has(
+  #komposition.closed
+)
+  ~ #vertical-discipline-content-sections-wrapper
+  #komposition-content {
+  display: none;
+}
+
+/*appear on scroll effect*/
 .appear-on-scroll {
   opacity: 0.2;
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
-
 
 /*INTERACTIVE CURSOR*/
 .discipline-section:not(.opened):hover {

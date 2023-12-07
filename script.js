@@ -146,3 +146,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const content = document.querySelector('.content');
+  const lyrikContent = document.getElementById('lyrik-content');
+  // Set your start and goal font sizes
+  const startFontSize = "20rem";
+  const goalFontSize = "1rem";
+
+  // Get the scroll area boundaries from the "#lyrik-content" section
+  const { top: sectionTop, bottom: sectionBottom } = lyrikSection.getBoundingClientRect();
+  const scrollStart = sectionTop + window.scrollY;
+  const scrollEnd = sectionBottom + window.scrollY;
+
+  // Calculate the difference between start and goal font sizes
+  const fontSizeDifference = startFontSize - goalFontSize;
+
+  window.addEventListener('scroll', function () {
+      // Get the current scroll position within the defined scroll area
+      const scrollPosition = Math.min(Math.max(window.scrollY, scrollStart), scrollEnd);
+
+      // Calculate the new font size based on the scroll position
+      const scrollPercentage = (scrollPosition - scrollStart) / (scrollEnd - scrollStart);
+      const newSize = startFontSize - fontSizeDifference * scrollPercentage;
+
+      // Limit the font size to a minimum value (adjust as needed)
+      const minSize = goalFontSize;
+      content.style.fontSize = `${Math.max(newSize, minSize)}px`;
+  });
+});
