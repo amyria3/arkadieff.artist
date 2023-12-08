@@ -1,8 +1,5 @@
-// script.js
-
 // 1. STABLE SLOGAN POSITION DESPITE SCROLL
 // 2. RESIZE VISIBLE VIDEO CONTENT DEPENDING ON CLICK OR SCROLL
-
 window.addEventListener("scroll", function () {
   const sloganElement = document.getElementById("slogan");
   sloganElement.style.transform = `translateY(${window.scrollY}px)`;
@@ -29,12 +26,11 @@ window.addEventListener("scroll", function () {
 
   // Restore the original size on click if the videoWrapper is small
   videoWrapper.addEventListener("click", function () {
-
-      // Scroll the videoWrapper to the top edge of the viewport
-      videoWrapper.scrollIntoView({
-        behavior: 'smooth', // You can use 'auto' instead of 'smooth' for an instant scroll
-        block: 'start', // Align the top edge of the element with the top of the viewport
-      });
+    // Scroll the videoWrapper to the top edge of the viewport
+    videoWrapper.scrollIntoView({
+      behavior: "smooth", // You can use 'auto' instead of 'smooth' for an instant scroll
+      block: "start", // Align the top edge of the element with the top of the viewport
+    });
 
     if (videoWrapperIsSmall) {
       videoWrapper.style.height = "100vh";
@@ -44,134 +40,21 @@ window.addEventListener("scroll", function () {
   });
 });
 
-  //APPEAR ON SCROLL-IN
-  const animatedElement = document.querySelector(".appear-on-scroll");
+// APPEAR ON SCROLL-IN
+const animatedElements = document.querySelectorAll(".appear-on-scroll");
 
-  window.addEventListener("scroll", function () {
-    const scrollPosition = window.scrollY;
-    const elementPosition = animatedElement.offsetTop;
+window.addEventListener("scroll", function () {
+  const scrollPosition = window.scrollY;
 
-    if (scrollPosition > elementPosition - window.innerHeight / 1.6) {
-      animatedElement.style.opacity = "1";
-      animatedElement.style.transform = "translateY(0)";
+  animatedElements.forEach((element) => {
+    const elementPosition = element.offsetTop;
+    const bottomThreshold = elementPosition - (window.innerHeight / 5) * 2;
+    const topThreshold = elementPosition - (window.innerHeight / 5) * 3;
+
+    if (scrollPosition > topThreshold && scrollPosition <= bottomThreshold) {
+      element.classList.add("seen");
+    } else {
+      element.classList.remove("seen");
     }
-  });
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Get all elements with the class 'discipline-section'
-  const disciplineSections = document.querySelectorAll(".discipline-section");
-
-  // Flag to track whether the mouse is over a section
-  let isMouseOver = false;
-
-  // Timeout ID for delayed actions
-  let timeoutId;
-
-  // Function to handle mouse enter event
-  function handleMouseEnter(section) {
-    // Exit the function if the section is already opened
-    if (section.classList.contains("opened")) {
-      return;
-    }
-
-    // Clear any existing timeouts
-    clearTimeout(timeoutId);
-
-    // Get the previously opened section
-    const previouslyOpenedSection = document.querySelector(
-      ".discipline-section.opened"
-    );
-
-    // Apply clothing to the previously opened section
-    closeSection(previouslyOpenedSection);
-    openSection(section);
-  }
-
-  // Function to handle click event
-  function handleClick(section) {
-    // Exit the function if the section is already opened
-    if (section.classList.contains("opened")) {
-      return;
-    }
-
-    // Get the previously opened section
-    const previouslyOpenedSection = document.querySelector(
-      ".discipline-section.opened"
-    );
-
-    // Apply clothing to the previously opened section
-    closeSection(previouslyOpenedSection);
-    openSection(section);
-  }
-
-  function openSection(sectionToBeOpened) {
-    sectionToBeOpened.classList.remove("closed");
-    const sectionContent = sectionToBeOpened.querySelector(".section-description");
-    sectionToBeOpened.style.flexGrow = 1;
-    sectionContent.style.width = "100%";
-    sectionContent.style.display = "flex";
-    sectionToBeOpened.classList.add("opened");
-  }
-
-  function closeSection(sectionToBeClosed) {
-    if (!sectionToBeClosed) return;
-
-    const sectionContent = sectionToBeClosed.querySelector(".section-description");
-    sectionToBeClosed.style.flexGrow = 0;
-    sectionContent.style.width = "0%";
-    setTimeout(() => {
-      sectionContent.style.display = "none";
-      sectionToBeClosed.classList.add("closed");
-    }, 1000);
-    sectionToBeClosed.classList.remove("opened");
-  }
-
-  // Set event listeners for mouse enter, mouse leave, and click for every section
-  disciplineSections.forEach((section) => {
-    section.addEventListener("mouseenter", function () {
-      // Set the flag to true and initiate a timeout for handleMouseEnter after 800ms
-      isMouseOver = true;
-      timeoutId = setTimeout(() => handleMouseEnter(section), 800);
-    });
-
-    section.addEventListener("mouseleave", function () {
-      // Reset the flag to false and clear the timeout
-      isMouseOver = false;
-      clearTimeout(timeoutId);
-    });
-
-    section.addEventListener("click", function () {
-      // Handle click event
-      handleClick(section);
-    });
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  const content = document.querySelector('.content');
-  const lyrikContent = document.getElementById('lyrik-content');
-  // Set your start and goal font sizes
-  const startFontSize = "20rem";
-  const goalFontSize = "1rem";
-
-  // Get the scroll area boundaries from the "#lyrik-content" section
-  const { top: sectionTop, bottom: sectionBottom } = lyrikSection.getBoundingClientRect();
-  const scrollStart = sectionTop + window.scrollY;
-  const scrollEnd = sectionBottom + window.scrollY;
-
-  // Calculate the difference between start and goal font sizes
-  const fontSizeDifference = startFontSize - goalFontSize;
-
-  window.addEventListener('scroll', function () {
-      // Get the current scroll position within the defined scroll area
-      const scrollPosition = Math.min(Math.max(window.scrollY, scrollStart), scrollEnd);
-
-      // Calculate the new font size based on the scroll position
-      const scrollPercentage = (scrollPosition - scrollStart) / (scrollEnd - scrollStart);
-      const newSize = startFontSize - fontSizeDifference * scrollPercentage;
-
-      // Limit the font size to a minimum value (adjust as needed)
-      const minSize = goalFontSize;
-      content.style.fontSize = `${Math.max(newSize, minSize)}px`;
   });
 });
