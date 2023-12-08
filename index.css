@@ -53,13 +53,6 @@
 @font-face {
   font-family: 'Biotif';
   font-style: normal;
-  font-weight: 500;
-  src: url('Illustrations/biotif-1/Biotif-Medium.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Biotif';
-  font-style: normal;
   font-weight: normal;
   src: url('Illustrations/biotif-1/Biotif-Regular.ttf') format('truetype');
 }
@@ -67,8 +60,22 @@
 @font-face {
   font-family: 'Biotif';
   font-style: normal;
+  font-weight: 500;
+  src: url('Illustrations/biotif-1/Biotif-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
   font-weight: 600;
   src: url('Illustrations/biotif-1/Biotif-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif Serif';
+  font-style: normal;
+  font-weight: 600;
+  src: url('Illustrations/biotif-serif/Biotif-Serif-600.ttf') format('truetype');
 }
 
 
@@ -248,13 +255,18 @@ h1 {
   letter-spacing: -0.38rem;
 }
 
-/*appear on scroll effect*/
-.appear-on-scroll {
-  opacity: 0.2;
-  transition: opacity 0.8s ease-out;
+#artist-description a {
+  font-family: "Biotif ";
+
 }
 
-.appear-on-scroll.opened {
+/*appear on scroll effect*/
+.appear-on-scroll {
+  opacity: 0.3;
+  transition: opacity 1.5s ease-out;
+}
+
+.appear-on-scroll.seen {
   opacity: 0.9;
 }
 
