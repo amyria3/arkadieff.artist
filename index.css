@@ -1,12 +1,77 @@
 /*DESIGN WORKS with window width min 1300*/
 
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;400;500;600;700&display=swap");
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100, 300, 400, 700;
+  src: url('https://fonts.gstatic.com/s/lato/v22/S6u8w4BMUTPHh30AUi-qJCY.woff2') format('woff2');
+}
 
 @font-face {
-  font-family: "Biotif";
-  src: url("Illustrations/biotif-1/Biotif-Light.ttf") format("truetype"); /* Replace 'path/to/biotif.woff' with the actual path to your .woff font file */
+  font-family: 'Blinker';
+  font-style: normal;
+  font-weight: 100, 300, 400, 500, 600, 700;
+  src: url('https://fonts.gstatic.com/s/blinker/v7/cIf_MaFatEEqwFz1U4mFkX0.woff2') format('woff2');
 }
+
+/* Define @font-face for custom font Biotif */
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: 900;
+  src: url('Illustrations/biotif-1/Biotif-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: bold;
+  src: url('Illustrations/biotif-1/Biotif-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('Illustrations/biotif-1/Biotif-Book.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: 800;
+  src: url('Illustrations/biotif-1/Biotif-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: 100;
+  src: url('Illustrations/biotif-1/Biotif-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: 500;
+  src: url('Illustrations/biotif-1/Biotif-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: normal;
+  src: url('Illustrations/biotif-1/Biotif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: 600;
+  src: url('Illustrations/biotif-1/Biotif-Semibold.ttf') format('truetype');
+}
+
+
 /* Add additional font weights/styles if needed */
 
 /*COLORS*/
@@ -174,120 +239,23 @@ h1 {
 }
 
 /*MAIN CONTENT SECTION*/
-#disciplines {
-  position: relative;
-  font-size: 0.6rem;
-  line-height: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.discipline-section h2 {
-  font-size: 0.7rem;
-  line-height: 0.7rem;
-  font-weight: 300;
-  text-align: center;
-  margin-top: 0.7rem;
-  margin-left: 0.7rem;
-  margin-right: 0.7rem;
-  writing-mode: vertical-rl;
-  color: #191919;
-  text-transform: uppercase;
-  font-weight: 100;
-  text-decoration: none;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-/*INTERACTIVE RESIZING*/
-/* DISCIPLINE-SECTION + SECTION-CONTENT-description */
-.discipline-section {
-  display: flex;
-  flex-basis: 2.1rem;
-  flex-grow: 0;
-  align-items: flex-start;
-  transition: flex-grow 1s ease-in; /* Remove the width transition */
-  height: 18vw;
-}
-
-.discipline-section.opened h2 {
-  display: none;
-}
-
-.discipline-section:not(:last-child) {
-  border-right: solid 0.06rem #191919;
-}
-
-.section-description {
-  padding-top: 6rem;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  padding: 1.6rem;
-  width: 100%; /* Set the width to 100% initially */
-  transition: width 1s ease-in, display 1s ease-in;
-  justify-content: end;
-  align-items: end;
-}
-
-.section-description p {
-  min-width: 30%;
-  max-width: 70%;
-  max-height: 70%;
-  flex-shrink: 0;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: wrap;
-}
-
-/*DISCIPLINE-SECTIONS CONTENT-SECTIONS*/
-#vertical-discipline-content-sections-wrapper {
-  display: flex;
-  gap: 0;
-  flex-direction: row;
-  overflow-x: auto;
-  white-space: nowrap; /* Prevents content from wrapping to the next line */
-  min-height: 100vh;
-  max-width: 100vw; /*mmmh*/
-  overflow-y: scroll;
-}
-
-.content-section {
-  background-color: #f5f2f2;
-  font-size: 1.4rem;
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  flex-shrink: 0;
-  flex-basis: 100vw;
-  padding: 1.6rem;
-  padding-top: 3.2rem;
-}
-
-/*display the right section*/
-#disciplines:has(#komposition.opened) ~ #vertical-discipline-content-sections-wrapper #komposition-content {
-  background-color: #ff0002;
-  display: flex;
-}
-
-
-#disciplines:has(
-  #komposition.closed
-)
-  ~ #vertical-discipline-content-sections-wrapper
-  #komposition-content {
-  display: none;
+#artist-description {
+  padding: 11rem;
+  font-size: 4rem;
+  line-height: 4rem;
+  font-family: "Biotif", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.38rem;
 }
 
 /*appear on scroll effect*/
 .appear-on-scroll {
   opacity: 0.2;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.8s ease-out;
+}
+
+.appear-on-scroll.opened {
+  opacity: 0.9;
 }
 
 /*INTERACTIVE CURSOR*/
