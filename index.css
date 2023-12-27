@@ -1,5 +1,50 @@
 /*DESIGN WORKS with window width min 1300*/
 
+
+/* BIOTIF */
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: 900;
+  src: url('Illustrations/biotif-1/Biotif-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: 800;
+  src: url('Illustrations/biotif-1/Biotif-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: 600;
+  src: url('Illustrations/biotif-1/Biotif-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: 500;
+  src: url('Illustrations/biotif-1/Biotif-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('Illustrations/biotif-1/Biotif-Book.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Biotif';
+  font-style: normal;
+  font-weight: 100;
+  src: url('Illustrations/biotif-1/Biotif-Light.ttf') format('truetype');
+}
+
+/*OTHER FONTS*/
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -14,72 +59,19 @@
   src: url('https://fonts.gstatic.com/s/blinker/v7/cIf_MaFatEEqwFz1U4mFkX0.woff2') format('woff2');
 }
 
-/* Define @font-face for custom font Biotif */
 @font-face {
-  font-family: 'Biotif';
-  font-style: normal;
-  font-weight: 900;
-  src: url('Illustrations/biotif-1/Biotif-Black.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Biotif';
-  font-style: normal;
-  font-weight: bold;
-  src: url('Illustrations/biotif-1/Biotif-Bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Biotif';
-  font-style: normal;
-  font-weight: 400;
-  src: url('Illustrations/biotif-1/Biotif-Book.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Biotif';
-  font-style: normal;
-  font-weight: 800;
-  src: url('Illustrations/biotif-1/Biotif-ExtraBold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Biotif';
-  font-style: normal;
-  font-weight: 100;
-  src: url('Illustrations/biotif-1/Biotif-Light.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Biotif';
-  font-style: normal;
+  font-family: 'KyivTypeTitling-Heavy3';
+  src: url('Illustrations/kyiv-type-titling/KyivTypeTitling-Heavy3.otf') format('opentype');
   font-weight: normal;
-  src: url('Illustrations/biotif-1/Biotif-Regular.ttf') format('truetype');
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Biotif';
+  font-family: 'Public Sans';
+  src: url('https://fonts.gstatic.com/s/publicsans/v3/revvDaXGRiROVWKOnmP2QQ.woff2') format('woff2');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 500;
-  src: url('Illustrations/biotif-1/Biotif-Medium.ttf') format('truetype');
 }
-
-@font-face {
-  font-family: 'Biotif';
-  font-style: normal;
-  font-weight: 600;
-  src: url('Illustrations/biotif-1/Biotif-Semibold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Biotif Serif';
-  font-style: normal;
-  font-weight: 600;
-  src: url('Illustrations/biotif-serif/Biotif-Serif-600.ttf') format('truetype');
-}
-
-
-/* Add additional font weights/styles if needed */
 
 /*COLORS*/
 .bg-white {
@@ -247,34 +239,45 @@ h1 {
 
 /*MAIN CONTENT SECTION*/
 #artist-description {
-  padding: 11rem;
-  font-size: 4rem;
-  line-height: 4rem;
-  font-family: "Biotif", sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.38rem;
+  padding: 10rem;
+  background-color: #f5f2f2;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vw;
+  display: flex;
+  gap: 3rem;
+  overflow: hidden;
+}
+
+#artist-description:hover {
+  cursor: url("Illustrations/shine.png");
 }
 
 #artist-description a {
   font-family: "Biotif ";
-
 }
 
-/*appear on scroll effect*/
-.appear-on-scroll {
-  opacity: 0.3;
-  transition: opacity 1.5s ease-out;
+#artist-description p {
+  width: 26rem;
+  font-size: 1.2rem;
+  line-height: 1.1rem;
+  font-family: "Biotif", sans-serif;
+  font-weight: 100;
+  letter-spacing: -0.05rem;
+  color: #f5f2f2;
 }
 
-.appear-on-scroll.seen {
-  opacity: 0.9;
+.grey-sky-background {
+  background-image: url('Illustrations/sky-grey.png');
+  background-size: 100% auto;
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  opacity: 1;
+  /* /* */
+  background-attachment: fixed;
 }
 
 /*INTERACTIVE CURSOR*/
-.discipline-section:not(.opened):hover {
-  cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
-}
-
 body {
   cursor: url("Illustrations/cursor.svg"), auto; /* Replace with the correct path to your cursor.svg file */
 }

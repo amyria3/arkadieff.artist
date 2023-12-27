@@ -1,0 +1,20 @@
+<svg height="200" width="400">
+  <path id="textPath" d="M10 80 Q 95 10 200 80 T 390 80" />
+  <text>
+    <textPath href="#textPath" class="text-path">
+      Hi! Ich bin Maria Arkadieff, das ist ein Text-Block und ich habe Null Ahnung, wieso ich hier weiter mache, obwohl ich mega genervt bin!
+    </textPath>
+  </text>
+</svg>
+
+
+/*PATH*/
+.text-path {
+  font-size: 2rem;
+  fill: blue;
+}
+
+path {
+  fill: none;
+  stroke: none;
+}

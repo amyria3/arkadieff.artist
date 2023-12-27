@@ -39,35 +39,3 @@ window.addEventListener("scroll", function () {
     }
   });
 });
-
-// APPEAR ON SCROLL-IN
-const animatedElements = document.querySelectorAll(".appear-on-scroll");
-
-window.addEventListener("scroll", function () {
-  const scrollPosition = window.scrollY;
-
-  animatedElements.forEach((element) => {
-
-    const elementPosition = element.offsetTop;
-    const bottomThreshold = elementPosition - (window.innerHeight / 7) * 3;
-    const topThreshold = elementPosition - (window.innerHeight / 7) * 4;
-
-    if (scrollPosition > topThreshold && scrollPosition <= bottomThreshold) {
-      element.classList.add("seen");
-    } else {
-      element.classList.remove("seen");
-    }
-
-    element.addEventListener('mouseenter', function () {
-      element.classList.add('seen');
-    });
-
-    element.addEventListener('mouseleave', function () {
-      if (scrollPosition > topThreshold && scrollPosition <= bottomThreshold) {
-        return
-      } else {
-        element.classList.remove("seen");
-      }
-    });
-  });
-});
