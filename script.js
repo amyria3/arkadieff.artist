@@ -100,4 +100,18 @@ window.addEventListener("scroll", function () {
     console.log("greySkyBackground: " + greySkyBackground);
     console.log("artistDescriptionContent : " + artistDescriptionContent);
   }
+
+  //PERFORMANCE
+  document.addEventListener("DOMContentLoaded", function() {
+    // Lazy load all images
+    document.querySelectorAll("img").forEach(function(img) {
+      img.loading = "lazy";
+    });
+
+    // Lazy load all videos
+    document.querySelectorAll("video source").forEach(function(source) {
+      source.loading = "lazy";
+    });
+  });
+
 });

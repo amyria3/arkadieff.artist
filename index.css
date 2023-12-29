@@ -336,3 +336,8 @@ a:hover {
     top: 100vw;
   }
 }
+
+/* PERFORMANCE */
+img, video {
+  content-visibility: auto;
+}
