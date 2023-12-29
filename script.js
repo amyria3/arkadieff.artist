@@ -16,7 +16,6 @@ window.addEventListener("scroll", function () {
   }
 
   // VIDEO SECTION (WRAPPER)
-
   const videoWrapper = document.getElementById("video-background-wrapper");
   const nextSection = videoWrapper.nextElementSibling;
 
@@ -56,16 +55,19 @@ window.addEventListener("scroll", function () {
 
   // Restore the original size on click if the videoWrapper is small
   videoWrapper.addEventListener("click", function () {
-    // Scroll the videoWrapper to the top edge of the viewport
-    videoWrapper.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-
     if (videoWrapperIsSmall) {
       videoWrapper.style.height = "100vh";
       videoWrapper.style.maxHeight = "100vw";
       videoWrapperIsSmall = false; // Update the state
+
+
+      setTimeout(function() {
+      // Scroll to the videoWrapper
+      videoWrapper.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 700); // 500 milliseconds (0.5 seconds)
+    } else {
+
+      videoWrapper.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
 
