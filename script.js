@@ -6,10 +6,10 @@ window.addEventListener("scroll", function () {
   if (sloganElement) {
     sloganElement.style.transform = `translateY(${scrolledVertically / 2}px)`; // Adjust the division factor as needed
   } else {
-    console.log(sloganElement)
+    console.log("sloganElement: " + sloganElement)
   }
 
-  // Fix artist description at place
+  // Make artist-description-background move slowly
   const artistDescriptionElement = document.getElementById("artist-description");
   const greySkyBackground = document.getElementById('grey-sky-background');
 
@@ -19,12 +19,9 @@ window.addEventListener("scroll", function () {
     const newBackgroundPosition = `0% ${50 + distanceFromBottomInPercent / 3}%`; // Adjust the division factor as needed
     greySkyBackground.style.backgroundPosition = newBackgroundPosition;
   } else {
-    console.log(artistDescriptionElement)
-    console.log(greySkyBackground)
+    console.log("artistDescriptionElement: " + artistDescriptionElement)
+    console.log("greySkyBackground: " + greySkyBackground)
   }
-  // const blurAmount = 5
-  // greySkyBackground.style.filter = `blur(${blurAmount}px)`;
-
 
 
 
