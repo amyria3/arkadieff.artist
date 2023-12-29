@@ -9,8 +9,8 @@ window.addEventListener("scroll", function () {
     console.log("sloganElement: " + sloganElement)
   }
 
-  // Make artist-description-background move slowly
-  const artistDescriptionElement = document.getElementById("artist-description");
+  // Make artist-background move slowly
+  const artistDescriptionElement = document.getElementById("artist");
   const greySkyBackground = document.getElementById('grey-sky-background');
   const artistDescriptionContent = document.getElementById('artist-description-content')
 
