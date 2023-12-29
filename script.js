@@ -12,15 +12,22 @@ window.addEventListener("scroll", function () {
   // Make artist-description-background move slowly
   const artistDescriptionElement = document.getElementById("artist-description");
   const greySkyBackground = document.getElementById('grey-sky-background');
+  const artistDescriptionContent = document.getElementById('artist-description-content')
 
-  if (artistDescriptionElement && greySkyBackground) {
+  if (artistDescriptionElement && greySkyBackground && artistDescriptionContent) {
     const distanceFromBottom = window.innerHeight - artistDescriptionElement.getBoundingClientRect().bottom;
     const distanceFromBottomInPercent = (distanceFromBottom / window.innerHeight) * 100;
+
     const newBackgroundPosition = `0% ${50 + distanceFromBottomInPercent / 3}%`; // Adjust the division factor as needed
     greySkyBackground.style.backgroundPosition = newBackgroundPosition;
+
+    const newTextPosition = `${0 + -1.07*distanceFromBottomInPercent}%` // Adjust as needed
+    artistDescriptionContent.style.top = newTextPosition;
+
   } else {
     console.log("artistDescriptionElement: " + artistDescriptionElement)
     console.log("greySkyBackground: " + greySkyBackground)
+    console.log("artistDescriptionContent : " + artistDescriptionContent)
   }
 
 

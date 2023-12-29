@@ -268,7 +268,7 @@ h1 {
   position: sticky;
   top: 0;
 
-  border-width: 10vw 10vw 12vw 10vw;
+  border-width: 12vw 10vw 12vw 10vw;
   border-style: solid;
   border-color: #f5f2f2; /* Specify the border style (solid) */
   box-sizing: border-box;
@@ -294,7 +294,11 @@ h1 {
   justify-content: center;
 
   position: absolute;
-  top: 0;
+  bottom: 0%;
+
+  transition: bottom 0.5s ease-in-out;
+
+  overflow: hidden;
 }
 
 #artist-description-content p {
