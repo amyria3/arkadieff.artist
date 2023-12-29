@@ -1,8 +1,12 @@
-// 1. STABLE SLOGAN POSITION DESPITE SCROLL
-// 2. RESIZE VISIBLE VIDEO CONTENT DEPENDING ON CLICK OR SCROLL
 window.addEventListener("scroll", function () {
+
+  //Fix slogan
   const sloganElement = document.getElementById("slogan");
   sloganElement.style.transform = `translateY(${window.scrollY}px)`;
+
+  // // Fix artist description at place
+  // const artistDescription = document.getElementById("wrapper-artist-description-content");
+  // artistDescription.style.transform = `translateY(${window.scrollY}px)`;
 
   // Get the #video-background-wrapper element
   const videoWrapper = document.getElementById("video-background-wrapper");
