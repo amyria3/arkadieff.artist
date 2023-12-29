@@ -1,7 +1,8 @@
 window.addEventListener("scroll", function () {
   const scrolledVertically = window.scrollY;
 
-  // Fix slogan
+  // SPLASH
+  //Fix slogan's position
   const sloganElement = document.getElementById("slogan");
   if (sloganElement) {
     sloganElement.style.transform = `translateY(${scrolledVertically / 2}px)`; // Adjust the division factor as needed
@@ -9,7 +10,11 @@ window.addEventListener("scroll", function () {
     console.log("sloganElement: " + sloganElement)
   }
 
-  // Make artist-background move slowly
+
+
+
+  // ARTIST
+  //Make artist-background move slowly, make #artist-description-content move faster
   const artistDescriptionElement = document.getElementById("artist");
   const greySkyBackground = document.getElementById('grey-sky-background');
   const artistDescriptionContent = document.getElementById('artist-description-content')
@@ -66,4 +71,5 @@ window.addEventListener("scroll", function () {
       videoWrapperIsSmall = false; // Update the state
     }
   });
+
 });
