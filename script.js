@@ -1,12 +1,32 @@
 window.addEventListener("scroll", function () {
+  const scrolledVertically = window.scrollY;
 
-  //Fix slogan
+  // Fix slogan
   const sloganElement = document.getElementById("slogan");
-  sloganElement.style.transform = `translateY(${window.scrollY}px)`;
+  if (sloganElement) {
+    sloganElement.style.transform = `translateY(${scrolledVertically / 2}px)`; // Adjust the division factor as needed
+  } else {
+    console.log(sloganElement)
+  }
 
-  // // Fix artist description at place
-  // const artistDescription = document.getElementById("wrapper-artist-description-content");
-  // artistDescription.style.transform = `translateY(${window.scrollY}px)`;
+  // Fix artist description at place
+  const artistDescriptionElement = document.getElementById("artist-description");
+  const greySkyBackground = document.getElementById('grey-sky-background');
+
+  if (artistDescriptionElement && greySkyBackground) {
+    const distanceFromBottom = window.innerHeight - artistDescriptionElement.getBoundingClientRect().bottom;
+    const distanceFromBottomInPercent = (distanceFromBottom / window.innerHeight) * 100;
+    const newBackgroundPosition = `0% ${50 + distanceFromBottomInPercent / 3}%`; // Adjust the division factor as needed
+    greySkyBackground.style.backgroundPosition = newBackgroundPosition;
+  } else {
+    console.log(artistDescriptionElement)
+    console.log(greySkyBackground)
+  }
+  // const blurAmount = 5
+  // greySkyBackground.style.filter = `blur(${blurAmount}px)`;
+
+
+
 
   // Get the #video-background-wrapper element
   const videoWrapper = document.getElementById("video-background-wrapper");
@@ -18,7 +38,7 @@ window.addEventListener("scroll", function () {
   // Calculate the scroll progress based on screen height
   const screenHeight = window.innerHeight;
   const scrollProgress =
-    (window.scrollY - disciplinesPosition.top) / (screenHeight / 6);
+    (scrolledVertically - disciplinesPosition.top) / (screenHeight / 6);
   var videoWrapperIsSmall = false;
 
   // Shrink the video background when the scroll progress is reached

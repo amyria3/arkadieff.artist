@@ -239,25 +239,70 @@ h1 {
 
 /*MAIN CONTENT SECTION*/
 #artist-description {
-  padding: 10rem;
-  background-color: #f5f2f2;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   max-height: 100vw;
-  display: flex;
-  gap: 3rem;
   overflow: hidden;
+
+  position: -webkit-sticky; /* Für WebKit-basierte Browser (Chrome, Safari, etc.) */
+  position: sticky; /* Standard */
+  top: 0;
+
+  margin-top: 2.5vw;
+
+  position: relative; /*this is for #...-content (position: absolute;)*/
 }
 
-#artist-description:hover {
-  cursor: url("Illustrations/shine.png");
+#grey-sky-background-frame {
+  width: 100vw;
+  min-height: 100vh;
+  max-height: 200vw;
+  overflow: hidden;
+  z-index: 99;
 }
 
-#artist-description a {
+#grey-sky-background {
+  width: 100vw;
+  min-height: 100vh;
+  max-height: 200vw;
+
+  position: sticky;
+  top: 0;
+
+  border-width: 10vw 10vw 12vw 10vw;
+  border-style: solid;
+  border-color: #f5f2f2; /* Specify the border style (solid) */
+  border-radius: 6vw;
+  box-sizing: border-box;
+
+  background-image: url('Illustrations/sky-grey.png');
+  background-size: 100% auto;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 1;
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+
+#artist-description-content {
+  width: 100vw;
+  min-height: 100vh;
+  max-height: 100vw;
+
+  margin: 12vw;
+
+  display: flex;
+
+  position: absolute;
+  top: 0;
+}
+
+#artist-description-content a {
   font-family: "Biotif ";
 }
 
-#artist-description p {
+#artist-description-content p {
   font-family: 'Biotif';
   display: flex;
   width: 32rem;
@@ -273,16 +318,6 @@ h1 {
   line-height: 1.875rem; /* 100% */
   letter-spacing: -0.05625rem;
   text-transform: uppercase;
-}
-
-.grey-sky-background {
-  background-image: url('Illustrations/sky-grey.png');
-  background-size: 100% auto;
-  background-position: 0% 0%;
-  background-repeat: no-repeat;
-  opacity: 1;
-  /* /* */
-  background-attachment: fixed;
 }
 
 /*INTERACTIVE CURSOR*/
