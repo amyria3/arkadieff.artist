@@ -258,7 +258,6 @@ h1 {
   min-height: 100vh;
   max-height: 200vw;
   overflow: hidden;
-  z-index: 99;
 }
 
 #grey-sky-background {
@@ -272,7 +271,6 @@ h1 {
   border-width: 10vw 10vw 12vw 10vw;
   border-style: solid;
   border-color: #f5f2f2; /* Specify the border style (solid) */
-  border-radius: 6vw;
   box-sizing: border-box;
 
   background-image: url('Illustrations/sky-grey.png');
@@ -281,7 +279,6 @@ h1 {
   background-repeat: no-repeat;
   opacity: 1;
   background-attachment: fixed;
-  z-index: 1;
 }
 
 
@@ -290,34 +287,30 @@ h1 {
   min-height: 100vh;
   max-height: 100vw;
 
-  margin: 12vw;
+  margin: 20vw;
 
   display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
 
   position: absolute;
   top: 0;
 }
 
-#artist-description-content a {
-  font-family: "Biotif ";
-}
-
 #artist-description-content p {
   font-family: 'Biotif';
-  display: flex;
-  width: 32rem;
-  height: 32rem;
-  flex-direction: column;
-  justify-content: center;
-  color: #f5f2f2;
-
-  font-family: Biotif;
-  font-size: 1.875rem;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.875rem; /* 100% */
-  letter-spacing: -0.05625rem;
+  letter-spacing: -0.05rem;
   text-transform: uppercase;
+
+  width: 60vw;
+}
+
+#artist-description-content a {
+  font-family: "Biotif ";
 }
 
 /*INTERACTIVE CURSOR*/
