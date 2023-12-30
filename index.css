@@ -241,33 +241,39 @@ h1 {
 }
 
 /*MAIN CONTENT SECTION*/
-#artist {
+#artist,
+#artist-content,
+#grey-sky-background-frame,
+#grey-sky-background,
+#artist-content {
   width: 100vw;
-  min-height: 100vh;
-  max-height: 200vw;
+  height: 100vh;
+  max-height: 100vw;
+}
+
+#artist {
+  /*position: -webkit-sticky; /* Für WebKit-basierte Browser (Chrome, Safari, etc.) */
+  position: relative;
   overflow: hidden;
 
-  position: -webkit-sticky; /* Für WebKit-basierte Browser (Chrome, Safari, etc.) */
-  position: sticky; /* Standard */
-  top: 0;
-
   margin-top: 2.5vw;
+}
 
-  position: relative; /*this is for #...-content (position: absolute;)*/
+#artist {
+  font-family: "Biotif";
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.05rem;
+  text-transform: uppercase;
 }
 
 #grey-sky-background-frame {
-  width: 100vw;
-  min-height: 100vh;
-  max-height: 200vw;
   overflow: hidden;
 }
 
 #grey-sky-background {
-  width: 100vw;
-  min-height: 100vh;
-  max-height: 200vw;
-
   position: sticky;
   top: 0;
 
@@ -285,34 +291,23 @@ h1 {
 }
 
 #artist-content {
-  width: 100%;
-  height: 100%;
-  min-height: calc(100vh - 24vw - 12vw);
-
-  max-height: 176vw;
-
   margin: 12vw 0 12vw 0;
   padding: 0 10vw 0 10vw;
 
   position: absolute;
   left: 0;
+
+  overflow-y: scroll;
 }
 
 #artist-hi {
-  font-family: "Biotif";
-  font-size: 1.8rem;
-  line-height: 1.8rem;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: -0.05rem;
-  text-transform: uppercase;
-
   max-width: 60vw;
 
   position: relative;
   left: 32vw;
 
   margin-top: 5vw;
+  margin-bottom: 10rem;
 }
 
 #artist-content a {
@@ -358,15 +353,16 @@ h1 {
 #disciplines-wrapper {
   display: flex;
   flex-direction: column;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory;
   width: 100%;
-  height: 100%;
-  overflow-y: scroll;
+  height: 100%; */
+  overflow-y: visible;
 }
 
 .discipline {
   height: 100vh;
   max-height: 100vw;
+  margin-bottom: 10rem;
 }
 
 /*ADD TO ALL ELEMENTS WHERE YOU ADJUUST POSITION*/
