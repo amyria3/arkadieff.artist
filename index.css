@@ -272,10 +272,15 @@ h1 {
   overflow: hidden;
 }
 
-#grey-sky-background {
-  position: sticky;
-  top: 0;
+#grey-sky-background-frame, grey-sky-background, #artist-content {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0; /*beide children relativ zu #artist*/
+}
 
+#grey-sky-background {
   border-width: 12vw 10vw 12vw 10vw;
   border-style: solid;
   border-color: #f5f2f2; /* Specify the border style (solid) */
@@ -293,18 +298,13 @@ h1 {
   margin: 12vw 0 12vw 0;
   padding: 0 10vw 0 10vw;
 
-  position: absolute;
-  left: 0;
-
   overflow-y: scroll;
 }
 
 #artist-hi {
   max-width: 60vw;
-
   position: relative;
   left: 32vw;
-
   margin-top: 5vw;
   margin-bottom: 10rem;
 }
