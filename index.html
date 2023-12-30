@@ -6,6 +6,7 @@
       <title>Maria Arkadieff, artist</title>
       <link rel="stylesheet" href="index.css"></link>
       <script src="script.js" defer></script>
+      <!-- <script src="menu.js" defer></script> -->
     </head>
 
     <body class="bg-transparent black">
@@ -39,15 +40,41 @@
           <div id="grey-sky-background"></div>
         </div>
 
+        <div class="menu-bar" id="menuBar">
+          <div class="menu-item non-selected-item" data-anchor="Musik"></div>
+          <div class="menu-item non-selected-item" data-anchor="Publizistik"></div>
+          <div class="menu-item selected-item" data-anchor="Lyrik"></div>
+          <div class="menu-item non-selected-item" data-anchor="Kunst"></div>
+          <div class="menu-item non-selected-item" data-anchor="Programmieren"></div>
+        </div>
+
         <div id="artist-content" class="transition">
           <p id="artist-hi">
             Hi! Maria Arkadieff ist Komponistin <br> (Ich) mache Musik, publiziere, schreibe Gedichte und manchmal mache ich Kunst. Mein Brotjob ist Programmieren.
           </p>
+          <div id="disciplines-wrapper">
+            <div class="discipline" id="Musik">
+              <p>Musik</p>
+              <div class="discipline-content">Content for Musik</div>
+            </div>
+            <div class="discipline" id="Publizistik">
+              <p>Publizistik</p>
+              <div class="discipline-content">Content for Publizistik</div>
+            </div>
+            <div class="discipline" id="Lyrik">
+              <p>Lyrik</p>
+              <div class="discipline-content">Content for Lyrik</div>
+            </div>
+            <div class="discipline" id="Kunst">
+              <p>Kunst</p>
+              <div class="discipline-content">Content for Kunst</div>
+            </div>
+            <div class="discipline" id="Programmieren">
+              <p>Programmieren</p>
+              <div class="discipline-content">Content for Programmieren</div>
+            </div>
+          </div>
         </div>
-
       </section>
-
-      <!-- <div id="disciplines" class="bg-black full-width appear-on-scroll "></div> -->
-
     </body>
   </html>

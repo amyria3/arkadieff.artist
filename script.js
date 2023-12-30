@@ -1,13 +1,12 @@
 window.addEventListener("scroll", function () {
-
   const scrolledVertically = window.scrollY;
   // Initialize a variable to track the scroll direction (for SPLASH)
   let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
   let isScrollingDown = false;
+  let videoWrapperIsSmall = false;
 
   // SPLASH
   // Fix slogan's position
-
   const sloganElement = document.getElementById("slogan");
   if (sloganElement) {
     sloganElement.style.transform = `translateY(${scrolledVertically / 2}px)`; // Adjust the division factor as needed
@@ -38,12 +37,21 @@ window.addEventListener("scroll", function () {
     if (scrollProgress >= 1) {
       const newHeight = 40; // 10vw in height
       videoWrapper.style.height = `${newHeight}vw`;
-      videoWrapperIsSmall = true;
+
+      // Add a class to indicate the videoWrapper is small
+      if (!videoWrapperIsSmall) {
+        videoWrapper.classList.add("small-video-wrapper");
+        videoWrapperIsSmall = true;
+      }
     } else {
       // If scrolling back, restore the original size
       videoWrapper.style.height = "100vh";
-      videoWrapper.style.maxHeight = "100vw";
-      videoWrapperIsSmall = false;
+
+      // Remove the class when the videoWrapper is not small
+      if (videoWrapperIsSmall) {
+        videoWrapper.classList.remove("small-video-wrapper");
+        videoWrapperIsSmall = false;
+      }
     }
   }
 
@@ -57,36 +65,30 @@ window.addEventListener("scroll", function () {
   videoWrapper.addEventListener("click", function () {
     if (videoWrapperIsSmall) {
       videoWrapper.style.height = "100vh";
-      videoWrapper.style.maxHeight = "100vw";
+
+      // Remove the class when the videoWrapper is not small
+      videoWrapper.classList.remove("small-video-wrapper");
       videoWrapperIsSmall = false; // Update the state
 
-
-      setTimeout(function() {
-      // Scroll to the videoWrapper
-      videoWrapper.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 700); // 500 milliseconds (0.5 seconds)
+      setTimeout(function () {
+        // Scroll to the videoWrapper
+        videoWrapper.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 700); // 500 milliseconds (0.5 seconds)
     } else {
-
       videoWrapper.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
 
   // ARTIST
   // Make artist-background move slowly, make #artist-content move faster
-  const artistDescriptionElement = document.getElementById("artist");
+  const artistElement = document.getElementById("artist");
   const greySkyBackground = document.getElementById("grey-sky-background");
-  const artistDescriptionContent = document.getElementById(
-    "artist-content"
-  );
+  const artistContent = document.getElementById("artist-content");
+  const disciplinesWrapper = document.getElementById("disciplines-wrapper");
 
-  if (
-    artistDescriptionElement &&
-    greySkyBackground &&
-    artistDescriptionContent
-  ) {
+  if (artistElement && greySkyBackground && artistContent) {
     const distanceFromBottom =
-      window.innerHeight -
-      artistDescriptionElement.getBoundingClientRect().bottom;
+      window.innerHeight - artistElement.getBoundingClientRect().bottom;
     const distanceFromBottomInPercent =
       (distanceFromBottom / window.innerHeight) * 100;
 
@@ -94,24 +96,32 @@ window.addEventListener("scroll", function () {
     greySkyBackground.style.backgroundPosition = newBackgroundPosition;
 
     const newTextPosition = `${0 + -1.07 * distanceFromBottomInPercent}%`; // Adjust as needed
-    artistDescriptionContent.style.top = newTextPosition;
+    artistContent.style.top = newTextPosition;
   } else {
-    console.log("artistDescriptionElement: " + artistDescriptionElement);
+    console.log("artistElement: " + artistElement);
     console.log("greySkyBackground: " + greySkyBackground);
-    console.log("artistDescriptionContent : " + artistDescriptionContent);
+    console.log("artistContent : " + artistContent);
   }
 
-  //PERFORMANCE
-  document.addEventListener("DOMContentLoaded", function() {
-    // Lazy load all images
-    document.querySelectorAll("img").forEach(function(img) {
-      img.loading = "lazy";
-    });
+  // Adjust BG to the scroll-position of discipline-sections
+  const scrollPosition = disciplinesWrapper.scrollLeft;
 
-    // Lazy load all videos
-    document.querySelectorAll("video source").forEach(function(source) {
-      source.loading = "lazy";
-    });
+  // Adjust the division factor as needed
+  const translateYValue = -0.5 * scrollPosition;
+
+  // Apply translateY to adjust background position
+  greySkyBackground.style.transform = `translateY(${translateYValue}px)`;
+});
+
+// PERFORMANCE
+document.addEventListener("DOMContentLoaded", function () {
+  // Lazy load all images
+  document.querySelectorAll("img").forEach(function (img) {
+    img.loading = "lazy";
   });
 
+  // Lazy load all videos
+  document.querySelectorAll("video source").forEach(function (source) {
+    source.loading = "lazy";
+  });
 });
