@@ -1,74 +1,77 @@
 /*DESIGN WORKS with window width min 1300*/
 
-
 /* BIOTIF */
 @font-face {
-  font-family: 'Biotif';
+  font-family: "Biotif";
   font-style: normal;
   font-weight: 900;
-  src: url('Illustrations/biotif-1/Biotif-Black.ttf') format('truetype');
+  src: url("Illustrations/biotif-1/Biotif-Black.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Biotif';
+  font-family: "Biotif";
   font-style: normal;
   font-weight: 800;
-  src: url('Illustrations/biotif-1/Biotif-ExtraBold.ttf') format('truetype');
+  src: url("Illustrations/biotif-1/Biotif-ExtraBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Biotif';
+  font-family: "Biotif";
   font-style: normal;
   font-weight: 600;
-  src: url('Illustrations/biotif-1/Biotif-Semibold.ttf') format('truetype');
+  src: url("Illustrations/biotif-1/Biotif-Semibold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Biotif';
+  font-family: "Biotif";
   font-style: normal;
   font-weight: 500;
-  src: url('Illustrations/biotif-1/Biotif-Medium.ttf') format('truetype');
+  src: url("Illustrations/biotif-1/Biotif-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Biotif';
+  font-family: "Biotif";
   font-style: normal;
   font-weight: 400;
-  src: url('Illustrations/biotif-1/Biotif-Book.ttf') format('truetype');
+  src: url("Illustrations/biotif-1/Biotif-Book.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Biotif';
+  font-family: "Biotif";
   font-style: normal;
   font-weight: 100;
-  src: url('Illustrations/biotif-1/Biotif-Light.ttf') format('truetype');
+  src: url("Illustrations/biotif-1/Biotif-Light.ttf") format("truetype");
 }
 
 /*OTHER FONTS*/
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 100, 300, 400, 700;
-  src: url('https://fonts.gstatic.com/s/lato/v22/S6u8w4BMUTPHh30AUi-qJCY.woff2') format('woff2');
+  src: url("https://fonts.gstatic.com/s/lato/v22/S6u8w4BMUTPHh30AUi-qJCY.woff2")
+    format("woff2");
 }
 
 @font-face {
-  font-family: 'Blinker';
+  font-family: "Blinker";
   font-style: normal;
   font-weight: 100, 300, 400, 500, 600, 700;
-  src: url('https://fonts.gstatic.com/s/blinker/v7/cIf_MaFatEEqwFz1U4mFkX0.woff2') format('woff2');
+  src: url("https://fonts.gstatic.com/s/blinker/v7/cIf_MaFatEEqwFz1U4mFkX0.woff2")
+    format("woff2");
 }
 
 @font-face {
-  font-family: 'KyivTypeTitling-Heavy3';
-  src: url('Illustrations/kyiv-type-titling/KyivTypeTitling-Heavy3.otf') format('opentype');
+  font-family: "KyivTypeTitling-Heavy3";
+  src: url("Illustrations/kyiv-type-titling/KyivTypeTitling-Heavy3.otf")
+    format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Public Sans';
-  src: url('https://fonts.gstatic.com/s/publicsans/v3/revvDaXGRiROVWKOnmP2QQ.woff2') format('woff2');
+  font-family: "Public Sans";
+  src: url("https://fonts.gstatic.com/s/publicsans/v3/revvDaXGRiROVWKOnmP2QQ.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -273,14 +276,13 @@ h1 {
   border-color: #f5f2f2; /* Specify the border style (solid) */
   box-sizing: border-box;
 
-  background-image: url('Illustrations/sky-grey.png');
+  background-image: url("Illustrations/sky-grey.png");
   background-size: 100% auto;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   opacity: 1;
   background-attachment: fixed;
 }
-
 
 #artist-content {
   width: 100%;
@@ -297,7 +299,7 @@ h1 {
 }
 
 #artist-hi {
-  font-family: 'Biotif';
+  font-family: "Biotif";
   font-size: 1.8rem;
   line-height: 1.8rem;
   font-style: normal;
@@ -317,9 +319,60 @@ h1 {
   font-family: "Biotif";
 }
 
+/* DISCIPLINES */
+
+ /* Menu Bar styles
+ .menu-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  position: absolute;
+  cursor: move;
+  z-index: 99;
+  bottom: 14vw;
+  right: 12vw;
+}
+
+.menu-item {
+  height: 1.8rem;
+  min-height: 1.8rem;
+  max-height: 1.8rem;
+}
+
+.non-selected-item {
+  width: 3.2rem;
+  min-width: 3.2rem;
+  max-width: 3.2rem;
+  background-color: #ff0002;
+}
+
+.selected-item {
+  min-width: 1.8rem;
+  max-width: 1.8rem;
+  width: 1.8rem;
+  border-radius: 100%;
+  background-color: #191919;
+} */
+
+/* Disciplines Wrapper styles */
+#disciplines-wrapper {
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.discipline {
+  height: 100vh;
+  max-height: 100vw;
+}
+
 /*ADD TO ALL ELEMENTS WHERE YOU ADJUUST POSITION*/
 .transition {
-  transition: bottom 0.2s ease-in-out, top 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition: bottom 0.2s ease-in-out, top 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
 }
 
 /*INTERACTIVE CURSOR*/
@@ -341,6 +394,7 @@ a:hover {
 }
 
 /* PERFORMANCE */
-img, video {
+img,
+video {
   content-visibility: auto;
 }

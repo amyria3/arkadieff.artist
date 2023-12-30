@@ -102,15 +102,6 @@ window.addEventListener("scroll", function () {
     console.log("greySkyBackground: " + greySkyBackground);
     console.log("artistContent : " + artistContent);
   }
-
-  // Adjust BG to the scroll-position of discipline-sections
-  const scrollPosition = disciplinesWrapper.scrollLeft;
-
-  // Adjust the division factor as needed
-  const translateYValue = -0.5 * scrollPosition;
-
-  // Apply translateY to adjust background position
-  greySkyBackground.style.transform = `translateY(${translateYValue}px)`;
 });
 
 // PERFORMANCE
