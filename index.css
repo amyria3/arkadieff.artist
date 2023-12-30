@@ -219,7 +219,7 @@ h1 {
   width: 100vw;
   height: 100vh;
   max-height: 100vw;
-  transition: height 0.05s ease-out;
+  transition: height 0.5s ease-out;
 }
 
 #video-background-wrapper:hover {
@@ -282,24 +282,28 @@ h1 {
 }
 
 
-#artist-description-content {
+#artist-content {
   width: 100vw;
-  min-height: 100vh;
-  max-height: 100vw;
 
-  margin: 20vw;
+  height: calc(100vh - 24vw);
+  max-height: 76vw;
 
-  display: flex;
+  margin: 12vw 0 12vw 0;
+  padding: 0 10vw 0 10vw;
+
+  /* display: flex;
   /* flex-direction: column; */
-  justify-content: center;
+  /*justify-content: center; */
 
   position: absolute;
-  bottom: 0%;
+  left: 0;
+  top: 100%;
 
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
-#artist-description-content p {
+#artist-hi {
+
   font-family: 'Biotif';
   font-size: 1.8rem;
   line-height: 1.8rem;
@@ -308,10 +312,15 @@ h1 {
   letter-spacing: -0.05rem;
   text-transform: uppercase;
 
-  width: 60vw;
+  max-width: 60vw;
+
+  position: relative;
+  left: 32vw;
+
+  margin-top: 5vw;
 }
 
-#artist-description-content a {
+#artist-content a {
   font-family: "Biotif ";
 }
 

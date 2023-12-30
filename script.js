@@ -72,11 +72,11 @@ window.addEventListener("scroll", function () {
   });
 
   // ARTIST
-  // Make artist-background move slowly, make #artist-description-content move faster
+  // Make artist-background move slowly, make #artist-content move faster
   const artistDescriptionElement = document.getElementById("artist");
   const greySkyBackground = document.getElementById("grey-sky-background");
   const artistDescriptionContent = document.getElementById(
-    "artist-description-content"
+    "artist-content"
   );
 
   if (
