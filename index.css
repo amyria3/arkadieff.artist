@@ -288,7 +288,7 @@ h1 {
 
   background-image: url("Illustrations/sky-grey.png");
   background-size: 100% auto;
-  background-position: 50% 50%;
+  background-position: left 50% top 0%;
   background-repeat: no-repeat;
   opacity: 1;
   background-attachment: fixed;
