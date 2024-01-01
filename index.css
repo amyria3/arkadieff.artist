@@ -286,9 +286,10 @@ h1 {
 #grey-sky-background {
   position: absolute;
   top:0;
+  left:-10vw;
 
   box-sizing: border-box;
-  width: 80vw;
+  width: 100vw;
   opacity: 1;
   background-attachment: local; /*moves when divs top-poisition is updated*/
 }
@@ -296,7 +297,7 @@ h1 {
 #grey-sky-background-img {
   position: absolute;
   top:0;
-  width: 80vw;
+  width: 100vw;
   height: auto;
 }
 
