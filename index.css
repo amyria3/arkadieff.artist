@@ -342,7 +342,7 @@ h1 {
   max-height: 1.8rem;
 }
 
-.non-selected-item {
+.menu-item:not(.selected-item){
   width: 3.2rem;
   min-width: 3.2rem;
   max-width: 3.2rem;
