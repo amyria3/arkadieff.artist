@@ -74,7 +74,7 @@ function setGreySkyBackgroundTopPosition() {
 
 function handleArtistScrollIn() { //works
   const ratio = returnRatio();
-  const scrolledVertically = (artistContent.getBoundingClientRect().top / window.innerHeight) * 100;
+  const scrolledVertically = artistContent.getBoundingClientRect().top;
   const greySkyBackgroundImgTop = `${-scrolledVertically / ratio}px`;
   greySkyBackgroundImg.style.top = greySkyBackgroundImgTop;
   console.log("scrolledVertically (scrolling in) : " + scrolledVertically);
