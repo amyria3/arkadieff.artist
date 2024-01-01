@@ -272,12 +272,17 @@ h1 {
   overflow: hidden;
 }
 
-#grey-sky-background-frame, grey-sky-background, #artist-content {
+#grey-sky-background-frame, #artist-content {
   position: absolute;
   top:0;
   bottom: 0;
   left: 0;
   right: 0; /*beide children relativ zu #artist*/
+}
+
+grey-sky-background {
+  position: absolute;
+  top:0
 }
 
 #grey-sky-background {
@@ -288,7 +293,7 @@ h1 {
 
   background-image: url("Illustrations/sky-grey.png");
   background-size: 100% auto;
-  background-position: left 50% top 0%;
+  background-position: top 0rem;
   background-repeat: no-repeat;
   opacity: 1;
   background-attachment: fixed;

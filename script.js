@@ -3,12 +3,13 @@ const artistElement = document.getElementById('artist');
 const greySkyBackground = document.getElementById('grey-sky-background');
 const artistContent = document.getElementById('artist-content');
 
-// Store values:
-let backgroundTopInitialPositionInVw = 20; // Change this value as needed
-let backgroundTopInitialPositionInPx = (backgroundTopInitialPositionInVw / 100) * window.innerWidth;
-let backgroundYPosition
 
-// CREATE FUNCTIONS
+// Store values:
+let backgroundTopInitialPositionInVw = -2; // Change this value as needed
+let backgroundTopInitialPositionInPx = (backgroundTopInitialPositionInVw / 100) * window.innerWidth;
+let backgroundYPositionStorage
+
+
 // Pin the slogan
 function pinSlogan() {
   const scrolledVertically = window.scrollY;
@@ -19,57 +20,58 @@ function pinSlogan() {
   }
 }
 
-// Function to get the top position of an element
-function getTopPosition(element) {
-  const rect = element.getBoundingClientRect();
-  return rect.top + window.scrollY;
+// Function to get the background position Y of an element
+function getBackgroundPositionY(element) {
+  const computedStyle = window.getComputedStyle(element);
+  return computedStyle.getPropertyValue('background-position-y');
 }
 
-// Reposition the background before
-function moveBackground() {
-  const backgroundTopInitialPosition = getTopPosition(greySkyBackground);
-  greySkyBackground.style.backgroundPositionY = backgroundTopInitialPosition; // Adjust the value as needed
+// ratio between #artistContent and background-img
+function returnRatio() {
+  const artistContentHeight = artistContent.offsetHeight;
+  const greySkyBackgroundHeight = greySkyBackground.clientHeight;
+  const ratio = artistContentHeight / greySkyBackgroundHeight;
+  return ratio;
 }
 
-// Function to slowly move the background in the opposite direction as you scroll in #artist (slower than scroll)
-function slowMoveBackground() {
-  const scrolledVertically = window.scrollY;
-  greySkyBackground.style.backgroundPositionY = `-${scrolledVertically/2}px`; // Note the negative sign
+// calculate offset
+function calculateOffset() {
+  const screenHeight = window.innerHeight;
+  const ratio = returnRatio();
+  const result = screenHeight / ratio;
+  return result;
 }
 
-// Function to get the yPosition of the background
-function updateBackgroundPosition(){
-  var computedStyle = window.getComputedStyle(greySkyBackground);
-  var currentBackgroundPositionY = computedStyle.getPropertyValue('background-position-y');
-  backgroundYPosition = currentBackgroundPositionY
+//adjust background offset
+function setGreySkyBackgroundTopPosition() {
+  const dividedHeight = calculateOffset();
+  greySkyBackground.style.top = `-${dividedHeight}px`;
 }
 
-// Function to execute on #artist-content-scroll
+function handleArtistScrollIn() {
+  const ratio = returnRatio();
+  const scrolledVertically = (artistContent.getBoundingClientRect().top / window.innerHeight) * 100;
+  const backgroundYPositionStorage = `${scrolledVertically / ratio}px`;
+  greySkyBackground.style.backgroundPositionY = backgroundYPositionStorage;
+  console.log("scrolledVertically (scrolling in) : " + scrolledVertically);
+  console.log("backgroundYPositionStorage: " + backgroundYPositionStorage);
+}
+
 function handleArtistBackground() {
-  if (!artistContent || !greySkyBackground) {
-    return;
-  }
-
-  const artistContentHeight = artistContent.scrollHeight;
-  const windowHeight = window.innerHeight;
+  const ratio = returnRatio();
   const scrolledVertically = artistContent.scrollTop;
-  const maxScroll = artistContentHeight - windowHeight;
-  const scrollProgress = (maxScroll === 0) ? 0 : (scrolledVertically / maxScroll) * 100;
-
-  // Adjust the multiplier as needed for the desired effect
-  const backgroundPosition = backgroundTopInitialPositionInPx - (scrollProgress * 2); // Adjust the multiplier
-
-  // Check if backgroundPosition is a valid number and within a reasonable range
-  if (!isNaN(backgroundPosition) && isFinite(backgroundPosition) && Math.abs(backgroundPosition) < 1000000) {
-    greySkyBackground.style.backgroundPositionY = `${backgroundPosition}px`;
-  }
+  const backgroundYPositionStorage = `${-scrolledVertically / ratio}px`;
+  greySkyBackground.style.backgroundPositionY = backgroundYPositionStorage;
+  console.log("scrolledVertically (#artist-content) : " + scrolledVertically);
+  console.log("backgroundYPositionStorage: " + backgroundYPositionStorage);
 }
+
+
 
 // Summarize Functions
 function handleScroll() {
   pinSlogan();
-  moveBackground();
-  slowMoveBackground();
+  handleArtistScrollIn()
 }
 
 window.addEventListener("scroll", handleScroll);
