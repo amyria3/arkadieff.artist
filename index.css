@@ -267,7 +267,7 @@ h1 {
 }
 
 #grey-sky-background-frame {
-  border-width: 12vw 10vw 12vw 10vw;
+  border-width: 8vw 8vw 8vw 8vw;
   border-style: solid;
   border-color: #f5f2f2;
   overflow: hidden;
@@ -301,7 +301,7 @@ h1 {
 
 #artist-content {
   width: 100vw;
-  margin: 12vw 0 12vw 0;
+  margin: 8vw 0 8vw 0;
   padding: 0 10vw 0 10vw;
 
   overflow-y: scroll;

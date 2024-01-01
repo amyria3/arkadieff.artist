@@ -5,7 +5,8 @@ const artistContentWrapper = document.getElementById('wrapper')
 const greySkyBackground = document.getElementById('grey-sky-background');
 const greySkyBackgroundImg = document.getElementById('grey-sky-background-img');
 
-const winddowWidth = window.innerWidth
+const windowWidth = window.innerWidth
+const visibleVW = 84
 
 // Pin the slogan
 function pinSlogan() {
@@ -20,8 +21,8 @@ function pinSlogan() {
 //Function to translate vws into px
 function convertVWToPixels(vwValue) {
   if (typeof(vwValue)==="number"){
-    console.log((vwValue * winddowWidth) / 100)
-    return (vwValue * winddowWidth) / 100;
+    console.log((vwValue * windowWidth) / 100)
+    return (vwValue * windowWidth) / 100;
   }else{
     console.log(typeof(vwValue))
   }
@@ -49,7 +50,7 @@ function returnRatio() {
 function returnRatioAfterRender() {
   const wrapperHeight = artistContentWrapper.clientHeight;
   const greySkyBackgroundHeight = greySkyBackgroundImg.clientHeight;
-  const zielHoehe = greySkyBackgroundHeight - convertVWToPixels(76);
+  const zielHoehe = greySkyBackgroundHeight - convertVWToPixels(visibleVW);
   const ratio = wrapperHeight / zielHoehe;
   console.log("wrapperHeight : " + wrapperHeight)
   console.log("greySkyBackgroundImgHeight : " + greySkyBackgroundHeight)
