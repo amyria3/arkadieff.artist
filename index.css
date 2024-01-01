@@ -372,6 +372,7 @@ h1 {
   height: 100vh;
   max-height: 100vw;
   margin-bottom: 10rem;
+  padding: 2vw;
 }
 
 /*ADD TO ALL ELEMENTS WHERE YOU ADJUUST POSITION*/
