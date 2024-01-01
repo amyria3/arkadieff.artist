@@ -305,6 +305,11 @@ h1 {
   padding: 0 10vw 0 10vw;
 
   overflow-y: scroll;
+
+}
+
+#wrapper {
+  overflow-y: hidden;
 }
 
 #artist-hi {

@@ -1,15 +1,11 @@
 const sloganElement = document.getElementById('slogan');
 const artistElement = document.getElementById('artist');
 const artistContent = document.getElementById('artist-content');
+const artistContentWrapper = document.getElementById('wrapper')
 const greySkyBackground = document.getElementById('grey-sky-background');
 const greySkyBackgroundImg = document.getElementById('grey-sky-background-img');
 
-
-// Store values:
-let backgroundTopInitialPositionInVw = -2; // Change this value as needed
-let backgroundTopInitialPositionInPx = (backgroundTopInitialPositionInVw / 100) * window.innerWidth;
-let backgroundYPositionStorage
-
+const winddowWidth = window.innerWidth
 
 // Pin the slogan
 function pinSlogan() {
@@ -21,6 +17,16 @@ function pinSlogan() {
   }
 }
 
+//Function to translate vws into px
+function convertVWToPixels(vwValue) {
+  if (typeof(vwValue)==="number"){
+    console.log((vwValue * winddowWidth) / 100)
+    return (vwValue * winddowWidth) / 100;
+  }else{
+    console.log(typeof(vwValue))
+  }
+}
+
 // Function to get the background position Y of an element
 function getBackgroundPositionY(element) {
   const computedStyle = window.getComputedStyle(element);
@@ -29,10 +35,23 @@ function getBackgroundPositionY(element) {
 
 // ratio between #artistContent and background-img
 function returnRatio() {
-  const artistContentHeight = artistContent.offsetHeight;
+  const wrapperHeight = artistContentWrapper.offsetHeight;
+
   const greySkyBackgroundHeight = greySkyBackgroundImg.clientHeight;
-  const ratio = artistContentHeight / greySkyBackgroundHeight;
-  console.log("artistContentHeight : " + artistContentHeight)
+  const ratio = wrapperHeight / greySkyBackgroundHeight;
+  console.log("wrapperHeight : " + wrapperHeight)
+  console.log("greySkyBackgroundImgHeight : " + greySkyBackgroundHeight)
+
+  console.log(ratio)
+  return ratio;
+}
+
+function returnRatioAfterRender() {
+  const wrapperHeight = artistContentWrapper.clientHeight;
+  const greySkyBackgroundHeight = greySkyBackgroundImg.clientHeight;
+  const zielHoehe = greySkyBackgroundHeight - convertVWToPixels(76);
+  const ratio = wrapperHeight / zielHoehe;
+  console.log("wrapperHeight : " + wrapperHeight)
   console.log("greySkyBackgroundImgHeight : " + greySkyBackgroundHeight)
 
   console.log(ratio)
@@ -56,20 +75,20 @@ function setGreySkyBackgroundTopPosition() {
 function handleArtistScrollIn() { //works
   const ratio = returnRatio();
   const scrolledVertically = (artistContent.getBoundingClientRect().top / window.innerHeight) * 100;
-  const backgroundYPositionStorage = `${-scrolledVertically / ratio}px`;
-  greySkyBackgroundImg.style.top = backgroundYPositionStorage;
+  const greySkyBackgroundImgTop = `${-scrolledVertically / ratio}px`;
+  greySkyBackgroundImg.style.top = greySkyBackgroundImgTop;
   console.log("scrolledVertically (scrolling in) : " + scrolledVertically);
-  console.log("backgroundYPositionStorage: " + backgroundYPositionStorage);
+  console.log("greySkyBackgroundImgTop: " + greySkyBackgroundImgTop);
 }
 
 function handleArtistBackground() {
   console.log("Yes")
-  const ratio = returnRatio();
+  const ratio = returnRatioAfterRender();
   const scrolledVertically = artistContent.scrollTop;
-  const backgroundYPositionStorage = `${-scrolledVertically * ratio}px`;
-  greySkyBackground.style.top = backgroundYPositionStorage;
+  const greySkyBackgroundTop = `${-scrolledVertically / ratio}px`;
+  greySkyBackground.style.top = greySkyBackgroundTop;
   console.log("scrolledVertically (#artist-content) : " + scrolledVertically);
-  console.log("backgroundYPositionStorage: " + backgroundYPositionStorage);
+  console.log("greySkyBackgroundTop: " + greySkyBackgroundTop);
 }
 
 
