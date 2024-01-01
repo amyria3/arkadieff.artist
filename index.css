@@ -197,7 +197,6 @@ h1 {
 #slogan {
   position: absolute;
   top: 0;
-  /* opacity: 1; */
   z-index: 2;
   margin-bottom: 100vh;
   overflow: hidden; /* Add this line to hide the overflow content */
@@ -267,7 +266,7 @@ h1 {
 }
 
 #grey-sky-background-frame {
-  border-width: 8vw 8vw 8vw 8vw;
+  border-width: 6vw 6vw 6vw 6vw;
   border-style: solid;
   border-color: #f5f2f2;
   overflow: hidden;
@@ -284,7 +283,7 @@ h1 {
 #grey-sky-background {
   position: absolute;
   top:0;
-  left:-10vw; /*due to margin*/
+  left:-6vw; /*due to margin*/
 
   box-sizing: border-box;
   width: 100vw;
@@ -301,8 +300,8 @@ h1 {
 
 #artist-content {
   width: 100vw;
-  margin: 8vw 0 8vw 0;
-  padding: 0 10vw 0 10vw;
+  margin: 6vw 0 6vw 0;
+  padding: 0 6vw 0 6vw;
 
   overflow-y: scroll;
 }
