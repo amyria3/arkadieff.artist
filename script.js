@@ -1,7 +1,8 @@
 const sloganElement = document.getElementById('slogan');
 const artistElement = document.getElementById('artist');
-const greySkyBackground = document.getElementById('grey-sky-background');
 const artistContent = document.getElementById('artist-content');
+const greySkyBackground = document.getElementById('grey-sky-background');
+const greySkyBackgroundImg = document.getElementById('grey-sky-background-img');
 
 
 // Store values:
@@ -29,8 +30,9 @@ function getBackgroundPositionY(element) {
 // ratio between #artistContent and background-img
 function returnRatio() {
   const artistContentHeight = artistContent.offsetHeight;
-  const greySkyBackgroundHeight = greySkyBackground.clientHeight;
+  const greySkyBackgroundHeight = greySkyBackgroundImg.clientHeight;
   const ratio = artistContentHeight / greySkyBackgroundHeight;
+  console.log(ratio)
   return ratio;
 }
 
@@ -48,24 +50,24 @@ function setGreySkyBackgroundTopPosition() {
   greySkyBackground.style.top = `-${dividedHeight}px`;
 }
 
-function handleArtistScrollIn() {
+function handleArtistScrollIn() { //works
   const ratio = returnRatio();
   const scrolledVertically = (artistContent.getBoundingClientRect().top / window.innerHeight) * 100;
-  const backgroundYPositionStorage = `${scrolledVertically / ratio}px`;
-  greySkyBackground.style.backgroundPositionY = backgroundYPositionStorage;
+  const backgroundYPositionStorage = `${-scrolledVertically / ratio}px`;
+  greySkyBackgroundImg.style.top = backgroundYPositionStorage;
   console.log("scrolledVertically (scrolling in) : " + scrolledVertically);
   console.log("backgroundYPositionStorage: " + backgroundYPositionStorage);
 }
 
 function handleArtistBackground() {
+  console.log("Yes")
   const ratio = returnRatio();
   const scrolledVertically = artistContent.scrollTop;
   const backgroundYPositionStorage = `${-scrolledVertically / ratio}px`;
-  greySkyBackground.style.backgroundPositionY = backgroundYPositionStorage;
+  greySkyBackground.style.top = backgroundYPositionStorage;
   console.log("scrolledVertically (#artist-content) : " + scrolledVertically);
   console.log("backgroundYPositionStorage: " + backgroundYPositionStorage);
 }
-
 
 
 // Summarize Functions
