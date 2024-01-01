@@ -334,12 +334,14 @@ h1 {
   z-index: 99;
   bottom: 14vw;
   right: 12vw;
+  cursor: grab;
 }
 
 .menu-item {
   height: 1.8rem;
   min-height: 1.8rem;
   max-height: 1.8rem;
+  cursor: pointer;
 }
 
 .menu-item:not(.selected-item){

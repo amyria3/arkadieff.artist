@@ -1,4 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
+    var menuBar = document.getElementById("menuBar");
+    var isDragging = false;
+    var offset = { x: 0, y: 0 };
+
+    menuBar.addEventListener("mousedown", function (e) {
+      isDragging = true;
+      offset = { x: e.clientX - menuBar.getBoundingClientRect().left, y: e.clientY - menuBar.getBoundingClientRect().top };
+    });
+
+    document.addEventListener("mousemove", function (e) {
+      if (isDragging) {
+        menuBar.style.left = e.clientX - offset.x + "px";
+        menuBar.style.top = e.clientY - offset.y + "px";
+      }
+    });
+
+    document.addEventListener("mouseup", function () {
+      isDragging = false;
+    });
+
     var menuItems = document.querySelectorAll(".menu-item");
 
     menuItems.forEach(function (item) {
