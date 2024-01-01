@@ -305,7 +305,6 @@ h1 {
   padding: 0 10vw 0 10vw;
 
   overflow-y: scroll;
-
 }
 
 #wrapper {
@@ -324,9 +323,8 @@ h1 {
   font-family: "Biotif";
 }
 
-/* DISCIPLINES */
-
- /* Menu Bar styles
+/*DISCIPLINES */
+/*Menu Bar styles*/
  .menu-bar {
   display: flex;
   flex-direction: column;
@@ -357,7 +355,7 @@ h1 {
   width: 1.8rem;
   border-radius: 100%;
   background-color: #191919;
-} */
+}
 
 /* Disciplines Wrapper styles */
 #disciplines-wrapper {
