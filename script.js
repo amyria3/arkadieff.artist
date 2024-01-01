@@ -32,6 +32,9 @@ function returnRatio() {
   const artistContentHeight = artistContent.offsetHeight;
   const greySkyBackgroundHeight = greySkyBackgroundImg.clientHeight;
   const ratio = artistContentHeight / greySkyBackgroundHeight;
+  console.log("artistContentHeight : " + artistContentHeight)
+  console.log("greySkyBackgroundImgHeight : " + greySkyBackgroundHeight)
+
   console.log(ratio)
   return ratio;
 }
@@ -63,7 +66,7 @@ function handleArtistBackground() {
   console.log("Yes")
   const ratio = returnRatio();
   const scrolledVertically = artistContent.scrollTop;
-  const backgroundYPositionStorage = `${-scrolledVertically / ratio}px`;
+  const backgroundYPositionStorage = `${-scrolledVertically * ratio}px`;
   greySkyBackground.style.top = backgroundYPositionStorage;
   console.log("scrolledVertically (#artist-content) : " + scrolledVertically);
   console.log("backgroundYPositionStorage: " + backgroundYPositionStorage);
