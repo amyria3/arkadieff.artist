@@ -7,7 +7,9 @@
       <link rel="stylesheet" href="index.css"></link>
       <script src="script.js" defer></script>
       <script src="menu.js" defer></script>
-      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script src="audioplayer.js" defer></script>
+
+
     </head>
 
     <body class="bg-transparent black">
@@ -46,7 +48,7 @@
         <div class="menu-bar" id="menuBar">
           <div class="menu-item" data-anchor="Musik"></div>
           <div class="menu-item" data-anchor="Publizistik"></div>
-          <div class="menu-item selected-item" data-anchor="Lyrik"></div>
+          <div class="menu-item" data-anchor="Lyrik"></div>
           <div class="menu-item" data-anchor="Kunst"></div>
           <div class="menu-item" data-anchor="Programmieren"></div>
         </div>
@@ -59,11 +61,18 @@
             </div>
 
             <div class="discipline" id="Musik">
-              <p>Musik</p>
+              <p>Musik und Komposition</p>
               <div class="discipline-content">
                 <p>
-
+                  Meine Großmutter liebte Oper, meine Mutter hat eine super Stimme und hat viel gesungen, vor allem Schubert und diverse Arien. Mein Ziehvater war klassischer Organist. In unserer Wohnung in Petersburg gaben wir Konzerte. Nach seinem Tod 2010 habe ich angefangen, zu komponieren.
                 </p>
+                <p>
+                  2020 habe ich eine Demoaufnahme eines meiner Stücke gemacht: das Meer.
+                </p>
+                <audio id="audioPlayer" controls controlsList="nodownload">
+                  <source src="Music/4168.2 Splett 210531 Maria Arkadieff Edit2.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+                </audio>
               </div>
             </div>
             <div class="discipline" id="Publizistik">
