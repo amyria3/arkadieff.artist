@@ -307,20 +307,22 @@ h1 {
   overflow-y: scroll;
 }
 
-#wrapper div {
-  width: 88vw;
-  height: 100vh;
-  max-height: 88vw;
-}
-
-
 #wrapper {
   overflow-y: hidden;
 }
 
 #artist-hi {
+  width: 88vw;
+  height: 100vh;
+  max-height: 88vw;
   display: flex;
   justify-content: flex-end;
+}
+
+.discipline {
+  width: 88vw;
+  height: 100vh;
+  max-height: 88vw;
 }
 
 #artist-content a {
