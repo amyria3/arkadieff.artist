@@ -319,12 +319,6 @@ h1 {
   justify-content: flex-end;
 }
 
-.discipline {
-  width: 88vw;
-  height: 100vh;
-  max-height: 88vw;
-}
-
 #artist-content a {
   font-family: "Biotif";
 }
@@ -338,8 +332,8 @@ h1 {
   position: absolute;
   cursor: move;
   z-index: 99;
-  bottom: 14vw;
-  right: 12vw;
+  top: 2vw;
+  right: 2vw;
   cursor: grab;
 }
 
@@ -377,9 +371,9 @@ h1 {
 }
 
 .discipline {
+  width: 88vw;
   height: 100vh;
-  max-height: 100vw;
-  margin-bottom: 10rem;
+  max-height: 88vw;
   padding: 2vw;
 }
 
