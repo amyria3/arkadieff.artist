@@ -332,8 +332,8 @@ h1 {
   position: absolute;
   cursor: move;
   z-index: 99;
-  top: 2vw;
-  right: 2vw;
+  top: 5vw;
+  right: 4vw;
   cursor: grab;
 }
 
