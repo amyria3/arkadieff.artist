@@ -296,6 +296,7 @@ h1 {
   top:0;
   width: 100vw;
   height: auto;
+  opacity: 0.6;
 }
 
 #artist-content {
@@ -306,16 +307,20 @@ h1 {
   overflow-y: scroll;
 }
 
+#wrapper div {
+  width: 88vw;
+  height: 100vh;
+  max-height: 88vw;
+}
+
+
 #wrapper {
   overflow-y: hidden;
 }
 
 #artist-hi {
-  max-width: 56vw;
-  position: relative;
-  left: 36vw;
-  margin-top: 5vw;
-  margin-bottom: 10rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #artist-content a {
@@ -337,25 +342,26 @@ h1 {
 }
 
 .menu-item {
-  height: 1.8rem;
-  min-height: 1.8rem;
-  max-height: 1.8rem;
+  height: 1.5rem;
+  min-height: 1.5rem;
+  max-height: 1.5rem;
   cursor: pointer;
 }
 
 .menu-item:not(.selected-item){
-  width: 3.2rem;
-  min-width: 3.2rem;
-  max-width: 3.2rem;
+  width: 3rem;
+  min-width: 3rem;
+  max-width: 3rem;
   background-color: #ff0002;
 }
 
 .selected-item {
-  min-width: 1.8rem;
-  max-width: 1.8rem;
-  width: 1.8rem;
+  min-width: 1.5rem;
+  max-width: 1.5rem;
+  width: 1.5rem;
   border-radius: 100%;
   background-color: #191919;
+  cursor: auto;
 }
 
 /* Disciplines Wrapper styles */
@@ -373,6 +379,11 @@ h1 {
   max-height: 100vw;
   margin-bottom: 10rem;
   padding: 2vw;
+}
+
+.discipline-content {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
 }
 
 /*ADD TO ALL ELEMENTS WHERE YOU ADJUUST POSITION*/
