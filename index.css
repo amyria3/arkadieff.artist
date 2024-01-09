@@ -250,7 +250,7 @@ h1 {
 
 #artist {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 
   margin-top: 2.5vw;
 }
@@ -266,7 +266,7 @@ h1 {
 }
 
 #grey-sky-background-frame {
-  border-width: 6vw 6vw 6vw 6vw;
+  border-width: 2vw 2vw 2vw 2vw;
   border-style: solid;
   border-color: #f5f2f2;
   overflow: hidden;
@@ -284,7 +284,7 @@ h1 {
 #grey-sky-background {
   position: absolute;
   top: 0;
-  left: -6vw; /*due to margin*/
+  left: -2vw; /*due to margin*/
 
   box-sizing: border-box;
   width: 100vw;
@@ -302,10 +302,11 @@ h1 {
 
 #artist-content {
   width: 100vw;
-  margin: 6vw 0 6vw 0;
-  padding: 0 6vw 0 6vw;
+  margin: 2vw 0 2vw 0;
+  padding: 0 2vw 0 2vw;
 
   overflow-y: scroll;
+  overflow-x: visible;
 }
 
 #wrapper {
@@ -313,11 +314,13 @@ h1 {
 }
 
 #artist-hi {
-  width: 88vw;
+  width: 96vw;
   height: 100vh;
-  max-height: 88vw;
+  max-height: 96vw;
   display: flex;
   justify-content: flex-end;
+  padding: 4vw;
+  padding-right: 50vw;
 }
 
 #artist-content a {
@@ -333,7 +336,7 @@ h1 {
   position: absolute;
   cursor: move;
   z-index: 99;
-  top: 5vw;
+  bottom: 5vw;
   right: 4vw;
   cursor: grab;
 }
@@ -369,19 +372,24 @@ h1 {
 }
 
 .discipline {
-  width: 88vw;
-  height: 100vh;
-  max-height: 88vw;
-  padding: 2vw;
+  width: 96vw;
+  height: 200vh;
+  max-height: 196vw;
+  padding: 4vw;
+  margin-bottom: 6vw;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
 }
 
+.discipline h3 {
+  font-size: 3rem;
+}
+.discipline p,
 .discipline-content {
-  font-size: 1.2rem;
-  line-height: 1.2rem;
-}
-
-.discipline-content p {
-  margin-top: 2vw;
+  font-size: 2rem;
+  line-height: 2rem;
   max-width: 60vw;
 }
 
@@ -400,6 +408,13 @@ a:hover {
   cursor: url("Illustrations/cursor-when-hovering.svg"), pointer; /* Replace with the path to a red version of your cursor.svg */
   color: #ff0002;
 }
+
+a:visited {
+  cursor: url("Illustrations/cursor-when-hovering.svg"), pointer; /* Replace with the path to a red version of your cursor.svg */
+  color: #ff0002;
+}
+
+
 
 /*FOR RESPONSIVE*/
 @media screen and (max-aspect-ratio: 1/1) {

@@ -92,7 +92,6 @@ function handleArtistBackground() {
   console.log("greySkyBackgroundTop: " + greySkyBackgroundTop);
 }
 
-
 // Summarize Functions
 function handleScroll() {
   pinSlogan();
