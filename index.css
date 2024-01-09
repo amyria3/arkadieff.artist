@@ -386,6 +386,7 @@ h1 {
 .discipline h3 {
   font-size: 3rem;
 }
+
 .discipline p,
 .discipline-content {
   font-size: 2rem;
@@ -413,8 +414,6 @@ a:visited {
   cursor: url("Illustrations/cursor-when-hovering.svg"), pointer; /* Replace with the path to a red version of your cursor.svg */
   color: #ff0002;
 }
-
-
 
 /*FOR RESPONSIVE*/
 @media screen and (max-aspect-ratio: 1/1) {
