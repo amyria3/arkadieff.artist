@@ -21,7 +21,7 @@ function pinSlogan() {
 //Function to translate vws into px
 function convertVWToPixels(vwValue) {
   if (typeof(vwValue)==="number"){
-    console.log((vwValue * windowWidth) / 100)
+    // console.log((vwValue * windowWidth) / 100)
     return (vwValue * windowWidth) / 100;
   }else{
     console.log(typeof(vwValue))
@@ -40,10 +40,10 @@ function returnRatio() {
 
   const greySkyBackgroundHeight = greySkyBackgroundImg.clientHeight;
   const ratio = wrapperHeight / greySkyBackgroundHeight;
-  console.log("wrapperHeight : " + wrapperHeight)
-  console.log("greySkyBackgroundImgHeight : " + greySkyBackgroundHeight)
+  // console.log("wrapperHeight : " + wrapperHeight)
+  // console.log("greySkyBackgroundImgHeight : " + greySkyBackgroundHeight)
+  // console.log(ratio)
 
-  console.log(ratio)
   return ratio;
 }
 
@@ -52,10 +52,9 @@ function returnRatioAfterRender() {
   const greySkyBackgroundHeight = greySkyBackgroundImg.clientHeight;
   const zielHoehe = greySkyBackgroundHeight - convertVWToPixels(visibleVW);
   const ratio = wrapperHeight / zielHoehe;
-  console.log("wrapperHeight : " + wrapperHeight)
-  console.log("greySkyBackgroundImgHeight : " + greySkyBackgroundHeight)
-
-  console.log(ratio)
+  // console.log("wrapperHeight : " + wrapperHeight)
+  // console.log("greySkyBackgroundImgHeight : " + greySkyBackgroundHeight)
+  // console.log(ratio)
   return ratio;
 }
 
@@ -83,13 +82,13 @@ function handleArtistScrollIn() { //works
 }
 
 function handleArtistBackground() {
-  console.log("Yes")
+  // console.log("Yes")
   const ratio = returnRatioAfterRender();
   const scrolledVertically = artistContent.scrollTop;
   const greySkyBackgroundTop = `${-scrolledVertically / ratio}px`;
   greySkyBackground.style.top = greySkyBackgroundTop;
-  console.log("scrolledVertically (#artist-content) : " + scrolledVertically);
-  console.log("greySkyBackgroundTop: " + greySkyBackgroundTop);
+  // console.log("scrolledVertically (#artist-content) : " + scrolledVertically);
+  // console.log("greySkyBackgroundTop: " + greySkyBackgroundTop);
 }
 
 // Summarize Functions
