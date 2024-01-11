@@ -480,7 +480,28 @@ audio::-webkit-media-controls-panel {
 }
 
 .audio-player:hover ::-webkit-media-controls-play-button {
-  color: #ff0002; /* Ändere hier die Eigenschaften je nach Bedarf */
+  color: #ff0002;
+}
+
+#audioPlayer audio::-webkit-media-controls {
+  zoom: 1.5;
+}
+
+#audioPlayer audio::-webkit-media-controls-play-button,
+#audioPlayer audio::-webkit-media-controls-pause-button {
+  zoom: 2;
+}
+
+#audioPlayer audio.isPlaying::-webkit-media-controls-play-button {
+  margin-left: -10%;
+}
+
+#audioPlayer audio::-webkit-media-controls-play-button {
+  margin-left: -10%;
+}
+
+#audioPlayer audio::-webkit-media-controls- {
+  display: none;
 }
 
 /*INTERACTIVE CURSOR*/
@@ -540,6 +561,45 @@ a:visited {
   #Programmieren {
     height: 100vh;
     max-height: 100vw;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #audioPlayer audio::-webkit-media-controls {
+    zoom: 1;
+  }
+
+  #audioPlayer audio::-webkit-media-controls-play-button,
+  #audioPlayer audio::-webkit-media-controls-pause-button {
+    zoom: 1;
+  }
+
+  #audioPlayer audio.isPlaying::-webkit-media-controls-play-button {
+    margin-left: auto;
+  }
+
+  #audioPlayer audio::-webkit-media-controls-play-button {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  #audioPlayer audio::-webkit-media-controls {
+    zoom: 1.4;
+  }
+
+  #audioPlayer audio::-webkit-media-controls-play-button,
+  #audioPlayer audio::-webkit-media-controls-pause-button {
+    zoom: 1.4;
+  }
+
+  #audioPlayer audio.isPlaying::-webkit-media-controls-play-button {
+    margin-left: 0%;
+  }
+
+  #audioPlayer audio::-webkit-media-controls-play-button {
+    margin-left: 0%;
   }
 }
 
