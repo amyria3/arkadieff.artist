@@ -28,43 +28,32 @@ function logVisibilityInfo(element) {
   );
 }
 
-// Funktion zum Überprüfen der Sichtbarkeit und Protokollierung
-function updateVisibilityAndLog(element) {
-  if (isVisible(element, intersectionWrapper)) {
-    !element.classList.contains("show") && element.classList.add("show");
-  } else {
-    element.classList.contains("show") && element.classList.remove("show");
-  }
-}
-
-// Funktion zum Überprüfen der Sichtbarkeit und Protokollierung
-function blur(element) {
+function adjustBlur(element) {
   if (isVisible(element, biggerIntersectionWrapper)) {
-    element.classList.contains("more-blur") &&
-      element.classList.remove("more-blur");
+    if (isVisible(element, intersectionWrapper)) {
+      element.classList.remove("some-blur");
+    } else {
+      element.classList.add("some-blur");
+    }
+    element.classList.remove("more-blur");
   } else {
-    !element.classList.contains("more-blur") &&
-      element.classList.add("more-blur");
+    element.classList.remove("some-blur");
+    element.classList.add("more-blur");
   }
 }
 
-// Initialisierung - Protokolliere die Informationen zu allen sichtbaren Elementen im Viewport
-onScrollElements.forEach((element) => {
-  blur(element);
-  updateVisibilityAndLog(element);
-});
 
 // Event-Listener für Scroll-Änderungen
 window.addEventListener("scroll", () => {
   // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
   onScrollElements.forEach((element) => {
-    updateVisibilityAndLog(element);
+    adjustBlur(element);
   });
 });
 
 window.addEventListener("wheel", (event) => {
   // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
   onScrollElements.forEach((element) => {
-    updateVisibilityAndLog(element);
+    adjustBlur(element);
   });
 });

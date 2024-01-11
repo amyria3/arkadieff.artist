@@ -367,16 +367,16 @@ h1 {
 /* Disciplines Wrapper styles */
 #intersection-wrapper {
   position: absolute;
+  width: 100vw;
   top: 20%;
   height: 60%;
-  width: 100vw;
   bottom: 20%;
 }
 
 #bigger-intersection-wrapper {
   position: absolute;
-  top: 15%;
   width: 100vw;
+  top: 15%;
   height: 70%;
   bottom: 15%;
 }
@@ -427,28 +427,33 @@ h1 {
 
 /*BLUR IN EFFECT*/
 .on-scroll {
-  opacity: 0.5;
-  filter: blur(5px);
-  transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
-  transition-delay: 0s; /* Standard-Verzögerung für Elemente ohne .show oder :hover */
+  filter: blur(0px);
+  transition: filter 0.5s ease-in-out;
 }
 
-.on-scroll.show,
-.on-scroll:hover,
-.on-scroll.more-blur:hover {
-  opacity: 1;
-  filter: blur(0px); /* Kein Blur-Effekt */
-  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Sofortige Reaktion weg vom Blur */
-  transition-delay: 0s; /* Keine zusätzliche Verzögerung für .show oder :hover */
+.some-blur {
+  filter: blur(3px);
+  transition: filter 0.5s ease-in-out;
 }
 
-.on-scroll.more-blur:not(.show) {
+.more-blur {
   filter: blur(10px);
-  transition: filter 1s ease-in-out;
+  transition: filter 0.8s ease-in-out;
 }
 
-.on-scroll:not(.show):not(:hover) {
-  transition-delay: 1s; /* Verzögerung beim Wiederherstellen des Blur-Effekts */
+.on-scroll.some-blur:hover,
+.on-scroll.more-blur:hover {
+  filter: blur(0px);
+}
+
+.some-blur:not(:hover) {
+  filter: blur(3px);
+  transition-delay: 0.5s;
+}
+
+.more-blur:not(:hover) {
+  filter: blur(10px);
+  transition-delay: 0.8s;
 }
 
 /*INTERACTIVE CURSOR*/
@@ -491,23 +496,19 @@ a:visited {
   }
   #intersection-wrapper {
     top: 10%;
-    bottom: 10%;
     height: 80%;
+    bottom: 10%;
   }
   #bigger-intersection-wrapper {
     top: 5%;
-    bottom: 5%;
     height: 90%;
+    bottom: 5%;
   }
   .discipline p,
   .discipline-content {
     font-size: 2rem;
     line-height: 2rem;
     max-width: 76vw;
-  }
-  .on-scroll {
-    opacity: 0.8;
-    filter: blur(2px);
   }
   #Programmieren {
     height: 100vh;
