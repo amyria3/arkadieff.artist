@@ -466,6 +466,7 @@ audio {
   width: 30vw;
   height: 5vw;
   background-color: #ff0002;
+  z-index: 100;
 }
 
 
