@@ -409,6 +409,15 @@ h1 {
   max-width: 60vw;
 }
 
+.discipline ::after {
+  content: "\00a0";
+  margin-right: 0.6rem;
+}
+
+.discipline bw {
+  margin-bottom: 0.6rem;
+}
+
 /*BLUR IN EFFECT*/
 .on-scroll {
   opacity: 0.5;
@@ -456,6 +465,7 @@ a:visited {
     position: absolute;
     top: 100vw;
   }
+
 }
 
 /* PERFORMANCE */
