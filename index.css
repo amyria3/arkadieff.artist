@@ -427,11 +427,11 @@ h1 {
 .on-scroll:hover {
   opacity: 1;
   filter: blur(0px); /* Kein Blur-Effekt */
-  transition: filter 2s ease-in-out, opacity 1s ease-in-out;
+  transition: filter 0.5s ease-in-out, opacity 1s ease-in-out;
 }
 
 .on-scroll:not(:hover){
-  transition-delay: 1s;
+  transition-delay: 4s;
 }
 
 /*INTERACTIVE CURSOR*/
