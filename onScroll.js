@@ -11,6 +11,7 @@ isVisible = function (el, wrapper) {
 
 // Selektiere #intersection-wrapper
 const intersectionWrapper = document.getElementById("intersection-wrapper");
+const biggerIntersectionWrapper = document.getElementById("bigger-intersection-wrapper")
 
 // Selektiere alle Elemente mit der Klasse .on-scroll
 const onScrollElements = document.querySelectorAll(".on-scroll");
@@ -23,9 +24,8 @@ function logVisibilityInfo(element) {
 }
 
 // Funktion zum Überprüfen der Sichtbarkeit und Protokollierung
-function checkVisibilityAndLog(element) {
+function updateVisibilityAndLog(element) {
   if (isVisible(element, intersectionWrapper)) {
-    logVisibilityInfo(element);
     !element.classList.contains("show")&&
     element.classList.add("show");
   } else {
@@ -34,22 +34,35 @@ function checkVisibilityAndLog(element) {
   }
 }
 
+// Funktion zum Überprüfen der Sichtbarkeit und Protokollierung
+function unblur(element) {
+  if (isVisible(element, biggerIntersectionWrapper)) {
+    !element.classList.contains("blur")&&
+    element.classList.add("blur");
+  } else {
+    element.classList.contains("blur")&&
+    element.classList.remove("blur");
+  }
+}
+
+
 // Initialisierung - Protokolliere die Informationen zu allen sichtbaren Elementen im Viewport
 onScrollElements.forEach((element) => {
-  checkVisibilityAndLog(element);
+  unblur(element)
+  updateVisibilityAndLog(element);
 });
 
 // Event-Listener für Scroll-Änderungen
 window.addEventListener("scroll", () => {
   // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
   onScrollElements.forEach((element) => {
-    checkVisibilityAndLog(element);
+    updateVisibilityAndLog(element);
   });
 });
 
 window.addEventListener("wheel", (event) => {
   // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
   onScrollElements.forEach((element) => {
-    checkVisibilityAndLog(element);
+    updateVisibilityAndLog(element);
   });
 });
