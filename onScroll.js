@@ -35,20 +35,20 @@ function updateVisibilityAndLog(element) {
 }
 
 // Funktion zum Überprüfen der Sichtbarkeit und Protokollierung
-function unblur(element) {
+function blur(element) {
   if (isVisible(element, biggerIntersectionWrapper)) {
-    !element.classList.contains("blur")&&
-    element.classList.add("blur");
+    !element.classList.contains("more-blur")&&
+    element.classList.add("more-blur");
   } else {
-    element.classList.contains("blur")&&
-    element.classList.remove("blur");
+    element.classList.contains("more-blur")&&
+    element.classList.remove("more-blur");
   }
 }
 
 
 // Initialisierung - Protokolliere die Informationen zu allen sichtbaren Elementen im Viewport
 onScrollElements.forEach((element) => {
-  unblur(element)
+  blur(element)
   updateVisibilityAndLog(element);
 });
 
