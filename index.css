@@ -411,12 +411,12 @@ h1 {
   max-width: 60vw;
 }
 
-.discipline ::after {
+.discipline::after {
   content: "\00a0";
   margin-right: 0.6rem;
 }
 
-.discipline bw {
+.discipline br {
   margin-bottom: 0.6rem;
 }
 
@@ -456,6 +456,12 @@ h1 {
   filter: blur(10px);
   transition-delay: 0.8s;
 }
+
+/*audioPlayer MEER*/
+audio:not([controls]) {
+  display: initial !important;
+}
+
 
 /*INTERACTIVE CURSOR*/
 body {
