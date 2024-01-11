@@ -410,12 +410,6 @@ h1 {
 }
 
 /*BLUR IN EFFECT*/
-
-.blur {
-  filter: blur(5px);
-  transition: filter 0.5s ease-in-out;
-}
-
 .on-scroll {
   opacity: 0.5;
   filter: blur(5px);
@@ -430,6 +424,12 @@ h1 {
   transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Sofortige Reaktion weg vom Blur */
   transition-delay: 0s; /* Keine zusätzliche Verzögerung für .show oder :hover */
 }
+
+.on-scroll.blur:not(.show) {
+  filter: blur(10px);
+  transition: filter 1s ease-in-out;
+}
+
 
 .on-scroll:not(.show):not(:hover) {
   transition-delay: 2s; /* Verzögerung beim Wiederherstellen des Blur-Effekts */
