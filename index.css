@@ -418,7 +418,8 @@ h1 {
 }
 
 .on-scroll.show,
-.on-scroll:hover {
+.on-scroll:hover,
+.on-scroll.more-blur:hover {
   opacity: 1;
   filter: blur(0px); /* Kein Blur-Effekt */
   transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Sofortige Reaktion weg vom Blur */
