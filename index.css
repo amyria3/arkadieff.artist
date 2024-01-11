@@ -462,6 +462,12 @@ audio:not([controls]) {
   display: initial !important;
 }
 
+audio {
+  width: 30vw;
+  height: 5vw;
+  background-color: #ff0002;
+}
+
 
 /*INTERACTIVE CURSOR*/
 body {
