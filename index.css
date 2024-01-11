@@ -431,9 +431,8 @@ h1 {
   transition: filter 1s ease-in-out;
 }
 
-
 .on-scroll:not(.show):not(:hover) {
-  transition-delay: 2s; /* Verzögerung beim Wiederherstellen des Blur-Effekts */
+  transition-delay: 1s; /* Verzögerung beim Wiederherstellen des Blur-Effekts */
 }
 
 /*INTERACTIVE CURSOR*/
