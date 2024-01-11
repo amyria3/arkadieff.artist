@@ -418,6 +418,12 @@ h1 {
   margin-bottom: 0.6rem;
 }
 
+#Programmieren {
+  max-height: 20vw;
+  height: 20vw;
+  margin-bottom: 10vw;
+}
+
 /*BLUR IN EFFECT*/
 .on-scroll {
   opacity: 0.5;
@@ -501,6 +507,12 @@ a:visited {
   .on-scroll {
     opacity: 0.8;
     filter: blur(2px);
+  }
+
+  #Programmieren {
+    height: 20vw;
+    max-height: 20vw;
+    margin-bottom: 10vw;
   }
 }
 
