@@ -407,19 +407,19 @@ h1 {
   opacity: 0.5;
   filter: blur(5px);
   transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
-  transition-delay: 1s; /* Standard-Verzögerung für Elemente ohne .show oder :hover */
+  transition-delay: 0s; /* Standard-Verzögerung für Elemente ohne .show oder :hover */
 }
 
 .on-scroll.show,
 .on-scroll:hover {
   opacity: 1;
   filter: blur(0px); /* Kein Blur-Effekt */
-  transition: filter 0s ease-in-out, opacity 0s ease-in-out; /* Sofortige Reaktion weg vom Blur */
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Sofortige Reaktion weg vom Blur */
   transition-delay: 0s; /* Keine zusätzliche Verzögerung für .show oder :hover */
 }
 
 .on-scroll:not(.show):not(:hover) {
-  transition-delay: 1s; /* Verzögerung beim Wiederherstellen des Blur-Effekts */
+  transition-delay: 2s; /* Verzögerung beim Wiederherstellen des Blur-Effekts */
 }
 
 /*INTERACTIVE CURSOR*/
