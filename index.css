@@ -390,12 +390,12 @@ h1 {
   height: 200vh;
   max-height: 196vw;
   padding: 4vw;
-  margin-bottom: 6vw;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: start;
   padding-top: 30vw;
+  margin-bottom: 0;
 }
 
 .discipline h3 {
@@ -419,9 +419,8 @@ h1 {
 }
 
 #Programmieren {
-  max-height: 20vw;
-  height: 20vw;
-  margin-bottom: 10vw;
+  height: 100vh;
+  max-height: 100vw;
 }
 
 /*BLUR IN EFFECT*/
@@ -508,11 +507,9 @@ a:visited {
     opacity: 0.8;
     filter: blur(2px);
   }
-
   #Programmieren {
-    height: 20vw;
-    max-height: 20vw;
-    margin-bottom: 10vw;
+    height: 100vh;
+    max-height: 100vw;
   }
 }
 
