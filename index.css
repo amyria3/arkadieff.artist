@@ -462,7 +462,7 @@ audio:not([controls]) {
   display: initial !important;
 }
 
-audio {
+#audioPlayer {
   width: 30vw;
   height: 5vw;
   background-color: #ff0002;
