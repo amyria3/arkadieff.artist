@@ -1,6 +1,3 @@
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-
 // Funktion isVisible
 isVisible = function (el, wrapper) {
   var elRect = el.getBoundingClientRect();
@@ -10,11 +7,13 @@ isVisible = function (el, wrapper) {
     elRect.top >= wrapperRect.top && elRect.bottom <= wrapperRect.bottom;
 
   return res;
-}
+};
 
 // Selektiere #intersection-wrapper
 const intersectionWrapper = document.getElementById("intersection-wrapper");
-const biggerIntersectionWrapper = document.getElementById("bigger-intersection-wrapper")
+const biggerIntersectionWrapper = document.getElementById(
+  "bigger-intersection-wrapper"
+);
 
 // Selektiere alle Elemente mit der Klasse .on-scroll
 const onScrollElements = document.querySelectorAll(".on-scroll");
@@ -22,57 +21,50 @@ const onScrollElements = document.querySelectorAll(".on-scroll");
 // Funktion zur Protokollierung der Informationen
 function logVisibilityInfo(element) {
   console.log(
-    `${element.innerHTML} | isVisible: ${isVisible(element, intersectionWrapper)} | Wrapper top: ${intersectionWrapper.getBoundingClientRect().top}`
+    `${element.innerHTML} | isVisible: ${isVisible(
+      element,
+      intersectionWrapper
+    )} | Wrapper top: ${intersectionWrapper.getBoundingClientRect().top}`
   );
 }
 
 // Funktion zum Überprüfen der Sichtbarkeit und Protokollierung
 function updateVisibilityAndLog(element) {
   if (isVisible(element, intersectionWrapper)) {
-    !element.classList.contains("show")&&
-    element.classList.add("show");
+    !element.classList.contains("show") && element.classList.add("show");
   } else {
-    element.classList.contains("show")&&
-    element.classList.remove("show");
+    element.classList.contains("show") && element.classList.remove("show");
   }
 }
 
 // Funktion zum Überprüfen der Sichtbarkeit und Protokollierung
 function blur(element) {
   if (isVisible(element, biggerIntersectionWrapper)) {
-    !element.classList.contains("more-blur")&&
-    element.classList.add("more-blur");
+    !element.classList.contains("more-blur") &&
+      element.classList.add("more-blur");
   } else {
-    element.classList.contains("more-blur")&&
-    element.classList.remove("more-blur");
+    element.classList.contains("more-blur") &&
+      element.classList.remove("more-blur");
   }
 }
 
 // Initialisierung - Protokolliere die Informationen zu allen sichtbaren Elementen im Viewport
 onScrollElements.forEach((element) => {
-  blur(element)
+  blur(element);
   updateVisibilityAndLog(element);
 });
 
 // Event-Listener für Scroll-Änderungen
-
-if (!isMobile){
-  window.addEventListener("scroll", () => {
-    // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
-    onScrollElements.forEach((element) => {
-      updateVisibilityAndLog(element);
-    });
-  });
-
-  window.addEventListener("wheel", (event) => {
-    // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
-    onScrollElements.forEach((element) => {
-      updateVisibilityAndLog(element);
-    });
-  });
-}else{
+window.addEventListener("scroll", () => {
+  // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
   onScrollElements.forEach((element) => {
-    element.classList.remove("more-blur");
-    element.classList.add("show")
+    updateVisibilityAndLog(element);
   });
-}
+});
+
+window.addEventListener("wheel", (event) => {
+  // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
+  onScrollElements.forEach((element) => {
+    updateVisibilityAndLog(element);
+  });
+});

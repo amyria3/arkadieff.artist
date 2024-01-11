@@ -395,7 +395,7 @@ h1 {
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  padding-top: 30vh;
+  padding-top: 30vw;
 }
 
 .discipline h3 {
@@ -465,7 +465,43 @@ a:visited {
     position: absolute;
     top: 100vw;
   }
+}
 
+@media only screen and (max-width: 650px) {
+  #artist,
+  #grey-sky-background-frame,
+  #grey-sky-background {
+    width: 100vw;
+    height: 100vh;
+    max-height: 200vw;
+  }
+  #artist-hi {
+    height: 100vw;
+  }
+  .discipline {
+    min-height: 100vh;
+    height: auto;
+  }
+  #intersection-wrapper {
+    top: 10%;
+    bottom: 10%;
+    height: 80%;
+  }
+  #bigger-intersection-wrapper {
+    top: 5%;
+    bottom: 5%;
+    height: 90%;
+  }
+  .discipline p,
+  .discipline-content {
+    font-size: 2rem;
+    line-height: 2rem;
+    max-width: 76vw;
+  }
+  .on-scroll {
+    opacity: 0.8;
+    filter: blur(2px);
+  }
 }
 
 /* PERFORMANCE */
