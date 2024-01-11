@@ -7,8 +7,9 @@
       <link rel="stylesheet" href="index.css"></link>
       <script src="script.js" defer></script>
       <script src="menu.js" defer></script>
-      <script src="audioPlayer.js" defer></script>
-
+      <script src="onScroll.js" defer></script>
+      <!-- ScrollMagic Library -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 
     </head>
 
@@ -40,6 +41,7 @@
       <section id="artist" class="full-width bg-white black">
 
         <div id="grey-sky-background-frame" class="bg-transparent">
+          <div id="intersection-wrapper"></div>
           <div id="grey-sky-background">
             <img src="Illustrations/sky-grey.png" alt="Sky Illustration" id="grey-sky-background-img">
           </div>
@@ -56,22 +58,20 @@
         <div id="artist-content" class="transition">
           <div id="wrapper">
             <div id="artist-hi">
-              <p>Hi! Maria Arkadieff ist Komponistin <br> (Ich) mache Musik, publiziere, schreibe Gedichte und manchmal mache ich Kunst. Mein Brotjob ist Programmieren.
-              </p>
+              <p>Hi! Maria Arkadieff ist Komponistin <br> (Ich) mache Musik, publiziere, schreibe Gedichte und manchmal mache ich Kunst. Mein Brotjob ist Programmieren.</p>
             </div>
 
             <div class="discipline" id="Musik">
-              <h3>Musik und Komposition</h3>
+              <h3 class="on-scroll">Musik und Komposition</h3>
               <div class="discipline-content">
-                <p>
-                  Meine Großmutter liebte Oper und meine Mutter singt gern Schubert und diverse Arien. Mein Ziehvater war klassischer Organist. In unserer Wohnung in St. Petersburg gaben wir Orgelkonzerte. Nach seinem Tod 2010 habe ich angefangen, zu komponieren. Am Klavier fühle ich mich ihm verbunden.
-                </p>
-                <p>Seit 2014 mache ich DAW-Musik. Hier ein Beispiel: <a href="https://on.soundcloud.com/Jpqh3">Boloto auf Soundcloud</a>
-                </p>
-                <p>
-                  2020 habe ich eine Demoaufnahme eines meiner Stücke gemacht: <br> das Meer.
-                </p>
-                <audio id="audioPlayer"" controls controlsList="nodownload">
+                <span class="on-scroll">Meine Großmutter liebte Oper und meine Mutter singt gern Schubert und diverse Arien.</span>
+                <span class="on-scroll">Mein Ziehvater war klassischer Organist.</span>
+                <span class="on-scroll">In unserer Wohnung in St. Petersburg gaben wir Orgelkonzerte.</span>
+                <span class="on-scroll">Nach seinem Tod 2010 habe ich angefangen, zu komponieren. </span>
+                <span class="on-scroll">Am Klavier fühle ich mich ihm verbunden.</span>
+                <span class="on-scroll">Seit 2014 mache ich DAW-Musik. Hier ein Beispiel: <a href="https://on.soundcloud.com/Jpqh3">Boloto auf Soundcloud</a></span>
+                <span class="on-scroll">2020 habe ich eine Demoaufnahme eines meiner Stücke gemacht: <br> das Meer.</span>
+                <br><audio id="audioPlayer" class="on-scroll" controlsList="nodownload">
                   <source src="Music/4168.2 Splett 210531 Maria Arkadieff Edit2.wav" type="audio/wav">
                   Your browser does not support the audio element.
                 </audio>
@@ -79,34 +79,49 @@
             </div>
 
             <div class="discipline" id="Publizistik">
-              <h3>Publizistik</h3>
+              <h3 class="on-scroll">Publizistik</h3>
               <div class="discipline-content">
-                <p>Ich schreibe seit 2010 über Politik. Durch die Mehrstaatlichkeit hatte ich lange immer eine leicht andere Perspektive. Immer wieder in den letzten Jahren habe ich mich mit der Diktatur in Russland auseinandergesetzt. zum Beispiel  <a href="https://daria-schweigolz.medium.com/wieso-russland-nicht-aufh%C3%B6ren-wird-krieg-zu-f%C3%BChren-e25b8b18f745" rel="nofollow" target="_blank">hier</a>.</p>
-                <br> Seit Ende 2023 schreibe ich einen Blog bei der TAZ. Er heißt:
-                <a href="https://blogs.taz.de/seelegegenwand/" rel="nofollow" target="_blank">Seele gegen Wand</a>
-                <p>Im Studium war ich politisch aktiv. 2022 habe ich </p>
+                <span class="on-scroll">Ich schreibe seit 2010 über Politik.</span>
+                <span class="on-scroll">Durch die Mehrstaatlichkeit hatte ich lange immer eine leicht andere Perspektive.</span>
+                <span class="on-scroll">Immer wieder in den letzten Jahren habe ich mich mit der Diktatur in Russland auseinandergesetzt, </span><span class="on-scroll">zum Beispiel <a href="https://daria-schweigolz.medium.com/wieso-russland-nicht-aufh%C3%B6ren-wird-krieg-zu-f%C3%BChren-e25b8b18f745" rel="nofollow" target="_blank">hier</a>.</span>
+                <span class="on-scroll">Seit Ende 2023 schreibe ich einen Blog bei der TAZ. Er heißt: <a class="on-scroll" href="https://blogs.taz.de/seelegegenwand/" rel="nofollow" target="_blank">Seele gegen Wand</a></span>
               </div>
             </div>
 
             <div class="discipline" id="Lyrik">
-              <h3>Lyrik</h3>
+              <h3 class="on-scroll">Lyrik</h3>
               <div class="discipline-content">
-              <p>Zwischen 2010 und 2016 haben ich Philosophie studiert. Sie hilft, Erfahrungen zu strukturieren und die Welt zu verstehen. Aber Lyrik ist für mich neben Musik der Weg, mit den existenziellen Konflikten zurecht zu kommen. Gesellschaften sind vielen seit Jahrhunderten mit Kultur, mit Erwartungen überladen. Bindungen haben an Selbstverständlichkeit verloren. Verluste tun weh.</p>
-              <p>Ab und zu mache ich Lesungen in Leipzig.</p></div>
+                <span class="on-scroll">Zwischen 2010 und 2016 haben ich Philosophie studiert.</span>
+                <span class="on-scroll">Sie hilft, Erfahrungen zu strukturieren und die Welt zu verstehen.</span>
+                <span class="on-scroll">Aber Lyrik ist für mich neben Musik der Weg, mit den existenziellen Konflikten zurecht zu kommen.</span>
+                <span class="on-scroll">Gesellschaften sind vielen seit Jahrhunderten mit Kultur, mit Erwartungen überladen.</span>
+                <span class="on-scroll">Bindungen haben an Selbstverständlichkeit verloren. Verluste tun weh.</span>
+                <span class="on-scroll">Ab und zu mache ich Lesungen in Leipzig.</span>
+              </div>
             </div>
 
             <div class="discipline" id="Kunst">
-              <h3>Kunst</h3>
+              <h3 class="on-scroll">Kunst</h3>
               <div class="discipline-content">
-                <p>Mit meinem Großvater Georgi Piontek und meiner Mutter habe ich als Kind gemalt. Er war ein Architekt, sein Herzensprojekt war ein Freiluftmuseum, das alle indigenen Völker Russlands bzw. der Sowjeunion zelebrieren sollte. Das Projekt konnte nicht realisiert werden.
-                  <br>Zur Zeit male ich fast nicht mehr, aber <a href="https://www.saatchiart.com/arkadieff">hier</a> sind ein Paar Aquarelle von mir. Und <a href="https://www.youtube.com/@mariaarkadieff7342">hier</a> einige experimentelle Videos.</p>
+                <span class="on-scroll">Mit meinem Großvater Georgi Piontek und meiner Mutter habe ich als Kind gemalt.</span>
+                <span class="on-scroll">Er war ein Architekt, sein Herzensprojekt war ein Freiluftmuseum,</span>
+                <span class="on-scroll">das alle indigenen Völker Russlands bzw. der Sowjeunion zelebrieren sollte.</span>
+                <span class="on-scroll">Das Projekt konnte nicht realisiert werden.</span>
+                <span class="on-scroll">Zur Zeit male ich fast nicht mehr, aber <a href="https://www.saatchiart.com/arkadieff">hier</a> sind ein Paar Aquarelle von mir. </span>
+                <span class="on-scroll">Und <a href="https://www.youtube.com/@mariaarkadieff7342">hier</a> einige experimentelle Videos.</span>
               </div>
             </div>
 
             <div class="discipline" id="Programmieren">
-              <h3>Programmieren</h3>
-              <div class="discipline-content">2020 habe ich Angefangen, zu programmieren. Ich habe UX/UI und React gelernt. Zur Zeit arbeite ich bei einem fair trade Unternehmen.</div>
+              <h3 class="on-scroll">Programmieren</h3>
+              <div class="discipline-content">
+                <span class="on-scroll">2020 habe ich Angefangen, zu programmieren.</span>
+                <span class="on-scroll">Ich habe UX/UI und React gelernt.</span>
+                <span class="on-scroll">Zur Zeit arbeite ich bei einem fair trade Unternehmen.</span>
+              </div>
             </div>
+
+
 
           </div>
         </div>

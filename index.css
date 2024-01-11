@@ -365,6 +365,14 @@ h1 {
 }
 
 /* Disciplines Wrapper styles */
+#intersection-wrapper {
+  position: absolute;
+  top: 20%;
+  width: 100vw;
+  height: 50%;
+  border-style: solid;
+}
+
 #disciplines-wrapper {
   display: flex;
   flex-direction: column;
@@ -395,10 +403,28 @@ h1 {
   max-width: 60vw;
 }
 
-/*ADD TO ALL ELEMENTS WHERE YOU ADJUUST POSITION*/
-.transition {
-  transition: bottom 0.2s ease-in-out, top 0.2s ease-in-out,
-    transform 0.2s ease-in-out;
+/*MOVE IN FROM LEFT EFFECT*/
+.on-scroll {
+  opacity: 0.5;
+  filter: blur(5);
+  transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.on-scroll.hidden {
+  opacity: 0.5;
+  filter: blur(10px);
+}
+
+.on-scroll.show {
+  opacity: 1;
+  filter: blur(0px); /* Kein Blur-Effekt */
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.on-scroll:hover {
+  opacity: 1;
+  filter: blur(0px); /* Kein Blur-Effekt */
+  transition: filter 2s ease-in-out, opacity 1s ease-in-out;
 }
 
 /*INTERACTIVE CURSOR*/
