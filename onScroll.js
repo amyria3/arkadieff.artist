@@ -40,11 +40,11 @@ function updateVisibilityAndLog(element) {
 // Funktion zum Überprüfen der Sichtbarkeit und Protokollierung
 function blur(element) {
   if (isVisible(element, biggerIntersectionWrapper)) {
-    !element.classList.contains("more-blur") &&
-      element.classList.add("more-blur");
-  } else {
     element.classList.contains("more-blur") &&
       element.classList.remove("more-blur");
+  } else {
+    !element.classList.contains("more-blur") &&
+      element.classList.add("more-blur");
   }
 }
 
