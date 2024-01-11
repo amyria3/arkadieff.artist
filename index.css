@@ -425,7 +425,7 @@ h1 {
   transition-delay: 0s; /* Keine zusätzliche Verzögerung für .show oder :hover */
 }
 
-.on-scroll.blur:not(.show) {
+.on-scroll.more-blur:not(.show) {
   filter: blur(10px);
   transition: filter 1s ease-in-out;
 }
