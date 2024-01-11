@@ -368,15 +368,17 @@ h1 {
 #intersection-wrapper {
   position: absolute;
   top: 20%;
+  height: 60%;
   width: 100vw;
-  height: 30%;
+  bottom: 20%;
 }
 
 #bigger-intersection-wrapper {
   position: absolute;
-  top: 10%;
+  top: 15%;
   width: 100vw;
-  height: 60%;
+  height: 70%;
+  bottom: 15%;
 }
 
 #disciplines-wrapper {
