@@ -26,8 +26,10 @@ function logVisibilityInfo(element) {
 function checkVisibilityAndLog(element) {
   if (isVisible(element, intersectionWrapper)) {
     logVisibilityInfo(element);
+    !element.classList.contains("show")&&
     element.classList.add("show");
   } else {
+    element.classList.contains("show")&&
     element.classList.remove("show");
   }
 }

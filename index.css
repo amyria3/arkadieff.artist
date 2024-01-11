@@ -406,14 +406,14 @@ h1 {
 /*MOVE IN FROM LEFT EFFECT*/
 .on-scroll {
   opacity: 0.5;
-  filter: blur(5);
-  transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+  filter: blur(5px);
+  transition: opacity 1s ease-in-out, filter 1s ease-in-out;
 }
 
-.on-scroll.hidden {
+/* .on-scroll.hidden {
   opacity: 0.5;
   filter: blur(10px);
-}
+} */
 
 .on-scroll.show {
   opacity: 1;
