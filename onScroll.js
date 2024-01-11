@@ -1,3 +1,6 @@
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+
 // Funktion isVisible
 isVisible = function (el, wrapper) {
   var elRect = el.getBoundingClientRect();
@@ -45,7 +48,6 @@ function blur(element) {
   }
 }
 
-
 // Initialisierung - Protokolliere die Informationen zu allen sichtbaren Elementen im Viewport
 onScrollElements.forEach((element) => {
   blur(element)
@@ -53,16 +55,24 @@ onScrollElements.forEach((element) => {
 });
 
 // Event-Listener für Scroll-Änderungen
-window.addEventListener("scroll", () => {
-  // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
-  onScrollElements.forEach((element) => {
-    updateVisibilityAndLog(element);
-  });
-});
 
-window.addEventListener("wheel", (event) => {
-  // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
-  onScrollElements.forEach((element) => {
-    updateVisibilityAndLog(element);
+if (!isMobile){
+  window.addEventListener("scroll", () => {
+    // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
+    onScrollElements.forEach((element) => {
+      updateVisibilityAndLog(element);
+    });
   });
-});
+
+  window.addEventListener("wheel", (event) => {
+    // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
+    onScrollElements.forEach((element) => {
+      updateVisibilityAndLog(element);
+    });
+  });
+}else{
+  onScrollElements.forEach((element) => {
+    element.classList.remove("more-blur");
+    element.classList.add("show")
+  });
+}
