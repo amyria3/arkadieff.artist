@@ -1,0 +1,89 @@
+/*CONTACT FORMULAR*/
+.contact-form {
+    position: relative;
+    width: 100vw;
+    min-height: 40vw;
+    box-sizing: border-box;
+    z-index: 100;
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    letter-spacing: -0.02rem;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 20vw;
+    transition: right 0.5s ease-in-out;
+  }
+
+  form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  input, label, textarea {
+    width: 100%;
+    height: 2.8rem;
+    font-family: 'Biotif';
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    padding: 0.6rem;
+  }
+
+  textarea {
+    height: 16rem;
+    font-family: 'Biotif';
+    font-weight: 100;
+    padding-top: 1rem;
+  }
+
+  label {
+    font-weight: 200;
+    margin-left: -0.75rem;
+    letter-spacing: -0.08rem;
+  }
+
+  input {
+    font-weight: 100;
+    letter-spacing: -0.04;
+  }
+
+  input {
+    background-color: #6c696900;
+    border-style: solid;
+    border-color: #f5f2f2;
+  }
+
+  input:focus-within {
+    background-color: #f5f2f2;
+    outline: 0.2rem solid #ff0002;
+  }
+
+  textarea:focus, textarea:focus-within {
+    background-color: #f5f2f2;
+    outline: 0.2rem solid #ff0002;
+  }
+
+  #submit {
+    margin-top: 2.5rem;
+    text-transform: uppercase;
+    color:#f5f2f2;
+    min-width: 60vw;
+
+    max-width: 80vw;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    letter-spacing: -0.2rem;
+    padding: 0.8rem;
+    font-weight: 500;
+    height: auto;
+  }
+
+  #submit:focus {
+    background-color: #f5f2f2;
+    color: #191919;
+  }
+
+  input:not(:focus):hover {
+    cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
+  }
