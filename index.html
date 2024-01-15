@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="bg-white" lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Arkadieff, artist</title>
+    <link rel="stylesheet" href="index.css"></link>
+    <script src="script.js" defer></script>
+    <script src="menu.js" defer></script>
+    <script src="onScroll.js" defer></script>
+    <script scr="getForm.js"></script>
+
+  </head>
+
+  <script>
+    function handleKeyPress(event) {
+      if (event.key === 'Enter' || event.keyCode === 13) {
+        event.preventDefault(); // Prevent the default behavior of the Enter key
+
+        // Get the current tabindex value
+        let currentTabIndex = parseInt(event.currentTarget.tabIndex);
+
+        // Calculate the next tabindex value based on the described logic
+        let nextTabIndex = currentTabIndex * 10 + 1;
+
+        // Find the next element with tabindex
+        let nextElement = document.querySelector('[tabindex="' + nextTabIndex + '"]');
+
+        // If the next element is found, focus it; otherwise, go to the next tabindex
+        if (nextElement) {
+          nextElement.focus();
+        } else {
+          document.querySelector('[tabindex="' + (currentTabIndex + 1) + '"]').focus();
+        }
+      }
+    }
+  </script>
+
+  <body class="bg-transparent black">
+
+    <div id="splash-wrapper">
+
+      <section id="splash" class="bg-white full-width">
+        <!-- <h1>Maria Arkadieff</h1> -->
+        <div id="portrait-wrapper"><img src="Illustrations/portrait_arkadieff.png" alt="Portrait einer junge Frau mit sehr kurzen Haaren. Sie steht an einer Mauer mit geschlossenen Augen." tabindex="1"></div>
+      </section>
+
+      <section id="slogan" class="bg-transparent full-width" tabindex="-1">
+        <div id="slogan-wrapper" class="bg-transparent" tabindex="-1" lang="en">
+          <p class="slogan red">GIVE</p>
+          <p class="slogan">EVERY</p>
+          <p class="slogan">THING</p>
+          <p class="slogan appear-on-load">FOREVER</p>
+        </div>
+      </section>
+    </div>
+
+    <section id="video-background-wrapper" class="full-width transition">
+      <video autoplay muted loop id="backgroundVideo" tabindex="-1">
+        <source src="Illustrations/meer.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section id="artist" class="full-width bg-white black">
+
+      <div id="grey-sky-background-frame" class="bg-transparent">
+        <div id="intersection-wrapper"></div>
+        <div id="bigger-intersection-wrapper"></div>
+        <div id="grey-sky-background">
+          <img src="Illustrations/sky-grey.png" alt="Sky Illustration" id="grey-sky-background-img">
+        </div>
+      </div>
+
+      <div class="menu-bar" id="menuBar" tabindex="-1" aria-label="Navigation">
+        <div class="menu-item" data-section-id="Musik" data-anchor="Musik" aria-label="Springe zu Musik"></div>
+        <div class="menu-item" data-section-id="Publizistik" data-anchor="Publizistik" aria-label="Springe zu Publizistik"></div>
+        <div class="menu-item" data-section-id="Lyrik" data-anchor="Lyrik" aria-label="Springe zu Lyrik"></div>
+        <div class="menu-item" data-section-id="Kunst" data-anchor="Kunst" aria-label="Springe zu Kunst"></div>
+        <div class="menu-item" data-section-id="Programmieren" data-anchor="Programmieren" aria-label="Springe zu Programmieren"></div>
+      </div>
+
+      <div id="artist-content" class="transition">
+        <div id="wrapper">
+          <div id="artist-hi">
+            <p tabindex="3">Hi! Maria Arkadieff ist Komponistin <br> (Ich) mache Musik, publiziere, schreibe Gedichte und manchmal mache ich Kunst. Mein Brotjob ist Programmieren.</p>
+          </div>
+
+          <div class="discipline" id="Musik" tabindex="4">
+            <h3 class="on-scroll some-blur more-blur">Musik und Komposition</h3>
+            <div class="discipline-content">
+              <span class="on-scroll some-blur more-blur">Meine Großmutter liebte Oper und meine Mutter singt gern Schubert und diverse Arien.</span>
+              <span class="on-scroll some-blur more-blur">Mein Ziehvater war klassischer Organist.</span>
+              <span class="on-scroll some-blur more-blur">In unserer Wohnung in St. Petersburg gaben wir Orgelkonzerte.</span>
+              <span class="on-scroll some-blur more-blur">Nach seinem Tod 2010 habe ich angefangen, zu komponieren. </span>
+              <span class="on-scroll some-blur more-blur">Am Klavier fühle ich mich ihm verbunden.</span>
+              <span class="on-scroll some-blur more-blur">Seit 2014 mache ich DAW-Musik. Hier ein Beispiel: <a href="https://on.soundcloud.com/Jpqh3">Boloto auf Soundcloud</a></span>
+              <br>
+              <span class="on-scroll some-blur more-blur">2020 habe ich eine Demoaufnahme eines meiner Stücke gemacht: <br> das Meer.</span>
+              <br>
+
+              <div id="audioPlayer" class="audio-player">
+                <audio controls controlsList="nodownload">
+                  <source src="Music/4168.2 Splett 210531 Maria Arkadieff Edit2.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+                </audio>
+            </div>
+            </div>
+          </div>
+
+          <div class="discipline" id="Publizistik" tabindex="5">
+            <h3 class="on-scroll some-blur more-blur" tabindex="51">Publizistik</h3>
+            <div class="discipline-content" tabindex="52">
+              <span class="on-scroll some-blur more-blur">Ich schreibe seit 2010 über Politik.</span>
+              <span class="on-scroll some-blur more-blur">Durch die Mehrstaatlichkeit hatte ich lange immer eine leicht andere Perspektive.</span>
+              <span class="on-scroll some-blur more-blur" tabindex="53">Immer wieder in den letzten Jahren habe ich mich mit der Diktatur in Russland auseinandergesetzt,</span><span class="on-scroll some-blur more-blur" tabindex="54">zum Beispiel <a href="https://daria-schweigolz.medium.com/wieso-russland-nicht-aufh%C3%B6ren-wird-krieg-zu-f%C3%BChren-e25b8b18f745" rel="nofollow" target="_blank" tabindex="55">hier</a>.</span>
+              <span class="on-scroll some-blur more-blur" tabindex="56">Seit Ende 2023 schreibe ich einen Blog bei der TAZ. Er heißt: <a class="on-scroll some-blur more-blur" href="https://blogs.taz.de/seelegegenwand/" rel="nofollow" target="_blank" tabindex="57">Seele gegen Wand</a></span>
+            </div>
+          </div>
+
+          <div class="discipline" id="Lyrik" tabindex="6">
+            <h3 class="on-scroll some-blur more-blur" tabindex="61">Lyrik</h3>
+            <div class="discipline-content" tabindex="62">
+              <span class="on-scroll some-blur more-blur">Zwischen 2010 und 2016 haben ich Philosophie studiert.</span>
+              <span class="on-scroll some-blur more-blur">Sie hilft, Erfahrungen zu strukturieren und die Welt zu verstehen.</span>
+              <span class="on-scroll some-blur more-blur">Aber Lyrik ist für einer der Wege, mit den Konflikten zurecht zu kommen, die das Existieren mit sich bringt.</span>
+              <span class="on-scroll some-blur more-blur">Gesellschaften sind seit Jahrhunderten mit Kultur und Erwartungen überladen.</span>
+              <span class="on-scroll some-blur more-blur">Bindungen haben an Selbstverständlichkeit verloren. Verluste tun weh.</span>
+              <span class="on-scroll some-blur more-blur">Ab und zu mache ich Lesungen in Leipzig.</span>
+            </div>
+          </div>
+
+          <div class="discipline" id="Kunst" tabindex="7">
+            <h3 class="on-scroll some-blur more-blur" tabindex="71">Kunst</h3>
+            <div class="discipline-content" tabindex="72">
+              <span class="on-scroll some-blur more-blur">Mit meinem Großvater Georgi Piontek und meiner Mutter habe ich als Kind gemalt.</span>
+              <span class="on-scroll some-blur more-blur">Er war ein Architekt, sein Herzensprojekt war ein Freiluftmuseum,</span>
+              <span class="on-scroll some-blur more-blur">das alle indigenen Völker Russlands bzw. der Sowjeunion zelebrieren sollte.</span>
+              <span class="on-scroll some-blur more-blur">Das Projekt konnte nicht realisiert werden.</span>
+              <span class="on-scroll some-blur more-blur"><span tabindex="73">Zur Zeit male ich fast nicht mehr, aber</span> <a href="https://www.saatchiart.com/arkadieff" tabindex="74">hier</a> <span tabindex="75">sind ein Paar Aquarelle von mir. </span></span>
+              <span class="on-scroll some-blur more-blur">Und <a href="https://www.youtube.com/@mariaarkadieff7342" tabindex="76">hier</a> einige experimentelle Videos.</span>
+            </div>
+          </div>
+
+          <div class="discipline" id="Programmieren" tabindex="8">
+            <h3 class="on-scroll some-blur more-blur" tabindex="81">Programmieren</h3>
+            <div class="discipline-content" tabindex="82">
+              <span class="on-scroll some-blur more-blur">2020 habe ich Angefangen, zu programmieren.</span>
+              <span class="on-scroll some-blur more-blur">Ich habe UX/UI und React gelernt.</span>
+              <span class="on-scroll some-blur more-blur">Zur Zeit arbeite ich bei einem fair trade Unternehmen.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <div id="contactForm" class="contact-form bg-grey white" style="display: none;">
+      <form id="myForm">
+        <!-- Hier füge die gewünschten Formularelemente ein -->
+        <span><label for="name">Name:</label>
+        <input type="text" id="name" name="name"></span>
+
+        <span><label for="email">Email:</label>
+        <input type="email" id="email" name="email"></span>
+
+        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Drop me a line..."></textarea>
+
+        <input id="submit" type="submit" value="Submit">
+      </form>
+    </div>
+
+  </body>
+</html>
