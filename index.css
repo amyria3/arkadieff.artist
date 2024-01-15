@@ -522,7 +522,6 @@ div:focus *.more-blur,
 }
 
 /*audioPlayer MEER*/
-
 #audioPlayer {
   margin-top: 2rem;
 }
@@ -535,23 +534,46 @@ audio, audio::-webkit-media-controls-panel {
   width: 100%;
 }
 
-#audioPlayer ::-webkit-media-controls-play-button,
-audio:focus::-webkit-media-controls-play-button,
-audio:focus::-webkit-media-controls-pause-button,
-audio:focus::-webkit-media-controls-seek-back-button,
-audio:focus::-moz-media-controls-panel,
-audio:focus::media-controls-panel {
-  border-radius: 0 !important;
-  outline: 0.5rem solid #ff0002;
+/* Fortschrittsbalken */
+#audioPlayer audio::-webkit-media-controls-timeline {
+  background: #0084ff; /* Hintergrundfarbe des Fortschrittsbalkens */
 }
 
-#audioPlayer ::-webkit-media-controls-play-button,
-#audioPlayer audio::-webkit-media-controls-pause-button,
-#audioPlayer audio:focus::-webkit-media-controls-play-button,
-#audioPlayer audio:focus::-webkit-media-controls-pause-button,
-#audioPlayer audio:focus::-webkit-media-controls-seek-back-button {
-  zoom: 1.5;
+/* Lautstärkeregler */
+#audioPlayer audio::-webkit-media-controls-volume-slider {
+  background: #00ff08; /* Hintergrundfarbe des Lautstärkereglers */
 }
+
+/* Allgemeine Anpassungen für alle Buttons im Audio-Player */
+#audioPlayer audio::-webkit-media-controls-play-button,
+#audioPlayer audio::-webkit-media-controls-pause-button,
+#audioPlayer audio::-webkit-media-controls-mute-button,
+#audioPlayer audio::-webkit-media-controls-volume-up-button,
+#audioPlayer audio::-webkit-media-controls-volume-down-button {
+  background: #555; /* Hintergrundfarbe der Buttons */
+  color: #fff; /* Textfarbe der Buttons */
+  border: none; /* Kein Rand für die Buttons */
+  border-radius: 5px; /* Abgerundete Ecken für die Buttons */
+  margin: 0 5px; /* Abstand zwischen den Buttons */
+  padding: 5px; /* Innenabstand der Buttons */
+  cursor: pointer; /* Zeige den Cursor als Zeiger an */
+}
+
+/* Fokusstil für alle Buttons im Audio-Player */
+#audioPlayer audio::-webkit-media-controls-play-button:focus,
+#audioPlayer audio::-webkit-media-controls-pause-button:focus,
+#audioPlayer audio::-webkit-media-controls-mute-button:focus,
+#audioPlayer audio::-webkit-media-controls-volume-up-button:focus,
+#audioPlayer audio::-webkit-media-controls-volume-down-button:focus {
+  outline: 0.1rem solid #191919; /* Fokus-Randfarbe für die Buttons */
+}
+
+/* Fokusstil für den Fortschrittsbalken und Lautstärkeregler */
+#audioPlayer audio::-webkit-media-controls-timeline:focus,
+#audioPlayer audio::-webkit-media-controls-volume-slider:focus {
+  outline: 0.1rem solid #ff0002; /* Fokus-Randfarbe für den Fortschrittsbalken und Lautstärkeregler */
+}
+
 
 /*CURSOR*/
 body {
