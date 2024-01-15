@@ -498,9 +498,8 @@ h1 {
 
 .discipline {
   width: calc(96vw - 0.4rem);
-  margin: 0.2rem; /*for outline on focus*/
-  height: 100vh;
   max-height: 196vw;
+  margin: 0.2rem; /*for outline on focus*/
   padding: 4vw;
   display: flex;
   flex-direction: column;
@@ -512,6 +511,7 @@ h1 {
 
 .discipline h3 {
   font-size: 3rem;
+  line-height: 3rem;
 }
 
 .discipline p,
@@ -552,17 +552,21 @@ h1 {
   transition: filter 0.8s ease-in;
 }
 
+.on-scroll:focus,
+.on-scroll.some-blur:focus,
+.on-scroll.more-blur:focus,
+.on-scroll:hover,
 .on-scroll.some-blur:hover,
 .on-scroll.more-blur:hover,
-.on-scroll.some-blur:focus,
-.on-scroll.more-blur:focus
-.on-scroll:focus {
+.on-scroll:hover {
   filter: blur(0px);
+  transition: filter 0.2s ease-out;
+  transition-delay: 0ms;
 }
 
 .some-blur:not(:hover) {
   filter: blur(3px);
-  transition-delay: 0.5s;
+  transition-delay: 0.3s;
 }
 
 .more-blur:not(:hover) {
