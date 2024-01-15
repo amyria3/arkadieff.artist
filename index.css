@@ -173,7 +173,9 @@ div:not(.discipline):focus {
 
 /*LINKS*/
 a, a:visited, a:visited:focus {
-  color: #ff0002;
+  background-color: #ff0002 !important;
+  color: #f5f2f2;
+  outline: none;
 }
 
 a:hover, a:visited:hover {
@@ -190,7 +192,6 @@ a:focus, a::selection:focus {
 span:focus a, span::selection:focus a {
   color: #ff0002 !important;
 }
-
 
 /*FIRST PART*/
 #splash-wrapper {
