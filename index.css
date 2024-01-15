@@ -255,12 +255,12 @@ input {
 
 input:focus-within {
   background-color: #f5f2f2;
-  outline: 0.2rem solid #FF0000;
+  outline: 0.2rem solid #ff0002;
 }
 
 textarea:focus, textarea:focus-within {
   background-color: #f5f2f2;
-  outline: 0.2rem solid #FF0000;
+  outline: 0.2rem solid #ff0002;
 }
 
 #submit {
