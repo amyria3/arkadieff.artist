@@ -32,8 +32,8 @@
       </section>
     </div>
 
-    <section id="video-background-wrapper" class="full-width transition">
-      <video autoplay muted loop id="backgroundVideo" aria-hidden="true">
+    <section id="video-background-wrapper" class="full-width transition" aria-hidden="true">
+      <video autoplay muted loop id="backgroundVideo">
         <source src="Illustrations/meer.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -41,7 +41,7 @@
 
     <section id="artist" class="full-width bg-white black">
 
-      <div id="grey-sky-background-frame" class="bg-transparent">
+      <div id="grey-sky-background-frame" class="bg-transparent" aria-hidden="true">
         <div id="intersection-wrapper"></div>
         <div id="bigger-intersection-wrapper"></div>
         <div id="grey-sky-background">
@@ -49,7 +49,7 @@
         </div>
       </div>
 
-      <div class="menu-bar" id="menuBar" aria-label="Navigation" aria-hidden="true">
+      <div class="menu-bar" id="menuBar" aria-label="Navigation">
         <div class="menu-item" data-section-id="Musik" data-anchor="Musik" aria-label="Springe zu Musik"></div>
         <div class="menu-item" data-section-id="Publizistik" data-anchor="Publizistik" aria-label="Springe zu Publizistik"></div>
         <div class="menu-item" data-section-id="Lyrik" data-anchor="Lyrik" aria-label="Springe zu Lyrik"></div>
@@ -59,22 +59,22 @@
 
       <div id="artist-content" class="transition">
         <div id="wrapper">
-          <div id="artist-hi">
+          <div id="artist-hi" tabindex="1">
             <p>Hi! Maria Arkadieff ist Komponistin <br> (Ich) mache Musik, publiziere, schreibe Gedichte und manchmal mache ich Kunst. Mein Brotjob ist Programmieren.</p>
           </div>
 
           <div class="discipline" id="Musik">
-            <h3 class="on-scroll some-blur more-blur" aria-hidden="true">Musik und Komposition</h3>
-            <div class="discipline-content" aria-hidden="true">
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Meine Großmutter liebte Oper und meine Mutter singt gern Schubert und diverse Arien.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Mein Ziehvater war klassischer Organist.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">In unserer Wohnung in St. Petersburg gaben wir Orgelkonzerte.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Nach seinem Tod 2010 habe ich angefangen, zu komponieren. </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Am Klavier fühle ich mich ihm verbunden.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Seit 2014 mache ich DAW-Musik. Hier ein Beispiel: <a href="https://on.soundcloud.com/Jpqh3" aria-hidden="true">Boloto auf Soundcloud</a></span>
+            <h3 class="on-scroll some-blur more-blur" tabindex="2">Musik und Komposition</h3>
+            <div class="discipline-content">
+              <span class="on-scroll some-blur more-blur" tabindex="3">Meine Großmutter liebte Oper und meine Mutter singt gern Schubert und diverse Arien.  </span>
+              <span class="on-scroll some-blur more-blur" tabindex="4">Mein Ziehvater war klassischer Organist.  </span>
+              <span class="on-scroll some-blur more-blur" tabindex="5">In unserer Wohnung in St. Petersburg gaben wir Orgelkonzerte.  </span>
+              <span class="on-scroll some-blur more-blur" tabindex="6">Nach seinem Tod 2010 habe ich angefangen, zu komponieren. </span>
+              <span class="on-scroll some-blur more-blur" tabindex="7">Am Klavier fühle ich mich ihm verbunden.  </span>
+              <span class="on-scroll some-blur more-blur" tabindex="8">Seit 2014 mache ich DAW-Musik. Hier ein Beispiel: <a href="https://on.soundcloud.com/Jpqh3" tabindex="9">Boloto auf Soundcloud</a></span>
               <br>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">2020 habe ich eine Demoaufnahme eines meiner Stücke gemacht: <br> das Meer.  </span>
-              <div id="audioPlayer" class="audio-player" aria-hidden="true">
+              <span class="on-scroll some-blur more-blur" tabindex="10">2020 habe ich eine Demoaufnahme eines meiner Stücke gemacht: <br> das Meer.  </span>
+              <div id="audioPlayer" class="audio-player">
                 <audio controls controlsList="nodownload">
                   <source src="Music/4168.2 Splett 210531 Maria Arkadieff Edit2.wav" type="audio/wav">
                   Your browser does not support the audio element.
@@ -82,73 +82,74 @@
               </div>
               <br>
               <br>
-              <span class="on-scroll.some-blur.more-blur" aria-hidden="true">2023 durfte ich bei der Produktion der Theater Rampe in München mitwirken.</spann><span class="on-scroll.some-blur.more-blur" aria-hidden="true"></span>Ich habe im Rahmen für die Residenz von Steven Solbrig Musik, Audio und Ton gemacht.</spann>
+              <span class="on-scroll.some-blur.more-blur" tabindex="11">2023 durfte ich bei der Produktion der Theater Rampe in München mitwirken.</spann><span class="on-scroll.some-blur.more-blur" tabindex="12"></span>Ich habe im Rahmen für die Residenz von Steven Solbrig Musik, Audio und Ton gemacht.</spann>
 
             </div>
           </div>
 
           <div class="discipline" id="Publizistik">
-            <h3 class="on-scroll some-blur more-blur" aria-hidden="true">Publizistik</h3>
-            <div class="discipline-content" aria-hidden="true">
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Ich schreibe seit 2010 über Politik.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Durch die Mehrstaatlichkeit hatte ich lange immer eine leicht andere Perspektive.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Immer wieder in den letzten Jahren habe ich mich mit der Diktatur in Russland auseinandergesetzt, </span><span class="on-scroll some-blur more-blur" aria-hidden="true">zum Beispiel <a href="https://daria-schweigolz.medium.com/wieso-russland-nicht-aufh%C3%B6ren-wird-krieg-zu-f%C3%BChren-e25b8b18f745" rel="nofollow" target="_blank" aria-hidden="true">hier</a>.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Seit Ende 2023 schreibe ich einen Blog bei der TAZ. Er heißt: <a class="on-scroll some-blur more-blur" href="https://blogs.taz.de/seelegegenwand/" rel="nofollow" target="_blank" aria-hidden="true">Seele gegen Wand</a></span>
-            </div>
+            <h3 class="on-scroll some-blur more-blur" tabindex="13">Publizistik</h3>
+            <div class="discipline-content">
+              <span class="on-scroll some-blur more-blur" tabindex="14">Ich schreibe seit 2010 über Politik.  </span>
+              <span class="on-scroll some-blur more-blur" tabindex="15">Durch die Mehrstaatlichkeit hatte ich lange immer eine leicht andere Perspektive.  </span>
+              <span class="on-scroll some-blur more-blur" tabindex="16">Immer wieder in den letzten Jahren habe ich mich mit der Diktatur in Russland auseinandergesetzt, </span><span class="on-scroll some-blur more-blur" tabindex="17">zum Beispiel <a href="https://daria-schweigolz.medium.com/wieso-russland-nicht-aufh%C3%B6ren-wird-krieg-zu-f%C3%BChren-e25b8b18f745" rel="nofollow" tabindex="18">hier</a>.  </span>
+              <span class="on-scroll some-blur more-blur" tabindex="19">Seit Ende 2023 schreibe</span>
+              <span class="on-scroll some-blur more-blur" tabindex="20">ich einen Blog bei der TAZ. Er heißt: <a class="on-scroll some-blur more-blur" href="https://blogs.taz.de/seelegegenwand/" rel="nofollow" target="_blank" tabindex="21">Seele gegen Wand</a></span>
           </div>
-
-          <div class="discipline" id="Lyrik">
-            <h3 class="on-scroll some-blur more-blur" aria-hidden="true">Lyrik</h3>
-            <div class="discipline-content" aria-hidden="true">
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Zwischen 2010 und 2016 haben ich Philosophie studiert.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Sie hilft, Erfahrungen zu strukturieren und die Welt zu verstehen.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Aber Lyrik ist für einer der Wege, mit den Konflikten zurecht zu kommen, die das Existieren mit sich bringt.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Gesellschaften sind seit Jahrhunderten mit Kultur und Erwartungen überladen.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Bindungen haben an Selbstverständlichkeit verloren. Verluste tun weh.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Ab und zu mache ich Lesungen in Leipzig.  </span>
-            </div>
-          </div>
-
-          <div class="discipline" id="Kunst">
-            <h3 class="on-scroll some-blur more-blur" aria-hidden="true">Kunst</h3>
-            <div class="discipline-content" aria-hidden="true">
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Mit meinem Großvater Georgi Piontek und meiner Mutter habe ich als Kind gemalt.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Er war ein Architekt, sein Herzensprojekt war ein Freiluftmuseum,</span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">das alle indigenen Völker Russlands bzw. der Sowjeunion zelebrieren sollte.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Das Projekt konnte nicht realisiert werden.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Zur Zeit male ich fast nicht mehr, aber <a href="https://www.saatchiart.com/arkadieff" aria-hidden="true">hier</a> sind ein Paar Aquarelle von mir. </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Und <a href="https://www.youtube.com/@mariaarkadieff7342" aria-hidden="true">hier</a> einige experimentelle Videos.  </span>
-            </div>
-          </div>
-
-          <div class="discipline" id="Programmieren">
-            <h3 class="on-scroll some-blur more-blur" aria-hidden="true">Programmieren</h3>
-            <div class="discipline-content" aria-hidden="true">
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">2020 habe ich Angefangen, zu programmieren.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Ich habe UX/UI und React gelernt.  </span>
-              <span class="on-scroll some-blur more-blur" aria-hidden="true">Zur Zeit arbeite ich bei einem fair trade Unternehmen.  </span>
-            </div>
-          </div>
-
         </div>
+
+        <div class="discipline" id="Lyrik">
+          <h3 class="on-scroll some-blur more-blur" tabindex="22">Lyrik</h3>
+          <div class="discipline-content">
+            <span class="on-scroll some-blur more-blur" tabindex="23">Zwischen 2010 und 2016 haben ich Philosophie studiert.  </span>
+            <span class="on-scroll some-blur more-blur" tabindex="24">Sie hilft, Erfahrungen zu strukturieren und die Welt zu verstehen.  </span>
+            <span class="on-scroll some-blur more-blur" tabindex="25">Aber Lyrik ist für einer der Wege, mit den Konflikten zurecht zu kommen, die das Existieren mit sich bringt.  </span>
+            <span class="on-scroll some-blur more-blur" tabindex="26">Gesellschaften sind seit Jahrhunderten mit Kultur und Erwartungen überladen.  </span>
+            <span class="on-scroll some-blur more-blur" tabindex="27">Bindungen haben an Selbstverständlichkeit verloren. Verluste tun weh.  </span>
+            <span class="on-scroll some-blur more-blur" tabindex="28">Ab und zu mache ich Lesungen in Leipzig.  </span>
+          </div>
+        </div>
+
+        <div class="discipline" id="Kunst">
+          <h3 class="on-scroll some-blur more-blur" tabindex="29">Kunst</h3>
+          <div class="discipline-content">
+            <span class="on-scroll some-blur more-blur" tabindex="30">Mit meinem Großvater Georgi Piontek und meiner Mutter habe ich als Kind gemalt.  </span>
+            <span class="on-scroll some-blur more-blur" tabindex="31">Er war ein Architekt, sein Herzensprojekt war ein Freiluftmuseum,</span>
+            <span class="on-scroll some-blur more-blur" tabindex="32">das alle indigenen Völker Russlands bzw. der Sowjeunion zelebrieren sollte.  </span>
+            <span class="on-scroll some-blur more-blur" tabindex="33">Das Projekt konnte nicht realisiert werden.  </span>
+            <span class="on-scroll some-blur more-blur" tabindex="34">Zur Zeit male ich fast nicht mehr, aber <a href="https://www.saatchiart.com/arkadieff" tabindex="35">hier</a> sind ein Paar Aquarelle von mir. </span>
+            <span class="on-scroll some-blur more-blur" tabindex="36">Und <a href="https://www.youtube.com/@mariaarkadieff7342" tabindex="37">hier</a> einige experimentelle Videos.  </span>
+          </div>
+        </div>
+
+        <div class="discipline" id="Programmieren">
+          <h3 class="on-scroll some-blur more-blur" tabindex="38">Programmieren</h3>
+          <div class="discipline-content">
+            <span class="on-scroll some-blur more-blur" tabindex="39">2020 habe ich Angefangen, zu programmieren.  </span>
+            <span class="on-scroll some-blur more-blur" tabindex="40">Ich habe UX/UI und React gelernt.  </span>
+            <span class="on-scroll some-blur more-blur" tabindex="41">Zur Zeit arbeite ich bei einem fair trade Unternehmen.  </span>
+          </div>
+        </div>
+
       </div>
-
-    </section>
-
-    <div id="contactForm" class="contact-form bg-grey white" style="display: none;">
-      <form id="myForm">
-        <!-- Hier füge die gewünschten Formularelemente ein -->
-        <span><label for="name">Name:</label>
-        <input type="text" id="name" name="name"></span>
-
-        <span><label for="email">Email:</label>
-        <input type="email" id="email" name="email"></span>
-
-        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Drop me a line..."></textarea>
-
-        <input id="submit" type="submit" value="Submit">
-      </form>
     </div>
 
-  </body>
-  </html>
+  </section>
+
+  <div id="contactForm" class="contact-form bg-grey white" style="display: none;">
+    <form id="myForm">
+      <!-- Hier füge die gewünschten Formularelemente ein -->
+      <span><label for="name">Name:</label>
+      <input type="text" id="name" name="name"></span>
+
+      <span><label for="email">Email:</label>
+      <input type="email" id="email" name="email"></span>
+
+      <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Drop me a line..."></textarea>
+
+      <input id="submit" type="submit" value="Submit">
+    </form>
+  </div>
+
+</body>
+</html>
