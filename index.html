@@ -11,29 +11,24 @@
     <script scr="getForm.js"></script>
 
   </head>
-
   <script>
     function handleKeyPress(event) {
-      if (event.key === 'Enter' || event.keyCode === 13) {
-        event.preventDefault(); // Prevent the default behavior of the Enter key
+    if (event.key === 'Enter' || event.keyCode === 13) {
+      event.preventDefault(); // Prevent the default behavior of the Enter key
 
-        // Get the current tabindex value
-        let currentTabIndex = parseInt(event.currentTarget.tabIndex);
+      // Get the current tabindex value
+      let currentTabIndex = parseInt(event.currentTarget.tabIndex);
 
-        // Calculate the next tabindex value based on the described logic
-        let nextTabIndex = currentTabIndex * 10 + 1;
+      // Convert the current tabindex to a string, add one, and select the element with the new tabindex
+      let nextTabIndex = currentTabIndex.toString() + "1";
+      let nextElement = document.querySelector('[tabindex="' + nextTabIndex + '"]');
 
-        // Find the next element with tabindex
-        let nextElement = document.querySelector('[tabindex="' + nextTabIndex + '"]');
-
-        // If the next element is found, focus it; otherwise, go to the next tabindex
-        if (nextElement) {
-          nextElement.focus();
-        } else {
-          document.querySelector('[tabindex="' + (currentTabIndex + 1) + '"]').focus();
-        }
+      // If the next element is found, focus it; otherwise, do nothing
+      if (nextElement) {
+        nextElement.focus();
       }
     }
+  }
   </script>
 
   <body class="bg-transparent black">
@@ -86,9 +81,9 @@
             <p tabindex="3">Hi! Maria Arkadieff ist Komponistin <br> (Ich) mache Musik, publiziere, schreibe Gedichte und manchmal mache ich Kunst. Mein Brotjob ist Programmieren.</p>
           </div>
 
-          <div class="discipline" id="Musik" tabindex="4">
+          <div class="discipline" id="Musik" tabindex="4" onkeydown="handleKeyPress(event)">
             <h3 class="on-scroll some-blur more-blur" tabindex="41">Musik und Komposition</h3>
-            <div class="discipline-content" tabindex="42">
+            <div class="discipline-content" tabindex="42" onkeydown="handleKeyPress(event)">
               <span class="on-scroll some-blur more-blur" tabindex="421">Meine Großmutter liebte Oper und meine Mutter singt gern Schubert und diverse Arien.</span>
               <span class="on-scroll some-blur more-blur" tabindex="422">Mein Ziehvater war klassischer Organist.</span>
               <span class="on-scroll some-blur more-blur" tabindex="423">In unserer Wohnung in St. Petersburg gaben wir Orgelkonzerte.</span>
@@ -108,9 +103,9 @@
             </div>
           </div>
 
-          <div class="discipline" id="Publizistik" tabindex="5">
-            <h3 class="on-scroll some-blur more-blur" tabindex="51">Publizistik</h3>
-            <div class="discipline-content" tabindex="52">
+          <div class="discipline" id="Publizistik" tabindex="5" onkeydown="handleKeyPress(event)">
+            <h3 class="on-scroll some-blur more-blur" tabindex="51" >Publizistik</h3>
+            <div class="discipline-content" tabindex="52" onkeydown="handleKeyPress(event)">
               <span class="on-scroll some-blur more-blur" tabindex="521">Ich schreibe seit 2010 über Politik.</span>
               <span class="on-scroll some-blur more-blur" tabindex="522">Durch die Mehrstaatlichkeit hatte ich lange immer eine leicht andere Perspektive.</span>
               <span class="on-scroll some-blur more-blur" tabindex="523">Immer wieder in den letzten Jahren habe ich mich mit der Diktatur in Russland auseinandergesetzt, </span><span class="on-scroll some-blur more-blur" tabindex="524">zum Beispiel <a href="https://daria-schweigolz.medium.com/wieso-russland-nicht-aufh%C3%B6ren-wird-krieg-zu-f%C3%BChren-e25b8b18f745" rel="nofollow" target="_blank" tabindex="525">hier</a>.</span>
@@ -118,9 +113,9 @@
             </div>
           </div>
 
-          <div class="discipline" id="Lyrik" tabindex="6">
+          <div class="discipline" id="Lyrik" tabindex="6" onkeydown="handleKeyPress(event)">
             <h3 class="on-scroll some-blur more-blur" tabindex="61">Lyrik</h3>
-            <div class="discipline-content" tabindex="62">
+            <div class="discipline-content" tabindex="62" onkeydown="handleKeyPress(event)">
               <span class="on-scroll some-blur more-blur" tabindex="621">Zwischen 2010 und 2016 haben ich Philosophie studiert.</span>
               <span class="on-scroll some-blur more-blur" tabindex="622">Sie hilft, Erfahrungen zu strukturieren und die Welt zu verstehen.</span>
               <span class="on-scroll some-blur more-blur" tabindex="623">Aber Lyrik ist für einer der Wege, mit den Konflikten zurecht zu kommen, die das Existieren mit sich bringt.</span>
@@ -130,9 +125,9 @@
             </div>
           </div>
 
-          <div class="discipline" id="Kunst" tabindex="7">
+          <div class="discipline" id="Kunst" tabindex="7" onkeydown="handleKeyPress(event)">
             <h3 class="on-scroll some-blur more-blur" tabindex="71">Kunst</h3>
-            <div class="discipline-content" tabindex="72">
+            <div class="discipline-content" tabindex="72" onkeydown="handleKeyPress(event)">
               <span class="on-scroll some-blur more-blur" tabindex="721">Mit meinem Großvater Georgi Piontek und meiner Mutter habe ich als Kind gemalt.</span>
               <span class="on-scroll some-blur more-blur" tabindex="722">Er war ein Architekt, sein Herzensprojekt war ein Freiluftmuseum,</span>
               <span class="on-scroll some-blur more-blur" tabindex="723">das alle indigenen Völker Russlands bzw. der Sowjeunion zelebrieren sollte.</span>
@@ -142,9 +137,9 @@
             </div>
           </div>
 
-          <div class="discipline" id="Programmieren" tabindex="8">
+          <div class="discipline" id="Programmieren" tabindex="8" onkeydown="handleKeyPress(event)">
             <h3 class="on-scroll some-blur more-blur" tabindex="81">Programmieren</h3>
-            <div class="discipline-content" tabindex="82">
+            <div class="discipline-content" tabindex="82" onkeydown="handleKeyPress(event)">
               <span class="on-scroll some-blur more-blur" tabindex="821">2020 habe ich Angefangen, zu programmieren.</span>
               <span class="on-scroll some-blur more-blur" tabindex="822">Ich habe UX/UI und React gelernt.</span>
               <span class="on-scroll some-blur more-blur" tabindex="823">Zur Zeit arbeite ich bei einem fair trade Unternehmen.</span>
