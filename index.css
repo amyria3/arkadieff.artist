@@ -565,8 +565,8 @@ h1 {
   transition-delay: 0.8s;
 }
 
-div:focus *{
-  filter: blur(0px)
+div:focus * {
+  filter: blur(0px);
 }
 
 /*audioPlayer MEER*/
