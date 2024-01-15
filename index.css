@@ -567,7 +567,9 @@ h1 {
 
 div:focus *,
 div:focus *.some-blur,
-div:focus *.more-blur {
+div:focus *.more-blur,
+*.more-blur:focus,
+*.some-blur:focus {
   filter: blur(0px);
 }
 
