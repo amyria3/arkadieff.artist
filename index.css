@@ -666,8 +666,8 @@ a:visited {
     height: 100vw;
   }
 
-  #artist-hi p{
-    height: 20vw;
+  #artist-hi p {
+    max-height: 30vw;
   }
 
   .discipline {
