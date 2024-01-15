@@ -549,7 +549,8 @@ h1 {
 .on-scroll.some-blur:hover,
 .on-scroll.more-blur:hover,
 .on-scroll.some-blur:focus,
-.on-scroll.more-blur:focus {
+.on-scroll.more-blur:focus
+.on-scroll:focus {
   filter: blur(0px);
 }
 
