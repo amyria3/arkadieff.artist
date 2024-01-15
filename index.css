@@ -107,7 +107,9 @@
 }
 
 :focus {
-  outline: 0.1rem solid #ff0002;
+  outline: 0.2rem solid #191919;
+  filter: blur(0px);
+  border-radius: 1px;
 }
 
 *::selection {
