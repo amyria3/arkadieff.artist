@@ -254,7 +254,6 @@ textarea:focus, textarea:focus-within {
   color: #191919;
 }
 
-
 input:not(:focus):hover {
   cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
 }
