@@ -543,9 +543,16 @@ audio:focus::-webkit-media-controls-seek-forward-button,
 audio:focus::-moz-media-controls-panel,
 audio:focus::media-controls-panel {
   border-radius: 0 !important;
-  zoom: 1.5;
 }
 
+#audioPlayer ::-webkit-media-controls-play-button,
+#audioPlayer audio::-webkit-media-controls-pause-button,
+#audioPlayer audio:focus::-webkit-media-controls-play-button,
+#audioPlayer audio:focus::-webkit-media-controls-pause-button,
+#audioPlayer audio:focus::-webkit-media-controls-seek-back-button,
+#audioPlayer audio:focus::-webkit-media-controls-seek-forward-button {
+  zoom: 1.5;
+}
 
 /*CURSOR*/
 body {
