@@ -11,24 +11,6 @@
     <script scr="getForm.js"></script>
 
   </head>
-  <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        const focusableElements = document.querySelectorAll('[tabindex]');
-
-        focusableElements.forEach(element => {
-          element.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-              const nextElement = document.querySelector(`[tabindex="${parseInt(element.getAttribute('tabindex')) + 1}"]`);
-              if (nextElement) {
-                nextElement.focus();
-                event.preventDefault(); // Prevents the default Enter key behavior
-              }
-            }
-          });
-        });
-      });
-  </script>
-
   <body class="bg-transparent black">
 
     <div id="splash-wrapper">
@@ -65,7 +47,7 @@
         </div>
       </div>
 
-      <div class="menu-bar" id="menuBar" tabindex="3" aria-label="Navigation">
+      <div class="menu-bar" id="menuBar" tabindex="-1" aria-label="Navigation">
         <div class="menu-item" data-section-id="Musik" data-anchor="Musik" aria-label="Springe zu Musik"></div>
         <div class="menu-item" data-section-id="Publizistik" data-anchor="Publizistik" aria-label="Springe zu Publizistik"></div>
         <div class="menu-item" data-section-id="Lyrik" data-anchor="Lyrik" aria-label="Springe zu Lyrik"></div>
@@ -75,11 +57,11 @@
 
       <div id="artist-content" class="transition">
         <div id="wrapper">
-          <div id="artist-hi" tabindex="4">
+          <div id="artist-hi" tabindex="3">
             <p>Hi! Maria Arkadieff ist Komponistin <br> (Ich) mache Musik, publiziere, schreibe Gedichte und manchmal mache ich Kunst. Mein Brotjob ist Programmieren.</p>
           </div>
 
-          <div class="discipline" id="Musik" tabindex="5">
+          <div class="discipline" id="Musik" tabindex="4">
             <h3 class="on-scroll some-blur more-blur">Musik und Komposition</h3>
             <div class="discipline-content">
               <span class="on-scroll some-blur more-blur">Meine Großmutter liebte Oper und meine Mutter singt gern Schubert und diverse Arien.</span>
@@ -101,7 +83,7 @@
             </div>
           </div>
 
-          <div class="discipline" id="Publizistik" tabindex="6">
+          <div class="discipline" id="Publizistik" tabindex="5">
             <h3 class="on-scroll some-blur more-blur">Publizistik</h3>
             <div class="discipline-content">
               <span class="on-scroll some-blur more-blur">Ich schreibe seit 2010 über Politik.</span>
@@ -111,7 +93,7 @@
             </div>
           </div>
 
-          <div class="discipline" id="Lyrik" tabindex="7">
+          <div class="discipline" id="Lyrik" tabindex="6">
             <h3 class="on-scroll some-blur more-blur">Lyrik</h3>
             <div class="discipline-content">
               <span class="on-scroll some-blur more-blur">Zwischen 2010 und 2016 haben ich Philosophie studiert.</span>
@@ -123,7 +105,7 @@
             </div>
           </div>
 
-          <div class="discipline" id="Kunst" tabindex="8">
+          <div class="discipline" id="Kunst" tabindex="7">
             <h3 class="on-scroll some-blur more-blur">Kunst</h3>
             <div class="discipline-content">
               <span class="on-scroll some-blur more-blur">Mit meinem Großvater Georgi Piontek und meiner Mutter habe ich als Kind gemalt.</span>
@@ -135,7 +117,7 @@
             </div>
           </div>
 
-          <div class="discipline" id="Programmieren" tabindex="9">
+          <div class="discipline" id="Programmieren" tabindex="8">
             <h3 class="on-scroll some-blur more-blur">Programmieren</h3>
             <div class="discipline-content">
               <span class="on-scroll some-blur more-blur">2020 habe ich Angefangen, zu programmieren.</span>

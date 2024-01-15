@@ -565,7 +565,9 @@ h1 {
   transition-delay: 0.8s;
 }
 
-div:focus * {
+div:focus *,
+div:focus *.some-blur,
+div:focus *.more-blur {
   filter: blur(0px);
 }
 
