@@ -523,22 +523,29 @@ div:focus *.more-blur,
 
 /*audioPlayer MEER*/
 
-.audio-player {
-  margin-top: 4rem;
+#audioPlayer {
+  margin-top: 2rem;
 }
 
-audio::-webkit-media-controls-panel {
+audio, audio::-webkit-media-controls-panel {
   background-color: #f5f2f2;
+  min-width: 20rem;
+  margin: 0;
   border-radius: 0%;
   width: 100%;
-  padding: 0.5rem;
 }
 
-audio::-webkit-media-controls-play-button {
+#audioPlayer ::-webkit-media-controls-play-button,
+audio:focus::-webkit-media-controls-play-button,
+audio:focus::-webkit-media-controls-pause-button,
+audio:focus::-webkit-media-controls-seek-back-button,
+audio:focus::-webkit-media-controls-seek-forward-button,
+audio:focus::-moz-media-controls-panel,
+audio:focus::media-controls-panel {
+  border-radius: 0 !important;
   zoom: 1.5;
-  outline: #ff0002;
-  background-color: #ff0002;
 }
+
 
 /*CURSOR*/
 body {
@@ -625,7 +632,6 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
-
   #audioPlayer audio::-webkit-media-controls {
     zoom: 1.4;
   }
