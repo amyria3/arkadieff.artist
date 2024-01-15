@@ -539,18 +539,17 @@ audio, audio::-webkit-media-controls-panel {
 audio:focus::-webkit-media-controls-play-button,
 audio:focus::-webkit-media-controls-pause-button,
 audio:focus::-webkit-media-controls-seek-back-button,
-audio:focus::-webkit-media-controls-seek-forward-button,
 audio:focus::-moz-media-controls-panel,
 audio:focus::media-controls-panel {
   border-radius: 0 !important;
+  outline: 0.5rem solid #ff0002;
 }
 
 #audioPlayer ::-webkit-media-controls-play-button,
 #audioPlayer audio::-webkit-media-controls-pause-button,
 #audioPlayer audio:focus::-webkit-media-controls-play-button,
 #audioPlayer audio:focus::-webkit-media-controls-pause-button,
-#audioPlayer audio:focus::-webkit-media-controls-seek-back-button,
-#audioPlayer audio:focus::-webkit-media-controls-seek-forward-button {
+#audioPlayer audio:focus::-webkit-media-controls-seek-back-button {
   zoom: 1.5;
 }
 
