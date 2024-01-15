@@ -540,43 +540,6 @@ audio::-webkit-media-controls-play-button {
   background-color: #ff0002;
 }
 
-/* .audio-player:hover ::-webkit-media-controls-play-button,
-audio:focus::-webkit-media-controls-play-button,
-audio:focus::-webkit-media-controls-pause-button,
-audio:focus::-webkit-media-controls-seek-back-button,
-audio:focus::-webkit-media-controls-seek-forward-button,
-audio:focus::-moz-media-controls-panel,
-audio:focus::media-controls-panel {
-  background-color: red;
-  border-radius: 0 !important;
-}
-
-#audioPlayer audio::-webkit-media-controls,
-#audioPlayer audio::-webkit-media-controls-play-button,
-#audioPlayer audio::-webkit-media-controls-pause-button,
-#audioPlayer audio.isPlaying::-webkit-media-controls-play-button,
-#audioPlayer audio::-webkit-media-controls-play-button,
-#audioPlayer audio::-webkit-media-controls- {
-  zoom: 1.5;
-  border-radius: 0 !important;
-}
-
-#audioPlayer audio::-webkit-media-controls-play-button,
-#audioPlayer audio::-webkit-media-controls-pause-button,
-#audioPlayer audio.isPlaying::-webkit-media-controls-play-button {
-  zoom: 2;
-  border-radius: 0 !important;
-}
-
-#audioPlayer audio.isPlaying::-webkit-media-controls-play-button,
-#audioPlayer audio::-webkit-media-controls-play-button {
-  margin-left: -10%;
-}
-
-#audioPlayer audio::-webkit-media-controls- {
-  display: none;
-} */
-
 /*CURSOR*/
 body {
   cursor: url("Illustrations/cursor.svg"), auto; /* Replace with the correct path to your cursor.svg file */
