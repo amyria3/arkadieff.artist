@@ -534,16 +534,14 @@ audio, audio::-webkit-media-controls-panel {
   width: 100%;
 }
 
-
-
 /* Fortschrittsbalken */
 #audioPlayer audio::-webkit-media-controls-timeline {
-  background: #0084ff; /* Hintergrundfarbe des Fortschrittsbalkens */
+  background: #f5f2f2; /* Hintergrundfarbe des Fortschrittsbalkens */
 }
 
 /* Lautstärkeregler */
 #audioPlayer audio::-webkit-media-controls-volume-slider {
-  background: #00ff08; /* Hintergrundfarbe des Lautstärkereglers */
+  background: #f5f2f2; /* Hintergrundfarbe des Lautstärkereglers */
 }
 
 /* Allgemeine Anpassungen für alle Buttons im Audio-Player */
@@ -575,7 +573,6 @@ audio, audio::-webkit-media-controls-panel {
 #audioPlayer audio::-webkit-media-controls-volume-slider:focus {
   outline: 0.1rem solid #ff0002; /* Fokus-Randfarbe für den Fortschrittsbalken und Lautstärkeregler */
 }
-
 
 
 /*CURSOR*/
