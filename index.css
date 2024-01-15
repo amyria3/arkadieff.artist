@@ -99,7 +99,6 @@
   color: #ff0002;
 }
 
-
 /*LAYORS*/
 * {
   box-sizing: border-box;
@@ -109,10 +108,15 @@
 :focus {
   outline: 0.2rem solid #191919;
   filter: blur(0px);
-  border-radius: 1px;
 }
 
-*::selection {
+.discipline:focus {
+  outline: 0.2rem solid #191919;
+  filter: blur(0px);
+  width: calc(86vw - 0.4rem);
+}
+
+::selection {
   background-color: #3f3d3d;
   color:#f5f2f2;
 }
@@ -493,15 +497,16 @@ h1 {
 }
 
 .discipline {
-  width: 96vw;
-  height: 200vh;
+  width: calc(96vw - 0.4rem);
+  margin: 0.2rem; /*for outline on focus*/
+  height: 100vh;
   max-height: 196vw;
   padding: 4vw;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  padding-top: 30vw;
+  padding-top: 20vw;
   margin-bottom: 0;
 }
 
@@ -655,6 +660,10 @@ a:visited {
 
   #artist-hi {
     height: 100vw;
+  }
+
+  #artist-hi p{
+    height: 20vw;
   }
 
   .discipline {
