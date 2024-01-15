@@ -110,12 +110,6 @@
   filter: blur(0px);
 }
 
-.discipline:focus {
-  outline: 0.2rem solid #191919;
-  filter: blur(0px);
-  width: calc(86vw - 0.4rem);
-}
-
 ::selection {
   background-color: #3f3d3d;
   color:#f5f2f2;
