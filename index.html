@@ -11,46 +11,6 @@
     <script scr="getForm.js"></script>
 
   </head>
-  <script>
-function handleKeyPress(event) {
-  if (event.key === 'Enter' || event.keyCode === 13) {
-    event.preventDefault(); // Prevent the default behavior of the Enter key
-
-    // Get the current tabindex value
-    let currentTabIndex = parseInt(event.currentTarget.tabIndex);
-
-    // Check if the element that triggered the event is currently focused
-    if (document.activeElement === event.currentTarget) {
-      // Check if the next level index exists
-      let nextLevelIndex = currentTabIndex.toString() + 1;
-      let nextLevelElement = document.querySelector('[tabindex="' + nextLevelIndex + '"]');
-      console.log("noticed Enter for Index " + nextLevelIndex)
-
-      // If the next level element exists, focus it; otherwise, go to the next element on the same level
-      if (nextLevelElement) {
-        nextLevelElement.focus();
-      } else {
-        // Go to the next element on the same level after a short delay
-        setTimeout(() => {
-          let nextElementSelectable = currentTabIndex + 1;
-
-          // Keep incrementing the nextElementSelectable until an element is found
-          while (!document.querySelector('[tabindex="' + nextElementSelectable + '"]')) {
-            nextElementSelectable++;
-          }
-
-          // Focus the found element
-          let nextElement = document.querySelector('[tabindex="' + nextElementSelectable + '"]');
-          if (nextElement) {
-            nextElement.focus();
-          }
-        }, 100); // 100 milliseconds delay
-      }
-    }
-  }
-}
-
-</script>
 
 
   <body class="bg-transparent black">
@@ -59,11 +19,11 @@ function handleKeyPress(event) {
 
       <section id="splash" class="bg-white full-width">
         <!-- <h1>Maria Arkadieff</h1> -->
-        <div id="portrait-wrapper"><img src="Illustrations/portrait_arkadieff.png" alt="Portrait einer junge Frau mit sehr kurzen Haaren. Sie steht an einer Mauer mit geschlossenen Augen." tabindex="1"></div>
+        <div id="portrait-wrapper"><img src="Illustrations/portrait_arkadieff.png" alt="Portrait einer junge Frau mit sehr kurzen Haaren. Sie steht an einer Mauer mit geschlossenen Augen."></div>
       </section>
 
-      <section id="slogan" class="bg-transparent full-width" tabindex="-1">
-        <div id="slogan-wrapper" class="bg-transparent" tabindex="-1" lang="en">
+      <section id="slogan" class="bg-transparent full-width" aria-hidden="true">
+        <div id="slogan-wrapper" class="bg-transparent" lang="en" aria-hidden="true">
           <p class="slogan red">GIVE</p>
           <p class="slogan">EVERY</p>
           <p class="slogan">THING</p>
@@ -73,7 +33,7 @@ function handleKeyPress(event) {
     </div>
 
     <section id="video-background-wrapper" class="full-width transition">
-      <video autoplay muted loop id="backgroundVideo" tabindex="-1">
+      <video autoplay muted loop id="backgroundVideo" aria-hidden="true">
         <source src="Illustrations/meer.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -89,7 +49,7 @@ function handleKeyPress(event) {
         </div>
       </div>
 
-      <div class="menu-bar" id="menuBar" tabindex="-1" aria-label="Navigation">
+      <div class="menu-bar" id="menuBar" aria-label="Navigation" aria-hidden="true">
         <div class="menu-item" data-section-id="Musik" data-anchor="Musik" aria-label="Springe zu Musik"></div>
         <div class="menu-item" data-section-id="Publizistik" data-anchor="Publizistik" aria-label="Springe zu Publizistik"></div>
         <div class="menu-item" data-section-id="Lyrik" data-anchor="Lyrik" aria-label="Springe zu Lyrik"></div>
@@ -100,21 +60,21 @@ function handleKeyPress(event) {
       <div id="artist-content" class="transition">
         <div id="wrapper">
           <div id="artist-hi">
-            <p tabindex="3">Hi! Maria Arkadieff ist Komponistin <br> (Ich) mache Musik, publiziere, schreibe Gedichte und manchmal mache ich Kunst. Mein Brotjob ist Programmieren.</p>
+            <p>Hi! Maria Arkadieff ist Komponistin <br> (Ich) mache Musik, publiziere, schreibe Gedichte und manchmal mache ich Kunst. Mein Brotjob ist Programmieren.</p>
           </div>
 
           <div class="discipline" id="Musik">
-            <h3 class="on-scroll some-blur more-blur" tabindex="41" onkeydown="handleKeyPress(event)">Musik und Komposition</h3>
-            <div class="discipline-content" tabindex="42" onkeydown="handleKeyPress(event)">
-              <span class="on-scroll some-blur more-blur" tabindex="421">Meine Großmutter liebte Oper und meine Mutter singt gern Schubert und diverse Arien.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="422">Mein Ziehvater war klassischer Organist.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="423">In unserer Wohnung in St. Petersburg gaben wir Orgelkonzerte.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="424">Nach seinem Tod 2010 habe ich angefangen, zu komponieren. </span>
-              <span class="on-scroll some-blur more-blur" tabindex="425">Am Klavier fühle ich mich ihm verbunden.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="426">Seit 2014 mache ich DAW-Musik. Hier ein Beispiel: <a href="https://on.soundcloud.com/Jpqh3" tabindex="427">Boloto auf Soundcloud</a></span>
+            <h3 class="on-scroll some-blur more-blur" aria-hidden="true">Musik und Komposition</h3>
+            <div class="discipline-content" aria-hidden="true">
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Meine Großmutter liebte Oper und meine Mutter singt gern Schubert und diverse Arien.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Mein Ziehvater war klassischer Organist.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">In unserer Wohnung in St. Petersburg gaben wir Orgelkonzerte.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Nach seinem Tod 2010 habe ich angefangen, zu komponieren. </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Am Klavier fühle ich mich ihm verbunden.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Seit 2014 mache ich DAW-Musik. Hier ein Beispiel: <a href="https://on.soundcloud.com/Jpqh3" aria-hidden="true">Boloto auf Soundcloud</a></span>
               <br>
-              <span class="on-scroll some-blur more-blur" tabindex="428">2020 habe ich eine Demoaufnahme eines meiner Stücke gemacht: <br> das Meer.  </span>
-              <div id="audioPlayer" class="audio-player" tabindex="429">
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">2020 habe ich eine Demoaufnahme eines meiner Stücke gemacht: <br> das Meer.  </span>
+              <div id="audioPlayer" class="audio-player" aria-hidden="true">
                 <audio controls controlsList="nodownload">
                   <source src="Music/4168.2 Splett 210531 Maria Arkadieff Edit2.wav" type="audio/wav">
                   Your browser does not support the audio element.
@@ -122,51 +82,51 @@ function handleKeyPress(event) {
               </div>
               <br>
               <br>
-              <span class="on-scroll.some-blur.more-blur" tabindex="429">2023 durfte ich bei der Produktion der Theater Rampe in München mitwirken.</spann><span class="on-scroll.some-blur.more-blur" tabindex="430"></span>Ich habe im Rahmen für die Residenz von Steven Solbrig Musik, Audio und Ton gemacht.</spann>
+              <span class="on-scroll.some-blur.more-blur" aria-hidden="true">2023 durfte ich bei der Produktion der Theater Rampe in München mitwirken.</spann><span class="on-scroll.some-blur.more-blur" aria-hidden="true"></span>Ich habe im Rahmen für die Residenz von Steven Solbrig Musik, Audio und Ton gemacht.</spann>
 
             </div>
           </div>
 
           <div class="discipline" id="Publizistik">
-            <h3 class="on-scroll some-blur more-blur" tabindex="51" onkeydown="handleKeyPress(event)">Publizistik</h3>
-            <div class="discipline-content" tabindex="52" onkeydown="handleKeyPress(event)">
-              <span class="on-scroll some-blur more-blur" tabindex="521">Ich schreibe seit 2010 über Politik.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="522">Durch die Mehrstaatlichkeit hatte ich lange immer eine leicht andere Perspektive.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="523">Immer wieder in den letzten Jahren habe ich mich mit der Diktatur in Russland auseinandergesetzt, </span><span class="on-scroll some-blur more-blur" tabindex="524">zum Beispiel <a href="https://daria-schweigolz.medium.com/wieso-russland-nicht-aufh%C3%B6ren-wird-krieg-zu-f%C3%BChren-e25b8b18f745" rel="nofollow" target="_blank" tabindex="525">hier</a>.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="526">Seit Ende 2023 schreibe ich einen Blog bei der TAZ. Er heißt: <a class="on-scroll some-blur more-blur" href="https://blogs.taz.de/seelegegenwand/" rel="nofollow" target="_blank" tabindex="529">Seele gegen Wand</a></span>
+            <h3 class="on-scroll some-blur more-blur" aria-hidden="true">Publizistik</h3>
+            <div class="discipline-content" aria-hidden="true">
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Ich schreibe seit 2010 über Politik.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Durch die Mehrstaatlichkeit hatte ich lange immer eine leicht andere Perspektive.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Immer wieder in den letzten Jahren habe ich mich mit der Diktatur in Russland auseinandergesetzt, </span><span class="on-scroll some-blur more-blur" aria-hidden="true">zum Beispiel <a href="https://daria-schweigolz.medium.com/wieso-russland-nicht-aufh%C3%B6ren-wird-krieg-zu-f%C3%BChren-e25b8b18f745" rel="nofollow" target="_blank" aria-hidden="true">hier</a>.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Seit Ende 2023 schreibe ich einen Blog bei der TAZ. Er heißt: <a class="on-scroll some-blur more-blur" href="https://blogs.taz.de/seelegegenwand/" rel="nofollow" target="_blank" aria-hidden="true">Seele gegen Wand</a></span>
             </div>
           </div>
 
           <div class="discipline" id="Lyrik">
-            <h3 class="on-scroll some-blur more-blur" tabindex="61" onkeydown="handleKeyPress(event)">Lyrik</h3>
-            <div class="discipline-content" tabindex="62" onkeydown="handleKeyPress(event)">
-              <span class="on-scroll some-blur more-blur" tabindex="621">Zwischen 2010 und 2016 haben ich Philosophie studiert.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="622">Sie hilft, Erfahrungen zu strukturieren und die Welt zu verstehen.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="623">Aber Lyrik ist für einer der Wege, mit den Konflikten zurecht zu kommen, die das Existieren mit sich bringt.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="624">Gesellschaften sind seit Jahrhunderten mit Kultur und Erwartungen überladen.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="625">Bindungen haben an Selbstverständlichkeit verloren. Verluste tun weh.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="626">Ab und zu mache ich Lesungen in Leipzig.  </span>
+            <h3 class="on-scroll some-blur more-blur" aria-hidden="true">Lyrik</h3>
+            <div class="discipline-content" aria-hidden="true">
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Zwischen 2010 und 2016 haben ich Philosophie studiert.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Sie hilft, Erfahrungen zu strukturieren und die Welt zu verstehen.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Aber Lyrik ist für einer der Wege, mit den Konflikten zurecht zu kommen, die das Existieren mit sich bringt.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Gesellschaften sind seit Jahrhunderten mit Kultur und Erwartungen überladen.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Bindungen haben an Selbstverständlichkeit verloren. Verluste tun weh.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Ab und zu mache ich Lesungen in Leipzig.  </span>
             </div>
           </div>
 
           <div class="discipline" id="Kunst">
-            <h3 class="on-scroll some-blur more-blur" tabindex="71" onkeydown="handleKeyPress(event)">Kunst</h3>
-            <div class="discipline-content" tabindex="72" onkeydown="handleKeyPress(event)">
-              <span class="on-scroll some-blur more-blur" tabindex="721">Mit meinem Großvater Georgi Piontek und meiner Mutter habe ich als Kind gemalt.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="722">Er war ein Architekt, sein Herzensprojekt war ein Freiluftmuseum,</span>
-              <span class="on-scroll some-blur more-blur" tabindex="723">das alle indigenen Völker Russlands bzw. der Sowjeunion zelebrieren sollte.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="724">Das Projekt konnte nicht realisiert werden.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="725">Zur Zeit male ich fast nicht mehr, aber <a href="https://www.saatchiart.com/arkadieff" tabindex="726">hier</a> sind ein Paar Aquarelle von mir. </span>
-              <span class="on-scroll some-blur more-blur" tabindex="727">Und <a href="https://www.youtube.com/@mariaarkadieff7342" tabindex="728">hier</a> einige experimentelle Videos.  </span>
+            <h3 class="on-scroll some-blur more-blur" aria-hidden="true">Kunst</h3>
+            <div class="discipline-content" aria-hidden="true">
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Mit meinem Großvater Georgi Piontek und meiner Mutter habe ich als Kind gemalt.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Er war ein Architekt, sein Herzensprojekt war ein Freiluftmuseum,</span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">das alle indigenen Völker Russlands bzw. der Sowjeunion zelebrieren sollte.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Das Projekt konnte nicht realisiert werden.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Zur Zeit male ich fast nicht mehr, aber <a href="https://www.saatchiart.com/arkadieff" aria-hidden="true">hier</a> sind ein Paar Aquarelle von mir. </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Und <a href="https://www.youtube.com/@mariaarkadieff7342" aria-hidden="true">hier</a> einige experimentelle Videos.  </span>
             </div>
           </div>
 
           <div class="discipline" id="Programmieren">
-            <h3 class="on-scroll some-blur more-blur" tabindex="81" onkeydown="handleKeyPress(event)">Programmieren</h3>
-            <div class="discipline-content" tabindex="82" onkeydown="handleKeyPress(event)">
-              <span class="on-scroll some-blur more-blur" tabindex="821">2020 habe ich Angefangen, zu programmieren.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="822">Ich habe UX/UI und React gelernt.  </span>
-              <span class="on-scroll some-blur more-blur" tabindex="823">Zur Zeit arbeite ich bei einem fair trade Unternehmen.  </span>
+            <h3 class="on-scroll some-blur more-blur" aria-hidden="true">Programmieren</h3>
+            <div class="discipline-content" aria-hidden="true">
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">2020 habe ich Angefangen, zu programmieren.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Ich habe UX/UI und React gelernt.  </span>
+              <span class="on-scroll some-blur more-blur" aria-hidden="true">Zur Zeit arbeite ich bei einem fair trade Unternehmen.  </span>
             </div>
           </div>
 
@@ -191,4 +151,4 @@ function handleKeyPress(event) {
     </div>
 
   </body>
-</html>
+  </html>
