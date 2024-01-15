@@ -181,8 +181,14 @@ span:focus, p:focus, h3:focus {
 }
 
 a:focus {
-  background-color: #ff0002;
-  color:#f5f2f2;
+  background-color: #ff0002 !important;
+  color:#f5f2f2 !important;
+  outline: none;
+}
+
+a::selection:focus {
+  background-color: #ff0002 !important;
+  color:#f5f2f2 !important;
   outline: none;
 }
 
