@@ -674,6 +674,10 @@ a:visited {
   color: #ff0002;
 }
 
+a:visited:focus {
+  color: #ff0002;
+}
+
 /*FOR RESPONSIVE*/
 @media screen and (max-aspect-ratio: 1/1) {
   #video-background-wrapper video {
