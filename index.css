@@ -114,11 +114,19 @@
   background-color: #3f3d3d;
   color:#f5f2f2;
 }
+
 span:focus, p:focus {
     background-color: #3f3d3d;
     color:#f5f2f2;
     outline: none;
 }
+
+a:focus {
+  background-color: #ff0002;
+  color:#f5f2f2;
+  outline: none;
+}
+
 
 html {
   top: 0;
