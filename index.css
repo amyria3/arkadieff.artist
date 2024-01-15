@@ -527,12 +527,11 @@ div:focus *.more-blur,
   margin-top: 4rem;
 }
 
-audio, audio::-webkit-media-controls-panel {
+audio::-webkit-media-controls-panel {
   background-color: #f5f2f2;
-  min-width: 30rem;
-  min-height: 8rem;
   border-radius: 0%;
   width: 100%;
+  padding: 0.5rem;
 }
 
 audio::-webkit-media-controls-play-button {
