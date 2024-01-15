@@ -14,20 +14,23 @@
 
   <script>
     function handleKeyPress(event) {
-      if (event.key === 'Enter') {
+      if (event.key === 'Enter' || event.keyCode === 13) {
         event.preventDefault(); // Prevent the default behavior of the Enter key
 
         // Get the current tabindex value
         let currentTabIndex = parseInt(event.currentTarget.tabIndex);
 
-        // Find the next element with tabindex
-        let nextElement = document.querySelector('[tabindex="' + (currentTabIndex + 1) + '"]');
+        // Calculate the next tabindex value based on the described logic
+        let nextTabIndex = currentTabIndex * 10 + 1;
 
-        // If the next element is found, focus it; otherwise, go back to tabindex 6
+        // Find the next element with tabindex
+        let nextElement = document.querySelector('[tabindex="' + nextTabIndex + '"]');
+
+        // If the next element is found, focus it; otherwise, go to the next tabindex
         if (nextElement) {
           nextElement.focus();
         } else {
-          document.querySelector('[tabindex="6"]').focus();
+          document.querySelector('[tabindex="' + (currentTabIndex + 1) + '"]').focus();
         }
       }
     }
