@@ -504,7 +504,7 @@ h1 {
 
 /* Disciplines Wrapper styles */
 #intersection-wrapper {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   top: 20%;
   height: 60%;
@@ -512,7 +512,7 @@ h1 {
 }
 
 #bigger-intersection-wrapper {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   top: 15%;
   height: 70%;
@@ -704,7 +704,7 @@ a:visited {
   }
 
   .discipline {
-    min-height: 100vh;
+    min-height: 100vw;
     height: auto;
   }
 
@@ -733,9 +733,7 @@ a:visited {
     padding-top: 10vw;
     padding-bottom: 40vw;
   }
-}
 
-@media screen and (max-width: 650px) {
   #audioPlayer audio::-webkit-media-controls {
     zoom: 1;
   }
