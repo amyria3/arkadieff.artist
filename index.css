@@ -534,6 +534,8 @@ audio, audio::-webkit-media-controls-panel {
   width: 100%;
 }
 
+
+
 /* Fortschrittsbalken */
 #audioPlayer audio::-webkit-media-controls-timeline {
   background: #0084ff; /* Hintergrundfarbe des Fortschrittsbalkens */
@@ -550,7 +552,7 @@ audio, audio::-webkit-media-controls-panel {
 #audioPlayer audio::-webkit-media-controls-mute-button,
 #audioPlayer audio::-webkit-media-controls-volume-up-button,
 #audioPlayer audio::-webkit-media-controls-volume-down-button {
-  background: #555; /* Hintergrundfarbe der Buttons */
+  background: #191919; /* Hintergrundfarbe der Buttons */
   color: #fff; /* Textfarbe der Buttons */
   border: none; /* Kein Rand für die Buttons */
   border-radius: 5px; /* Abgerundete Ecken für die Buttons */
@@ -565,7 +567,7 @@ audio, audio::-webkit-media-controls-panel {
 #audioPlayer audio::-webkit-media-controls-mute-button:focus,
 #audioPlayer audio::-webkit-media-controls-volume-up-button:focus,
 #audioPlayer audio::-webkit-media-controls-volume-down-button:focus {
-  outline: 0.1rem solid #191919; /* Fokus-Randfarbe für die Buttons */
+  outline: 0.1rem solid #ff0002; /* Fokus-Randfarbe für die Buttons */
 }
 
 /* Fokusstil für den Fortschrittsbalken und Lautstärkeregler */
@@ -573,6 +575,7 @@ audio, audio::-webkit-media-controls-panel {
 #audioPlayer audio::-webkit-media-controls-volume-slider:focus {
   outline: 0.1rem solid #ff0002; /* Fokus-Randfarbe für den Fortschrittsbalken und Lautstärkeregler */
 }
+
 
 
 /*CURSOR*/
