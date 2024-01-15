@@ -151,19 +151,6 @@ body {
   font-weight: light;
 }
 
-a:hover {
-  color: #ff0002;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #ff0002;
-}
-
-a:visited:focus {
-  color: #ff0002;
-}
-
 :focus {
   outline: 0.2rem solid #191919;
   filter: blur(0px);
@@ -180,22 +167,30 @@ span:focus, p:focus, h3:focus {
     outline: none;
 }
 
-a:focus {
-  background-color: #ff0002 !important;
-  color:#f5f2f2 !important;
-  outline: none;
-  filter: none;
-}
-
-a::selection:focus {
-  background-color: #ff0002 !important;
-  color:#f5f2f2 !important;
-  outline: none;
-}
-
 div:not(.discipline):focus {
   outline: none;
 }
+
+/*LINKS*/
+a, a:visited, a:visited:focus {
+  color: #ff0002;
+}
+
+a:hover, a:visited:hover {
+  cursor: url("Illustrations/cursor-when-hovering.svg"), pointer;
+  color: #ff0002;
+}
+
+a:focus, a::selection:focus {
+  background-color: #ff0002 !important;
+  color: #f5f2f2 !important;
+  outline: none !important;
+}
+
+span:focus a, span::selection:focus a {
+  color: #ff0002 !important;
+}
+
 
 /*CONTACT FORMULAR*/
 .contact-form {
@@ -659,24 +654,11 @@ audio::-webkit-media-controls-panel {
   display: none;
 }
 
-/*INTERACTIVE CURSOR*/
+/*CURSOR*/
 body {
   cursor: url("Illustrations/cursor.svg"), auto; /* Replace with the correct path to your cursor.svg file */
 }
 
-a:hover {
-  cursor: url("Illustrations/cursor-when-hovering.svg"), pointer; /* Replace with the path to a red version of your cursor.svg */
-  color: #ff0002;
-}
-
-a:visited {
-  cursor: url("Illustrations/cursor-when-hovering.svg"), pointer; /* Replace with the path to a red version of your cursor.svg */
-  color: #ff0002;
-}
-
-a:visited:focus {
-  color: #ff0002;
-}
 
 /*FOR RESPONSIVE*/
 @media screen and (max-aspect-ratio: 1/1) {
