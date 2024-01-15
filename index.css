@@ -178,6 +178,9 @@ a:hover {
   color: #ff0002;
   text-decoration: none;
 }
+a:visited {
+  color: #ff0002;
+}
 
 /*CONTACT FORMULAR*/
 .contact-form {
