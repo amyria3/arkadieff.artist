@@ -72,14 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  if (window.innerWidth < 700) {
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("wheel", handleScroll);
-  } else {
-    const blurredElements = document.querySelectorAll(".more-blur", ".some-blur");
-
-    blurredElements.forEach((element) => {
-      element.classList.add("blocked");
-    });
-  }
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("wheel", handleScroll);
 });

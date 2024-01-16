@@ -42,18 +42,24 @@ function adjustBlur(element) {
   }
 }
 
-
-// Event-Listener für Scroll-Änderungen
-window.addEventListener("scroll", () => {
-  // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
-  onScrollElements.forEach((element) => {
-    adjustBlur(element);
+if (window.innerWidth > 650) {
+  window.addEventListener("scroll", () => {
+    // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
+    onScrollElements.forEach((element) => {
+      adjustBlur(element);
+    });
   });
-});
 
-window.addEventListener("wheel", (event) => {
-  // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
-  onScrollElements.forEach((element) => {
-    adjustBlur(element);
+  window.addEventListener("wheel", (event) => {
+    // Überprüfe und protokolliere die Sichtbarkeit nur für Elemente im Viewport
+    onScrollElements.forEach((element) => {
+      adjustBlur(element);
+    });
   });
-});
+} else {
+  const blurredElements = document.querySelectorAll(".more-blur", ".some-blur");
+
+  blurredElements.forEach((element) => {
+    element.classList.add("blocked");
+  });
+}
