@@ -603,13 +603,16 @@ body {
   }
 
 
+  #artist {
+    margin-top: 0;
+  }
+
   #artist,
-  #artist-content,
-  /*  #grey-sky-background,*/
   #grey-sky-background-frame
   {
     width: 100vw !important;
     height: 100vh !important;
+    max-height: 100vh !important;
   }
 
   #artist-hi {
@@ -648,7 +651,6 @@ body {
     height: 100vh;
     max-height: 100vw;
     padding-top: 10vw;
-    padding-bottom: 40vw;
   }
 
   #audioPlayer audio::-webkit-media-controls {
@@ -669,7 +671,7 @@ body {
   }
 
   #menuBar {
-    bottom: 20vh;
+    bottom: 50vw;
   }
 }
 
