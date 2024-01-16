@@ -69,3 +69,51 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("wheel", handleScroll);
 });
+
+
+//FOR PHONES
+
+// Funktion isVisible
+isVisible = function (el, container) {
+  var elRect = el.getBoundingClientRect();
+  var containerRect = container.getBoundingClientRect();
+
+  const res =
+    elRect.top >= containerRect.top &&
+    elRect.bottom <= containerRect.bottom;
+
+  return res;
+};
+
+// Selektiere #artist-content
+const artistContent = document.getElementById("artist-content");
+
+// Selektiere alle Elemente mit der Klasse .on-blur innerhalb von #artist-content
+const onBlurElements = artistContent.querySelectorAll(".on-blur");
+
+// Funktion zur Anpassung des Blur-Effekts
+function adjustBlur(element) {
+  if (isVisible(element, artistContent)) {
+    element.classList.remove("more-blur");
+    setTimeout(() => {
+      element.classList.remove("some-blur");
+    }, 500);
+  } else {
+    element.classList.add("some-blur");
+    element.classList.remove("more-blur");
+  }
+}
+
+// Event-Listener für Scroll-Änderungen
+function handleScroll() {
+  // Überprüfe und passe den Blur-Effekt nur für sichtbare Elemente innerhalb von #artist-content an
+  onBlurElements.forEach((element) => {
+    adjustBlur(element);
+  });
+}
+
+// Überprüfe, ob die Bildschirmbreite kleiner als 600 Pixel ist (als Beispiel für "Handy")
+if (window.innerWidth < 700) {
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("wheel", handleScroll);
+}
