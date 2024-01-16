@@ -652,7 +652,7 @@ body {
   }
 
   #menuBar {
-    margin-bottom: 6rem;
+    bottom: 20vh;
   }
 }
 
