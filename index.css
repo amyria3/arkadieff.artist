@@ -373,7 +373,7 @@ h1 {
 
 /*DISCIPLINES */
 /*Menu Bar styles*/
-.menu-bar {
+#menuBar {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
@@ -408,8 +408,8 @@ h1 {
   cursor: auto;
 }
 
-.menu-bar:focus {
-  outline: none;
+#menuBar:focus {
+  background-color: #3f3d3d;
 }
 
 /* Disciplines Wrapper styles */
@@ -582,7 +582,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 850px) {
   html {
     font-size: 2.6vw;
   }
@@ -649,6 +649,10 @@ body {
 
   #audioPlayer audio::-webkit-media-controls-play-button {
     margin-left: auto;
+  }
+
+  #menuBar {
+    margin-bottom: 6rem;
   }
 }
 
