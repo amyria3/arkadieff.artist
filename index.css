@@ -587,17 +587,33 @@ body {
     font-size: 2.6vw;
   }
 
+  /*MAKE SLOGAN SECTION MARGER*/
+  #splash-wrapper, #splash {
+    height: 160vw !important;
+  }
+
+  #slogan-wrapper {
+    font-size: larger;
+    margin-top: 70vw;
+  }
+
+  /*DO NOT DISPLAY VID*/
+  #backgroundVideo, #video-background-wrapper {
+    display: none !important;
+  }
+
+
   #artist,
-  #grey-sky-background-frame,
-  #grey-sky-background {
-    margin-top: 20vw;
-    width: 100vw;
-    height: 100vh;
-    max-height: 200vw;
+  #artist-content,
+  /*  #grey-sky-background,*/
+  #grey-sky-background-frame
+  {
+    width: 100vw !important;
+    height: 100vh !important;
   }
 
   #artist-hi {
-    height: 100vw;
+    height: 60vw;
   }
 
   #artist-hi p {
@@ -654,19 +670,6 @@ body {
 
   #menuBar {
     bottom: 20vh;
-  }
-
-  #backgroundVideo, #video-background-wrapper {
-    display: none !important;
-  }
-
-  #splash-wrapper, #splash {
-    height: 160vw !important;
-  }
-
-  #slogan-wrapper {
-    font-size: larger;
-    margin-top: 70vw;
   }
 }
 
