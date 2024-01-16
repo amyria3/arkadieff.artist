@@ -656,6 +656,15 @@ body {
   }
 }
 
+@media only screen and (max-width: 700px) {
+  video #video-background-wrapper {
+    display: none;
+  }
+  #slogan-wrapper {
+    height: auto;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   #audioPlayer audio::-webkit-media-controls {
     zoom: 1.4;
