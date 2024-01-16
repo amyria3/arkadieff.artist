@@ -590,6 +590,7 @@ body {
   #artist,
   #grey-sky-background-frame,
   #grey-sky-background {
+    margin-top: 20vw;
     width: 100vw;
     height: 100vh;
     max-height: 200vw;
@@ -662,6 +663,7 @@ body {
   #splash-wrapper, #splash {
     height: 160vw !important;
   }
+
   #slogan-wrapper {
     font-size: larger;
     margin-top: 70vw;
