@@ -5,7 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   menuBar.addEventListener("mousedown", function (e) {
     isDragging = true;
-    offset = { x: e.clientX - menuBar.getBoundingClientRect().left, y: e.clientY - menuBar.getBoundingClientRect().top };
+    offset = {
+      x: e.clientX - menuBar.getBoundingClientRect().left,
+      y: e.clientY - menuBar.getBoundingClientRect().top,
+    };
   });
 
   document.addEventListener("mousemove", function (e) {
@@ -39,7 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (targetSection) {
         var offset = targetSection.offsetTop;
         console.log("Scrolling to offset:", offset);
-        document.getElementById("artist-content").scrollTo({ top: offset, behavior: "smooth" });
+        document
+          .getElementById("artist-content")
+          .scrollTo({ top: offset, behavior: "smooth" });
       }
     });
   });
@@ -55,7 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var disciplines = document.querySelectorAll(".discipline");
 
     disciplines.forEach(function (discipline) {
-      var matchingMenuItem = document.querySelector('.menu-item[data-section-id="' + discipline.id + '"]');
+      var matchingMenuItem = document.querySelector(
+        '.menu-item[data-section-id="' + discipline.id + '"]'
+      );
       if (matchingMenuItem && isTopInViewport(discipline)) {
         menuItems.forEach(function (menuItem) {
           menuItem.classList.remove("selected-item");
@@ -65,55 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Bind handleScroll to both scroll and wheel events for better compatibility
-  window.addEventListener("scroll", handleScroll);
-  window.addEventListener("wheel", handleScroll);
-});
-
-
-//FOR PHONES
-
-// Funktion isVisible
-isVisible = function (el, container) {
-  var elRect = el.getBoundingClientRect();
-  var containerRect = container.getBoundingClientRect();
-
-  const res =
-    elRect.top >= containerRect.top &&
-    elRect.bottom <= containerRect.bottom;
-
-  return res;
-};
-
-// Selektiere #artist-content
-const artistContent = document.getElementById("artist-content");
-
-// Selektiere alle Elemente mit der Klasse .on-blur innerhalb von #artist-content
-const onBlurElements = artistContent.querySelectorAll(".on-blur");
-
-// Funktion zur Anpassung des Blur-Effekts
-function adjustBlur(element) {
-  if (isVisible(element, artistContent)) {
-    element.classList.remove("more-blur");
-    setTimeout(() => {
-      element.classList.remove("some-blur");
-    }, 500);
+  if (window.innerWidth < 700) {
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("wheel", handleScroll);
   } else {
-    element.classList.add("some-blur");
-    element.classList.remove("more-blur");
+    const blurredElements = document.querySelectorAll(".more-blur", ".some-blur");
+
+    blurredElements.forEach((element) => {
+      element.classList.add("blocked");
+    });
   }
-}
-
-// Event-Listener für Scroll-Änderungen
-function handleScroll() {
-  // Überprüfe und passe den Blur-Effekt nur für sichtbare Elemente innerhalb von #artist-content an
-  onBlurElements.forEach((element) => {
-    adjustBlur(element);
-  });
-}
-
-// Überprüfe, ob die Bildschirmbreite kleiner als 600 Pixel ist (als Beispiel für "Handy")
-if (window.innerWidth < 700) {
-  window.addEventListener("scroll", handleScroll);
-  window.addEventListener("wheel", handleScroll);
-}
+});

@@ -480,13 +480,13 @@ h1 {
   transition: filter 0.5s ease-in;
 }
 
-.some-blur {
+.some-blur:not(.blocked) {
   opacity: 0.8;
   filter: blur(3px);
   transition: filter 0.5s ease-in, opacity 0.2s ease-in;
 }
 
-.more-blur {
+.more-blur:not(.blocked) {
   filter: blur(10px);
   transition: filter 0.8s ease-in;
 }
@@ -503,12 +503,12 @@ h1 {
   transition-delay: 0ms;
 }
 
-.some-blur:not(:hover) {
+.some-blur:not(.blocked):not(:hover) {
   filter: blur(3px);
   transition-delay: 0.3s;
 }
 
-.more-blur:not(:hover) {
+.more-blur:not(.blocked):not(:hover) {
   filter: blur(10px);
   transition-delay: 0.8s;
 }
@@ -569,16 +569,10 @@ audio, audio::-webkit-media-controls-panel {
   background-color: #f5f2f2 !important;
 }
 
-/* #audioPlayer audio::-webkit-media-controls-enclosure {
-  display: none;
-} */
-
-
 /*CURSOR*/
 body {
   cursor: url("Illustrations/cursor.svg"), auto; /* Replace with the correct path to your cursor.svg file */
 }
-
 
 /*FOR RESPONSIVE*/
 @media screen and (max-aspect-ratio: 1/1) {
