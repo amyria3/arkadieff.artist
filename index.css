@@ -655,7 +655,7 @@ body {
     bottom: 20vh;
   }
 
-  #backgroundVideo #video-background-wrapper {
+  #backgroundVideo, #video-background-wrapper {
     display: none !important;
   }
 
