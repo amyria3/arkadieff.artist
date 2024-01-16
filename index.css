@@ -672,7 +672,7 @@ body {
 
   #menuBar {
     bottom: 20vw;
-    width: 6rem;
+    width: 5rem;
   }
 
   .menu-item {
@@ -682,9 +682,9 @@ body {
   }
 
   .menu-item:not(.selected-item) {
-    width: 6rem;
-    min-width: 6rem;
-    max-width: 6rem;
+    width: 5rem;
+    min-width: 5rem;
+    max-width: 5rem;
   }
 
   .selected-item {
